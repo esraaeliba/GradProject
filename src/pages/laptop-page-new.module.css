@@ -1,0 +1,1332 @@
+@keyframes jello-horizontal {
+  0%,
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+}
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+.vectorIcon {
+  position: relative;
+  width: 2475.04px;
+  height: 2946.73px;
+  mix-blend-mode: multiply;
+}
+.vectorWrapper {
+  position: absolute;
+  top: -675.84px;
+  left: -653.43px;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-3xs);
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.logo {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% - 794px);
+  left: calc(50% - 709px);
+  width: 251px;
+  height: 89px;
+  background-image: url(/public/logo@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.grayUp,
+.greyUpRec {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.grayUp {
+  height: 1.46%;
+  width: 101.39%;
+  top: 2.54%;
+  right: -0.69%;
+  bottom: 96%;
+  left: -0.69%;
+}
+.blackUpRec1 {
+  align-self: stretch;
+  position: relative;
+  background-color: var(--color-black);
+  height: 115px;
+}
+.blackUpRec {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.grayUpRec {
+  position: absolute;
+  top: 68px;
+  left: 10px;
+  background-color: var(--color-dimgray-100);
+  width: 1440px;
+  height: 7px;
+}
+.firstWebsiteFor {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: 0.6em;
+  text-indent: 100px;
+}
+.firstUp,
+.upGp {
+  position: absolute;
+  height: 32.59%;
+  width: 78.22%;
+  top: 26.67%;
+  right: 15.75%;
+  bottom: 40.74%;
+  left: 6.03%;
+}
+.upGp {
+  height: 7.31%;
+  width: 101.39%;
+  top: -0.6%;
+  right: -0.69%;
+  bottom: 93.29%;
+  left: -0.69%;
+  text-align: center;
+}
+.barChild,
+.barItem {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+.barChild {
+  width: 100%;
+  right: 0;
+  border-radius: var(--br-mini);
+  background-color: var(--neutral-10);
+  border: 1px solid var(--color-gray-700);
+  box-sizing: border-box;
+}
+.barItem {
+  width: 9.82%;
+  right: 90.18%;
+  border-radius: var(--br-mini) 0 0 var(--br-mini);
+  background-color: var(--color-black);
+  mix-blend-mode: multiply;
+}
+.search,
+.vectorIcon1 {
+  position: absolute;
+  top: 22.22%;
+  left: 14.73%;
+}
+.vectorIcon1 {
+  height: 40%;
+  width: 3.27%;
+  top: 28.89%;
+  right: 93.45%;
+  bottom: 31.11%;
+  left: 3.27%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.bar {
+  align-self: stretch;
+  position: relative;
+  height: 45px;
+}
+.searchBar1 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.searchBar {
+  position: absolute;
+  height: 2.44%;
+  width: 38.19%;
+  top: 9.42%;
+  right: 31.25%;
+  bottom: 88.15%;
+  left: 30.56%;
+  color: var(--color-gray-300);
+}
+.login {
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-family: var(--s-regular);
+  color: var(--neutral-10);
+  text-align: left;
+}
+.loginButton {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-8xs);
+  background-color: transparent;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-mini);
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.loginButton:hover {
+  animation: 1s linear 0s infinite normal none jello-horizontal;
+  opacity: 1;
+}
+.logInButton {
+  padding: 0;
+  height: 1.84%;
+  width: 5%;
+  top: 3.9%;
+  right: 8.89%;
+  bottom: 94.26%;
+  left: 86.11%;
+}
+.logInButton,
+.signupButton,
+.sinUpButton {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+}
+.signupButton {
+  padding: var(--padding-8xs);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-mini);
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.signupButton:hover {
+  animation: 1s ease 0s 1 normal none jello-horizontal;
+  opacity: 1;
+}
+.sinUpButton {
+  padding: 0;
+  height: 1.84%;
+  width: 5.97%;
+  top: 3.9%;
+  right: 1.6%;
+  bottom: 94.26%;
+  left: 92.43%;
+}
+.vectorIcon2,
+.vectorIcon3 {
+  position: relative;
+  width: 25px;
+  height: 21.88px;
+}
+.vectorIcon3 {
+  width: 10px;
+  height: 14.55px;
+}
+.laptops {
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-family: var(--s-regular);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 102px;
+  flex-shrink: 0;
+}
+.homeToLaptopVector {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 2.16%;
+  width: 11.81%;
+  top: 18.89%;
+  right: 73.82%;
+  bottom: 78.95%;
+  left: 14.38%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-3xs);
+}
+.camerasTextUp:hover,
+.gamingtextUp:hover,
+.homeToLaptopVector:hover,
+.laptopTextUp:hover,
+.projectTextUp:hover,
+.soundTextUp:hover {
+  animation: 1s ease 0s 1 normal none pulsate;
+  opacity: 1;
+}
+.vectorIcon4 {
+  position: relative;
+  width: 80px;
+  height: 60.03px;
+}
+.shoppingCart {
+  position: absolute;
+  height: 3.25%;
+  width: 5.56%;
+  top: 8.98%;
+  right: 4.79%;
+  bottom: 87.77%;
+  left: 89.65%;
+}
+.lapTopImage {
+  position: relative;
+  width: 189.07px;
+  height: 150px;
+  object-fit: cover;
+  z-index: 3;
+}
+.hpVictus16E0000ne {
+  margin: 0;
+}
+.hpVictus16E0000neContainer {
+  position: relative;
+  z-index: 2;
+}
+.lineInLapTopFrame {
+  position: relative;
+  border-top: 1px solid var(--color-gray-700);
+  box-sizing: border-box;
+  width: 196.02px;
+  height: 1px;
+  z-index: 1;
+}
+.egpmonth {
+  position: relative;
+  font-size: var(--font-size-mini);
+  z-index: 0;
+}
+.laptopReview,
+.laptopReview1,
+.laptopReview2 {
+  position: absolute;
+  height: 100%;
+  width: 22.83%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 77.17%;
+  border-radius: var(--br-6xl);
+  border: 1px solid var(--color-gray-700);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-8xs);
+}
+.laptopReview1,
+.laptopReview2 {
+  right: 25.72%;
+  left: 51.45%;
+}
+.laptopReview2 {
+  right: 51.45%;
+  left: 25.72%;
+}
+.egpmonth3,
+.hpVictus16E0000neContainer3 {
+  position: relative;
+  font-size: var(--font-size-xs);
+  font-family: var(--s-regular);
+  color: var(--color-black);
+  text-align: left;
+  z-index: 2;
+}
+.egpmonth3 {
+  font-size: var(--font-size-mini);
+  z-index: 0;
+}
+.laptopReview3 {
+  cursor: pointer;
+  border: 1px solid var(--color-gray-700);
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 100%;
+  width: 22.83%;
+  top: 0;
+  right: 77.17%;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-6xl);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-8xs);
+}
+.laptopReviewParent {
+  position: absolute;
+  height: 23.49%;
+  width: 99.88%;
+  top: 0;
+  right: 0.12%;
+  bottom: 76.51%;
+  left: 0;
+}
+.laptopReview10,
+.laptopReview11,
+.laptopReview12,
+.laptopReview13,
+.laptopReview14,
+.laptopReview15,
+.laptopReview4,
+.laptopReview5,
+.laptopReview6,
+.laptopReview7,
+.laptopReview8,
+.laptopReview9 {
+  position: absolute;
+  height: 23.49%;
+  width: 22.8%;
+  top: 25.5%;
+  right: 0;
+  bottom: 51.01%;
+  left: 77.2%;
+  border-radius: var(--br-6xl);
+  border: 1px solid var(--color-gray-700);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-8xs);
+}
+.laptopReview10,
+.laptopReview11,
+.laptopReview12,
+.laptopReview13,
+.laptopReview14,
+.laptopReview15,
+.laptopReview5,
+.laptopReview6,
+.laptopReview7,
+.laptopReview8,
+.laptopReview9 {
+  right: 25.69%;
+  left: 51.5%;
+}
+.laptopReview10,
+.laptopReview11,
+.laptopReview12,
+.laptopReview13,
+.laptopReview14,
+.laptopReview15,
+.laptopReview6,
+.laptopReview7,
+.laptopReview8,
+.laptopReview9 {
+  right: 51.39%;
+  left: 25.81%;
+}
+.laptopReview10,
+.laptopReview11,
+.laptopReview12,
+.laptopReview13,
+.laptopReview14,
+.laptopReview15,
+.laptopReview7,
+.laptopReview8,
+.laptopReview9 {
+  right: 77.08%;
+  left: 0.12%;
+}
+.laptopReview10,
+.laptopReview11,
+.laptopReview12,
+.laptopReview13,
+.laptopReview14,
+.laptopReview15,
+.laptopReview8,
+.laptopReview9 {
+  top: 51.01%;
+  right: 0.12%;
+  bottom: 25.5%;
+  left: 77.08%;
+}
+.laptopReview10,
+.laptopReview11,
+.laptopReview12,
+.laptopReview13,
+.laptopReview14,
+.laptopReview15,
+.laptopReview9 {
+  right: 25.81%;
+  left: 51.39%;
+}
+.laptopReview10,
+.laptopReview11,
+.laptopReview12,
+.laptopReview13,
+.laptopReview14,
+.laptopReview15 {
+  right: 51.5%;
+  left: 25.69%;
+}
+.laptopReview11,
+.laptopReview12,
+.laptopReview13,
+.laptopReview14,
+.laptopReview15 {
+  right: 77.2%;
+  left: 0;
+}
+.laptopReview12,
+.laptopReview13,
+.laptopReview14,
+.laptopReview15 {
+  top: 76.51%;
+  right: 0;
+  bottom: 0;
+  left: 77.2%;
+}
+.laptopReview13,
+.laptopReview14,
+.laptopReview15 {
+  right: 25.69%;
+  left: 51.5%;
+}
+.laptopReview14,
+.laptopReview15 {
+  right: 51.39%;
+  left: 25.81%;
+}
+.laptopReview15 {
+  right: 77.08%;
+  left: 0.12%;
+}
+.laptopsReview {
+  position: absolute;
+  height: 67.05%;
+  width: 60%;
+  top: 23.21%;
+  right: 10.21%;
+  bottom: 9.74%;
+  left: 29.79%;
+  font-size: var(--font-size-xs);
+  color: var(--color-black);
+}
+.laptopPageNewChild {
+  position: absolute;
+  height: 0.05%;
+  width: 75.49%;
+  top: 92.05%;
+  right: 10.17%;
+  bottom: 7.9%;
+  left: 14.34%;
+  border-top: 1px solid var(--color-gray-700);
+  box-sizing: border-box;
+}
+.loadMore {
+  position: relative;
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.2em;
+  font-family: var(--s-regular);
+  color: var(--color-black);
+  text-align: left;
+}
+.loadMoreButton,
+.loadMoreWrapper {
+  cursor: pointer;
+  background-color: transparent;
+  position: absolute;
+}
+.loadMoreWrapper {
+  border: 1px solid var(--color-gray-700);
+  padding: var(--padding-3xs);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-6xl);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.loadMoreButton {
+  border: 0;
+  padding: 0;
+  height: 2.38%;
+  width: 11.74%;
+  top: 93.67%;
+  right: 44.17%;
+  bottom: 3.95%;
+  left: 44.1%;
+}
+.laptops1 {
+  position: relative;
+  font-size: var(--font-size-mini);
+  letter-spacing: 0.15px;
+  line-height: 21px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-gray-200);
+  display: flex;
+  align-items: center;
+  width: 182px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.acer,
+.apple,
+.asus,
+.cherry,
+.dell,
+.hp,
+.huawei,
+.iLife,
+.infinix,
+.itel,
+.lenovo,
+.msi {
+  position: absolute;
+  top: 6.78px;
+  left: -0.25px;
+  line-height: 18.2px;
+  display: flex;
+  align-items: center;
+  width: 29px;
+  height: 18px;
+}
+.acer,
+.apple,
+.asus,
+.cherry,
+.dell,
+.huawei,
+.iLife,
+.infinix,
+.itel,
+.lenovo,
+.msi {
+  top: 38.78px;
+  width: 63px;
+}
+.acer,
+.apple,
+.asus,
+.cherry,
+.dell,
+.huawei,
+.iLife,
+.infinix,
+.itel,
+.msi {
+  top: 71.78px;
+  width: 55px;
+}
+.acer,
+.apple,
+.cherry,
+.dell,
+.huawei,
+.iLife,
+.infinix,
+.itel,
+.msi {
+  top: 103.56px;
+  left: 0;
+  width: 23.5px;
+}
+.acer,
+.apple,
+.cherry,
+.huawei,
+.iLife,
+.infinix,
+.itel,
+.msi {
+  top: 135.78px;
+  left: -0.25px;
+  width: 63px;
+}
+.acer,
+.apple,
+.cherry,
+.huawei,
+.infinix,
+.itel,
+.msi {
+  top: 167.78px;
+  width: 77px;
+}
+.acer,
+.cherry,
+.huawei,
+.infinix,
+.itel,
+.msi {
+  top: 199.78px;
+  width: 50px;
+}
+.cherry,
+.huawei,
+.infinix,
+.itel,
+.msi {
+  top: 232.78px;
+  width: 63px;
+}
+.huawei,
+.infinix,
+.itel,
+.msi {
+  top: 264.78px;
+  width: 46px;
+}
+.huawei,
+.infinix,
+.itel {
+  top: 296.68px;
+  left: 0;
+  width: 45.64px;
+}
+.infinix,
+.itel {
+  top: 328.87px;
+  width: 37.53px;
+}
+.itel {
+  top: 361.06px;
+  width: 19.06px;
+}
+.checkboxdefaultCheckboxOnl {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.checkboxdefaultCheckboxOnl1 {
+  position: absolute;
+  top: 32px;
+  left: 0;
+}
+.checkboxdefaultCheckboxOnl2 {
+  position: absolute;
+  top: 65px;
+  left: 0;
+}
+.checkboxdefaultCheckboxOnl3 {
+  position: absolute;
+  top: 97px;
+  left: 0;
+}
+.checkboxdefaultCheckboxOnl4 {
+  position: absolute;
+  top: 129px;
+  left: 0;
+}
+.checkboxdefaultCheckboxOnl5 {
+  position: absolute;
+  top: 161px;
+  left: 0;
+}
+.checkboxdefaultCheckboxOnl6 {
+  position: absolute;
+  top: 193px;
+  left: 0;
+}
+.checkboxdefaultCheckboxOnl7 {
+  position: absolute;
+  top: 226px;
+  left: 0;
+}
+.checkboxdefaultCheckboxOnl8 {
+  position: absolute;
+  top: 258px;
+  left: 0;
+}
+.checkboxdefaultCheckboxOnl9 {
+  position: absolute;
+  top: 290px;
+  left: 0;
+}
+.checkboxdefaultCheckboxOnl10 {
+  position: absolute;
+  top: 322px;
+  left: 0;
+}
+.checkboxdefaultCheckboxOnl11 {
+  position: absolute;
+  top: 354px;
+  left: 0;
+}
+.checkboxdefaultCheckboxOnlParent,
+.olitems {
+  position: absolute;
+  top: -0.22px;
+  left: 130.4px;
+  width: 33px;
+  height: 387px;
+}
+.olitems {
+  height: 105.56%;
+  width: 48.39%;
+  top: 2.58%;
+  right: 42.28%;
+  bottom: -8.14%;
+  left: 9.33%;
+}
+.laptopsTypes {
+  position: relative;
+  border-bottom: 1px solid var(--color-whitesmoke-200);
+  box-sizing: border-box;
+  width: 194px;
+  height: 396px;
+}
+.brand {
+  position: absolute;
+  height: 48.78%;
+  width: 24.58%;
+  top: 39.02%;
+  left: 9.26%;
+  font-size: var(--font-size-mini);
+  letter-spacing: 0.15px;
+  line-height: 21px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--s-regular);
+  color: var(--color-gray-200);
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+.pseudoIcon {
+  position: absolute;
+  height: 63.41%;
+  width: 10%;
+  top: 34.15%;
+  right: 11.34%;
+  bottom: 2.44%;
+  left: 76.62%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.brandType {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  width: 216px;
+  height: 41px;
+}
+.color {
+  position: absolute;
+  top: 16px;
+  left: 19.5px;
+  font-size: var(--font-size-mini);
+  letter-spacing: 0.15px;
+  line-height: 21px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--s-regular);
+  color: var(--color-gray-200);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  width: 75px;
+  height: 20px;
+}
+.pseudoIcon1 {
+  position: absolute;
+  height: 63.41%;
+  width: 11%;
+  top: 34.15%;
+  right: -2.96%;
+  bottom: 2.44%;
+  left: 87.9%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.colorrr {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 32.54%;
+  width: 90.29%;
+  top: 0;
+  right: 11.17%;
+  bottom: 67.46%;
+  left: -1.46%;
+}
+.divswatchOption,
+.divswatchOption1 {
+  position: absolute;
+  top: 0;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  width: 22px;
+  height: 22px;
+  overflow: hidden;
+}
+.divswatchOption {
+  left: 0;
+  background-color: var(--color-black);
+}
+.divswatchOption1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: #00f;
+  left: 34.39px;
+}
+.divswatchOption2 {
+  background-color: #a9a9a9;
+  left: 68.78px;
+}
+.divswatchOption2,
+.divswatchOption3,
+.divswatchOption4 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  width: 22px;
+  height: 22px;
+  overflow: hidden;
+}
+.divswatchOption3 {
+  background-color: var(--neutral-10);
+  left: 103.17px;
+}
+.divswatchOption4 {
+  background-color: silver;
+  left: 137.56px;
+}
+.colors,
+.divswatchAttributeOptions {
+  position: absolute;
+  top: 19px;
+  left: 20px;
+  width: 215.5px;
+  height: 30.69px;
+}
+.colors {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  height: 68.25%;
+  width: 95.1%;
+  top: 32.54%;
+  right: 2.21%;
+  bottom: -0.79%;
+  left: 2.7%;
+  border-bottom: 1px solid var(--color-whitesmoke-200);
+  box-sizing: border-box;
+}
+.colorType {
+  position: relative;
+  width: 204px;
+  height: 126px;
+}
+.price1 {
+  position: absolute;
+  top: 16px;
+  left: 20.5px;
+  font-size: var(--font-size-mini);
+  letter-spacing: 0.15px;
+  line-height: 21px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--s-regular);
+  color: var(--color-gray-200);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  width: 52px;
+  height: 20px;
+}
+.pseudoIcon2 {
+  position: absolute;
+  height: 63.41%;
+  width: 13.68%;
+  top: 34.15%;
+  right: -1.32%;
+  bottom: 2.44%;
+  left: 87.63%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.price {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 32.03%;
+  width: 88.37%;
+  top: 0;
+  right: 11.4%;
+  bottom: 67.97%;
+  left: 0.23%;
+}
+.egp749900Egp6999900 {
+  position: absolute;
+  height: 47.37%;
+  width: 104.5%;
+  top: 47.37%;
+  left: -8.59%;
+  line-height: 19.5px;
+  display: flex;
+  align-items: center;
+}
+.priceSlide {
+  position: absolute;
+  height: 56.72%;
+  width: 84.46%;
+  top: 23.88%;
+  right: -1.04%;
+  bottom: 19.4%;
+  left: 16.58%;
+}
+.slider,
+.sliderdefault {
+  position: absolute;
+  height: 8.96%;
+  width: 89.12%;
+  top: 19.4%;
+  right: 5.18%;
+  bottom: 71.64%;
+  left: 5.7%;
+}
+.slider {
+  height: 52.34%;
+  width: 89.77%;
+  top: 32.03%;
+  right: 5.58%;
+  bottom: 15.63%;
+  left: 4.65%;
+  border-bottom: 1px solid var(--color-whitesmoke-200);
+  box-sizing: border-box;
+}
+.priceType {
+  position: relative;
+  width: 215px;
+  height: 128px;
+  font-family: var(--font-open-sans);
+}
+.ssd1 {
+  position: absolute;
+  height: 48.78%;
+  width: 34.1%;
+  top: 39.02%;
+  left: 9.22%;
+  font-size: var(--font-size-mini);
+  letter-spacing: 0.15px;
+  line-height: 21px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--s-regular);
+  color: var(--color-gray-200);
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+.pseudoIcon3 {
+  position: absolute;
+  height: 63.41%;
+  width: 11.98%;
+  top: 35.37%;
+  right: 11.06%;
+  bottom: 1.22%;
+  left: 76.96%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.ssd {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  width: 217px;
+  height: 41px;
+}
+.graphicsCard,
+.laptopCategory1 {
+  position: absolute;
+  height: 48.78%;
+  width: 68%;
+  top: 39.02%;
+  left: 9.22%;
+  font-size: var(--font-size-mini);
+  letter-spacing: 0.15px;
+  line-height: 21px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--s-regular);
+  color: var(--color-gray-200);
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+.graphicsCard {
+  width: 62.67%;
+}
+.pseudoIcon6 {
+  position: absolute;
+  height: 63.41%;
+  width: 11.98%;
+  top: 34.15%;
+  right: 11.06%;
+  bottom: 2.44%;
+  left: 76.96%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.displaySize {
+  height: 48.78%;
+  width: 49.77%;
+  top: 39.02%;
+  left: 9.22%;
+  font-size: var(--font-size-mini);
+  letter-spacing: 0.15px;
+  line-height: 21px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--s-regular);
+  color: var(--color-gray-200);
+  text-align: left;
+}
+.displaySize,
+.filter,
+.ram1 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+.ram1 {
+  height: 48.78%;
+  width: 23.5%;
+  top: 39.02%;
+  left: 9.22%;
+  font-size: var(--font-size-mini);
+  letter-spacing: 0.15px;
+  line-height: 21px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--s-regular);
+  color: var(--color-gray-200);
+  text-align: left;
+}
+.filter {
+  height: 67.05%;
+  width: 13.54%;
+  top: 23.21%;
+  right: 72.08%;
+  bottom: 9.74%;
+  left: 14.38%;
+  border-radius: var(--br-mini);
+  border: 1px solid var(--color-gray-700);
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: var(--padding-3xs);
+  justify-content: center;
+  gap: 23px;
+  font-size: var(--font-size-smi);
+  color: var(--color-gray-100);
+}
+.vectorIcon5 {
+  position: relative;
+  width: 12px;
+  height: 7.4px;
+}
+.camerasTextUp,
+.laptopTextUp {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 117px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.camerasTextUp {
+  width: 115px;
+}
+.gamingConsoles {
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-family: var(--s-regular);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 202px;
+  flex-shrink: 0;
+}
+.gamingtextUp {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 215px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.soundSystems {
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-family: var(--s-regular);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 173px;
+  flex-shrink: 0;
+}
+.soundTextUp {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 188px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.projectors {
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-family: var(--s-regular);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 135px;
+  flex-shrink: 0;
+}
+.navigationBar,
+.projectTextUp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.projectTextUp {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 149px;
+}
+.navigationBar {
+  position: absolute;
+  height: 3.35%;
+  width: 72.71%;
+  top: 13.53%;
+  right: 13.61%;
+  bottom: 83.12%;
+  left: 13.68%;
+  border-radius: var(--br-mini);
+  background-color: var(--color-gray-700);
+  gap: var(--gap-11xl);
+}
+.laptopPageNew {
+  position: relative;
+  background-color: var(--neutral-10);
+  width: 100%;
+  height: 1848px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--neutral-10);
+  font-family: var(--s-regular);
+}

@@ -1,0 +1,244 @@
+@keyframes scale-down-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+}
+.vectorIcon {
+  position: relative;
+  width: 1062px;
+  height: 1122px;
+}
+.v {
+  position: absolute;
+  top: -147px;
+  left: -304px;
+  width: 1490px;
+  height: 1326px;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.vectorIcon1 {
+  position: relative;
+  width: 909.74px;
+  height: 974.4px;
+  mix-blend-mode: multiply;
+}
+.v1 {
+  position: absolute;
+  top: -384px;
+  left: -201px;
+  width: 943px;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.shoppingCartText {
+  position: absolute;
+  top: calc(50% - 549px);
+  left: calc(50% - 222px);
+  width: 444px;
+  height: 55px;
+}
+.itemFrameChild {
+  position: relative;
+  border-top: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 617.05px;
+  height: 1px;
+}
+.items {
+  position: relative;
+  display: inline-block;
+  width: 125px;
+  flex-shrink: 0;
+}
+.itemsWrapper {
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-3xs) var(--padding-3xs) var(--padding-3xs) 0;
+  align-items: center;
+  justify-content: center;
+}
+.itemFrame,
+.totalFrameInner {
+  display: flex;
+  flex-direction: column;
+}
+.itemFrame {
+  position: absolute;
+  top: calc(50% - 182px);
+  left: calc(50% - 321px);
+  padding: var(--padding-3xs) 0 var(--padding-3xs) var(--padding-3xs);
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-3xs);
+}
+.totalFrameInner {
+  padding: var(--padding-3xs);
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.total2000le {
+  position: relative;
+}
+.total2000leWrapper,
+.totalFrame {
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-3xs) var(--padding-3xs) var(--padding-3xs) 42px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.totalFrame {
+  position: absolute;
+  top: calc(50% + 86px);
+  left: calc(50% - 346px);
+  flex-direction: column;
+  padding: var(--padding-3xs);
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-3xs);
+  font-size: var(--font-size-16xl);
+}
+.checkout1 {
+  position: relative;
+  font-size: var(--font-size-26xl);
+  font-family: var(--s-regular);
+  color: var(--color-black);
+  text-align: left;
+}
+.checkout {
+  cursor: pointer;
+  border: 1px solid var(--color-black);
+  padding: var(--padding-3xs);
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% + 221px);
+  left: calc(50% - 139px);
+  border-radius: var(--br-mini);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.lapTopImage {
+  position: relative;
+  width: 156px;
+  height: 123.76px;
+  object-fit: cover;
+}
+.hpVictus16E0000ne {
+  margin: 0;
+}
+.lapTopImageParent {
+  width: 156px;
+  height: 188.76px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+  z-index: 2;
+}
+.firstProductChild {
+  position: relative;
+  width: 141.77px;
+  height: 0;
+  z-index: 1;
+}
+.le {
+  position: relative;
+  font-size: var(--font-size-16xl);
+  font-weight: 600;
+  z-index: 0;
+}
+.firstProduct,
+.productsFrame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.firstProduct {
+  border-radius: var(--br-6xl);
+  border: 1px solid var(--color-gray-700);
+  box-sizing: border-box;
+  width: 555px;
+  height: 192px;
+  flex-direction: row;
+  gap: var(--gap-8xs);
+  text-align: left;
+  font-size: 10px;
+  color: var(--color-black);
+  font-family: var(--s-regular);
+}
+.firstProduct:hover {
+  animation: 1s ease 0s 1 normal backwards scale-down-center;
+  opacity: 1;
+}
+.productsFrame {
+  position: absolute;
+  top: calc(50% - 86px);
+  left: calc(50% - 281px);
+  height: 182px;
+  flex-direction: column;
+}
+.shoppingChart {
+  position: absolute;
+  top: 85px;
+  left: 200px;
+  font-size: 50px;
+  display: inline-block;
+  width: 444px;
+  height: 58px;
+}
+.shoppingChart1 {
+  position: absolute;
+  top: 25px;
+  left: 160px;
+  font-size: 50px;
+  display: inline-block;
+  width: 444px;
+  height: 58px;
+}
+.logo {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% - 289px);
+  left: calc(50% - 271px);
+  width: 121px;
+  height: 42px;
+  background-image: url(/public/logo1@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.shoppingCartPopupNew {
+  position: relative;
+  border-radius: 12px;
+  border: 1px solid var(--color-gray-700);
+  box-sizing: border-box;
+  width: 582px;
+  height: 616px;
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--color-black);
+  font-family: var(--s-regular);
+}

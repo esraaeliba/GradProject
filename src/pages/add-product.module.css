@@ -1,0 +1,375 @@
+@keyframes jello-horizontal {
+  0%,
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+}
+.vectorIcon {
+  position: relative;
+  width: 844px;
+  height: 1711px;
+}
+.vectorWrapper {
+  position: absolute;
+  top: -290px;
+  left: 768px;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-3xs);
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.vectorIcon1 {
+  position: relative;
+  width: 748px;
+  height: 1739px;
+  mix-blend-mode: multiply;
+}
+.vectorContainer {
+  position: absolute;
+  top: -289px;
+  left: -104px;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-3xs);
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.blackUpRec1 {
+  align-self: stretch;
+  position: relative;
+  background-color: var(--color-black);
+  height: 115px;
+}
+.blackUpRec {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.signup {
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-family: var(--s-regular);
+  color: var(--neutral-10);
+  text-align: left;
+}
+.signUpButton,
+.signupButton {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+}
+.signupButton {
+  padding: var(--padding-8xs);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-mini);
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.signupButton:hover {
+  animation: 1s ease 0s 1 normal none jello-horizontal;
+  opacity: 1;
+}
+.signUpButton {
+  padding: 0;
+  height: 25.19%;
+  width: 5.89%;
+  top: 60.74%;
+  right: 2.26%;
+  bottom: 14.07%;
+  left: 91.85%;
+}
+.blackUp {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.grayUpRec {
+  align-self: stretch;
+  position: relative;
+  background-color: var(--color-dimgray-100);
+  height: 7px;
+}
+.grayUp {
+  position: absolute;
+  height: 20%;
+  width: 100%;
+  top: 42.96%;
+  right: 0;
+  bottom: 37.04%;
+  left: 0;
+}
+.firstWebsiteFor {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: 0.6em;
+  text-indent: 100px;
+}
+.firstUp,
+.upGp {
+  position: absolute;
+  height: 32.59%;
+  width: 78.22%;
+  top: 26.67%;
+  right: 15.41%;
+  bottom: 40.74%;
+  left: 6.37%;
+}
+.upGp {
+  height: 10.51%;
+  width: 101.39%;
+  top: -0.78%;
+  right: -0.69%;
+  bottom: 90.27%;
+  left: -0.69%;
+  text-align: center;
+  color: var(--neutral-10);
+}
+.productName {
+  position: relative;
+  letter-spacing: 0.2em;
+}
+.rectangleInSignPage {
+  border: 0;
+  background-color: var(--color-gainsboro);
+  align-self: stretch;
+  position: relative;
+  border-radius: var(--br-mini);
+  height: 61px;
+}
+.frameInSignPageChild {
+  position: relative;
+  width: 420px;
+  height: 146px;
+}
+.frameInSignPage,
+.haveAnyFeedback {
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+.frameInSignPage {
+  height: 53.23%;
+  width: 54.03%;
+  top: 25.21%;
+  right: 22.99%;
+  bottom: 21.56%;
+  left: 22.99%;
+  border-radius: var(--br-mini);
+  flex-direction: column;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+  justify-content: center;
+  gap: var(--gap-8xs);
+}
+.haveAnyFeedback {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  height: 4.82%;
+  top: 89.18%;
+  left: calc(50% - 296px);
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.1em;
+  font-family: var(--s-regular);
+  color: var(--color-black);
+  text-align: left;
+  width: 592px;
+}
+.logo {
+  padding: 0;
+  top: calc(50% - 512.5px);
+  left: calc(50% - 704px);
+  width: 251px;
+  height: 89px;
+  background-image: url(/public/logo@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.logInButton,
+.loginButton,
+.logo {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+}
+.loginButton {
+  padding: var(--padding-8xs);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-mini);
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.loginButton:hover {
+  animation: 1s linear 0s infinite normal none jello-horizontal;
+  opacity: 1;
+}
+.logInButton {
+  padding: 0;
+  height: 2.65%;
+  width: 5%;
+  top: 5.6%;
+  right: 8.54%;
+  bottom: 91.75%;
+  left: 86.46%;
+}
+.signupButton1 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-mini);
+  border: 1px solid var(--color-gray-700);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-8xs);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.signupButton1:hover {
+  animation: 1s ease 0s 1 normal none jello-horizontal;
+  opacity: 1;
+}
+.signUpHead {
+  position: absolute;
+  height: 4.98%;
+  width: 33.82%;
+  top: 14.55%;
+  right: 33.06%;
+  bottom: 80.47%;
+  left: 33.13%;
+  font-size: var(--font-size-26xl);
+}
+.confirmAddingProduct {
+  position: relative;
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.5em;
+  font-family: var(--s-regular);
+  color: var(--neutral-10);
+  text-align: left;
+}
+.confirmAddingProductWrapper {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-3xs);
+  background-color: var(--color-black);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-mini);
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.createAccButton {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 3.42%;
+  width: 37.99%;
+  top: 82.1%;
+  right: 30.97%;
+  bottom: 14.47%;
+  left: 31.04%;
+}
+.addProduct {
+  position: relative;
+  background-color: var(--neutral-10);
+  width: 100%;
+  height: 1285px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--s-regular);
+}
+.creataccount {
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.5em;
+  font-family: var(--s-regular);
+  color: var(--neutral-10);
+  text-align: left;
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-3xs);
+  background-color: var(--color-black);
+  position: absolute;
+  height: 8%;
+  width: 70%;
+  top: 100%;
+  right: 0;
+  bottom: 0;
+  left: 100px;
+  border-radius: var(--br-mini);
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.creataccount:hover {
+  animation: 1s ease 0s 1 normal none jello-horizontal;
+  opacity: 1;
+}

@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --s-regular: Inter;
+  --font-roboto: Roboto;
+  --font-open-sans: "Open Sans";
+
+  /* font sizes */
+  --font-size-xl: 20px;
+  --font-size-6xl: 25px;
+  --s-regular-size: 16px;
+  --m-bold-size: 24px;
+  --l-bold-size: 36px;
+  --font-size-sm: 14px;
+  --xl-bold-size: 64px;
+  --font-size-mini: 15px;
+  --font-size-xs: 12px;
+  --font-size-26xl: 45px;
+  --font-size-16xl: 35px;
+  --font-size-11xl: 30px;
+  --font-size-lg: 18px;
+  --font-size-smi: 13px;
+
+  /* Colors */
+  --neutral-10: #fff;
+  --color-gray-100: #777;
+  --color-gray-200: #21293c;
+  --color-gray-300: rgba(0, 0, 0, 0.56);
+  --color-gray-400: rgba(0, 0, 0, 0.3);
+  --color-gray-500: rgba(0, 0, 0, 0.1);
+  --color-gray-600: rgba(0, 0, 0, 0.5);
+  --type-primary: rgba(0, 0, 0, 0.9);
+  --color-gray-700: rgba(0, 0, 0, 0.2);
+  --color-black: #000;
+  --main: #0195f7;
+  --color-dimgray-100: #737373;
+  --neutral-80: #5d5f61;
+  --color-whitesmoke-100: #f5f5f5;
+  --color-whitesmoke-200: #efefef;
+  --color-gainsboro: #d9d9d9;
+
+  /* Gaps */
+  --gap-11xl: 30px;
+  --gap-45xl: 64px;
+  --gap-13xl: 32px;
+  --gap-5xs: 8px;
+  --gap-xl: 20px;
+  --gap-xs: 12px;
+  --gap-3xs: 10px;
+  --gap-8xs: 5px;
+  --gap-16xl: 35px;
+  --gap-9xs: 4px;
+
+  /* Paddings */
+  --padding-3xs: 10px;
+  --padding-13xl: 32px;
+  --padding-base: 16px;
+  --padding-8xs: 5px;
+  --padding-5xl: 24px;
+  --padding-31xl: 50px;
+  --padding-xs: 12px;
+
+  /* border radiuses */
+  --br-mini: 15px;
+  --br-6xl: 25px;
+  --br-8xs: 5px;
+  --br-81xl: 100px;
+  --br-5xs: 8px;
+}

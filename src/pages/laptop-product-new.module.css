@@ -1,0 +1,935 @@
+@keyframes jello-horizontal {
+  0%,
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+}
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+.logo {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% - 1373px);
+  left: calc(50% - 709px);
+  width: 251px;
+  height: 89px;
+  background-image: url(/public/logo@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.blackUpRec1 {
+  align-self: stretch;
+  position: relative;
+  background-color: var(--color-black);
+  height: 115px;
+}
+.blackUpRec {
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.blackUp,
+.blackUpRec {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.grayUpRec {
+  align-self: stretch;
+  position: relative;
+  background-color: var(--color-dimgray-100);
+  height: 7px;
+}
+.grayLineUp {
+  position: absolute;
+  height: 20%;
+  width: 100%;
+  top: 42.96%;
+  right: 0;
+  bottom: 37.04%;
+  left: 0;
+}
+.firstWebsiteFor {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: 0.6em;
+  text-indent: 100px;
+}
+.firstWebTextUp,
+.upGp {
+  position: absolute;
+  height: 32.59%;
+  width: 78.22%;
+  top: 26.67%;
+  right: 15.75%;
+  bottom: 40.74%;
+  left: 6.03%;
+}
+.upGp {
+  height: 4.49%;
+  width: 101.39%;
+  top: -0.37%;
+  right: -0.69%;
+  bottom: 95.87%;
+  left: -0.69%;
+  text-align: center;
+  color: var(--neutral-10);
+}
+.barChild,
+.barItem {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+.barChild {
+  width: 100%;
+  right: 0;
+  border-radius: var(--br-mini);
+  background-color: var(--neutral-10);
+  border: 1px solid var(--color-gray-700);
+  box-sizing: border-box;
+}
+.barItem {
+  width: 9.82%;
+  right: 90.18%;
+  border-radius: var(--br-mini) 0 0 var(--br-mini);
+  background-color: var(--color-black);
+  mix-blend-mode: multiply;
+}
+.search,
+.vectorIcon {
+  position: absolute;
+  top: 22.22%;
+  left: 14.73%;
+}
+.vectorIcon {
+  height: 40%;
+  width: 3.27%;
+  top: 28.89%;
+  right: 93.45%;
+  bottom: 31.11%;
+  left: 3.27%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.bar {
+  align-self: stretch;
+  position: relative;
+  height: 45px;
+}
+.searchBar1 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.searchBar {
+  position: absolute;
+  height: 1.5%;
+  width: 38.19%;
+  top: 5.79%;
+  right: 31.25%;
+  bottom: 92.71%;
+  left: 30.56%;
+  color: var(--color-gray-300);
+}
+.login {
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-family: var(--s-regular);
+  color: var(--neutral-10);
+  text-align: left;
+}
+.loginButton1 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-8xs);
+  background-color: transparent;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-mini);
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.loginButton1:hover {
+  animation: 1s linear 0s infinite normal none jello-horizontal;
+  opacity: 1;
+}
+.loginButton {
+  padding: 0;
+  height: 1.13%;
+  width: 5%;
+  top: 2.4%;
+  right: 8.89%;
+  bottom: 96.47%;
+  left: 86.11%;
+}
+.loginButton,
+.signupButton,
+.signupButton1 {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+}
+.signupButton1 {
+  padding: var(--padding-8xs);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-mini);
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.signupButton1:hover {
+  animation: 1s ease 0s 1 normal none jello-horizontal;
+  opacity: 1;
+}
+.signupButton {
+  padding: 0;
+  height: 1.13%;
+  width: 5.97%;
+  top: 2.4%;
+  right: 1.6%;
+  bottom: 96.47%;
+  left: 92.43%;
+}
+.laptops {
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-family: var(--s-regular);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 102px;
+  flex-shrink: 0;
+}
+.vectorIcon1 {
+  position: relative;
+  width: 12px;
+  height: 7.4px;
+}
+.camerasTextUp,
+.laptopTextUp {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 117px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.camerasTextUp:hover,
+.gamingtextUp:hover,
+.homeToLaptopVector:hover,
+.laptopTextUp:hover,
+.projectTextUp:hover,
+.soundTextUp:hover {
+  animation: 1s ease 0s 1 normal none pulsate;
+  opacity: 1;
+}
+.camerasTextUp {
+  width: 115px;
+}
+.gamingConsoles {
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-family: var(--s-regular);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 202px;
+  flex-shrink: 0;
+}
+.gamingtextUp {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 215px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.soundSystems {
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-family: var(--s-regular);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 173px;
+  flex-shrink: 0;
+}
+.soundTextUp {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 188px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.projectors {
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-family: var(--s-regular);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 135px;
+  flex-shrink: 0;
+}
+.navigationBar,
+.projectTextUp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.projectTextUp {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 149px;
+}
+.navigationBar {
+  position: absolute;
+  height: 2.06%;
+  width: 72.71%;
+  top: 8.32%;
+  right: 13.61%;
+  bottom: 89.62%;
+  left: 13.68%;
+  border-radius: var(--br-mini);
+  background-color: var(--color-gray-700);
+  gap: var(--gap-11xl);
+}
+.vectorIcon6,
+.vectorIcon7 {
+  position: relative;
+  width: 25px;
+  height: 21.88px;
+}
+.vectorIcon7 {
+  width: 10px;
+  height: 14.55px;
+}
+.homeToLaptopVector {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 1.33%;
+  width: 11.81%;
+  top: 11.61%;
+  right: 73.82%;
+  bottom: 87.06%;
+  left: 14.38%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-3xs);
+}
+.vectorIcon8 {
+  position: relative;
+  width: 80px;
+  height: 60.03px;
+}
+.shoppingCart,
+.shoppingCart1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+}
+.shoppingCart1 {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.shoppingCart {
+  height: 2%;
+  width: 5.56%;
+  top: 5.52%;
+  right: 4.79%;
+  bottom: 92.48%;
+  left: 89.65%;
+}
+.lapTopImage {
+  position: relative;
+  width: 415px;
+  height: 329.24px;
+  object-fit: cover;
+  z-index: 0;
+}
+.laptopPhoto {
+  position: absolute;
+  height: 12.74%;
+  width: 30.42%;
+  top: 13.81%;
+  right: 55.97%;
+  bottom: 73.45%;
+  left: 13.61%;
+  border-radius: var(--br-6xl);
+  border: 1px solid var(--color-gray-700);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hpVictus16E0001ne {
+  margin: 0;
+}
+.hpVictus16E0001neContainer {
+  position: relative;
+  font-weight: 600;
+  display: inline-block;
+  width: 333px;
+  flex-shrink: 0;
+}
+.laptopName {
+  position: absolute;
+  height: 6.42%;
+  width: 24.17%;
+  top: 13.81%;
+  right: 29.93%;
+  bottom: 79.77%;
+  left: 45.9%;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-6xl);
+}
+.processor {
+  font-family: var(--s-regular);
+}
+.processorAmdRyzenContainer {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  flex-shrink: 0;
+}
+.laptopSpecs {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-3xs) 0 var(--padding-3xs) var(--padding-3xs);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.laptopProductNewChild,
+.specs {
+  position: absolute;
+  height: 7.52%;
+  width: 21.53%;
+  top: 21.12%;
+  right: 32.57%;
+  bottom: 71.36%;
+  left: 45.9%;
+}
+.laptopProductNewChild {
+  height: 0.03%;
+  width: 24.24%;
+  top: 20.74%;
+  right: 29.86%;
+  bottom: 79.22%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.lapTopImage1 {
+  position: relative;
+  width: 95px;
+  height: 77px;
+  object-fit: cover;
+  z-index: 0;
+}
+.laptopSmallImage4 {
+  cursor: pointer;
+  border: 1px solid var(--color-gray-700);
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 3.39%;
+  width: 7.5%;
+  top: 27.25%;
+  right: 78.89%;
+  bottom: 69.36%;
+  left: 13.61%;
+  border-radius: var(--br-6xl);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.laptopProductNewItem {
+  position: absolute;
+  height: 0.03%;
+  width: 24.24%;
+  top: 29.46%;
+  right: 29.86%;
+  bottom: 70.51%;
+  left: 45.9%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.egpmonth {
+  position: relative;
+  font-size: var(--font-size-11xl);
+  font-family: var(--s-regular);
+  color: var(--color-black);
+  text-align: left;
+}
+.laptopPrice,
+.priceButton {
+  cursor: pointer;
+  background-color: transparent;
+  position: absolute;
+}
+.laptopPrice {
+  border: 1px solid var(--color-black);
+  padding: var(--padding-3xs);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-mini);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.priceButton {
+  border: 0;
+  padding: 0;
+  height: 1.86%;
+  width: 20.28%;
+  top: 29.81%;
+  right: 31.88%;
+  bottom: 68.33%;
+  left: 47.85%;
+}
+.relatedProducts1 {
+  position: relative;
+  display: inline-block;
+  width: 156px;
+  height: 17px;
+  flex-shrink: 0;
+  z-index: 4;
+}
+.lapTopImage2,
+.lapTopImage3,
+.lapTopImage4,
+.lapTopImage5 {
+  position: relative;
+  width: 150px;
+  height: 119px;
+  object-fit: cover;
+  z-index: 3;
+}
+.lapTopImage3,
+.lapTopImage4,
+.lapTopImage5 {
+  z-index: 2;
+}
+.lapTopImage4,
+.lapTopImage5 {
+  z-index: 1;
+}
+.lapTopImage5 {
+  z-index: 0;
+}
+.relatedProducts {
+  position: absolute;
+  height: 19.16%;
+  width: 13.75%;
+  top: 12.64%;
+  right: 13.61%;
+  bottom: 68.2%;
+  left: 72.64%;
+  border-radius: var(--br-6xl);
+  border: 1px solid var(--color-gray-700);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-8xs);
+  font-size: var(--font-size-mini);
+}
+.vectorIcon9 {
+  position: relative;
+  width: 42px;
+  height: 40.35px;
+  z-index: 0;
+}
+.addToFav {
+  cursor: pointer;
+  border: 1px solid var(--color-gray-700);
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 1.86%;
+  width: 3.47%;
+  top: 31.8%;
+  right: 31.88%;
+  bottom: 66.33%;
+  left: 64.65%;
+  border-radius: var(--br-mini);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.laptopProductNewInner {
+  position: absolute;
+  height: 0.03%;
+  width: 72.78%;
+  top: 34.15%;
+  right: 13.61%;
+  bottom: 65.82%;
+  left: 13.61%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.laptopSmallImage,
+.laptopSmallImage2,
+.laptopSmallImage3 {
+  cursor: pointer;
+  border: 1px solid var(--color-gray-700);
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 3.39%;
+  width: 7.5%;
+  top: 27.25%;
+  right: 71.18%;
+  bottom: 69.36%;
+  left: 21.32%;
+  border-radius: var(--br-6xl);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.laptopSmallImage,
+.laptopSmallImage2 {
+  right: 63.47%;
+  left: 29.03%;
+}
+.laptopSmallImage {
+  right: 55.76%;
+  left: 36.74%;
+}
+.details {
+  position: relative;
+}
+.detailssss {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-mini);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-3xs);
+  align-items: center;
+  justify-content: center;
+}
+.detailsHead {
+  position: absolute;
+  height: 1.86%;
+  width: 10.14%;
+  top: 36.26%;
+  right: 76.25%;
+  bottom: 61.88%;
+  left: 13.61%;
+  font-size: var(--font-size-11xl);
+}
+.blankLine {
+  margin: 0;
+  font-weight: 600;
+}
+.hpVictus16E0001neContainer1 {
+  position: relative;
+  display: inline-block;
+  width: 825px;
+  flex-shrink: 0;
+}
+.laptopDetails {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.detailsText,
+.moreInfoHead {
+  position: absolute;
+  height: 21.16%;
+  width: 58.68%;
+  top: 38.92%;
+  right: 27.99%;
+  bottom: 39.92%;
+  left: 13.33%;
+  font-size: var(--font-size-lg);
+}
+.moreInfoHead {
+  height: 1.86%;
+  width: 22.85%;
+  top: 61.68%;
+  right: 63.54%;
+  bottom: 36.46%;
+  left: 13.61%;
+  font-size: var(--font-size-11xl);
+}
+.brand {
+  font-family: var(--s-regular);
+}
+.brand,
+.hardDiskCapacity {
+  font-weight: 600;
+}
+.laptopMoreInfoContainer {
+  position: relative;
+  white-space: pre-wrap;
+}
+.moreInfoText {
+  position: absolute;
+  height: 33.6%;
+  width: 68.4%;
+  top: 64.01%;
+  right: 18.26%;
+  bottom: 2.4%;
+  left: 13.33%;
+  font-size: var(--font-size-lg);
+}
+.addToCartButton {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 1.86%;
+  width: 15.76%;
+  top: 31.8%;
+  right: 36.39%;
+  bottom: 66.33%;
+  left: 47.85%;
+}
+.laptopProductNew {
+  position: relative;
+  background-color: var(--neutral-10);
+  width: 100%;
+  height: 3006px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--s-regular);
+}
+.cart11 {
+  border: 0;
+  position: absolute;
+  padding: var(--padding-3xs);
+  background-color: black;
+  color: white;
+  font-size: xx-large;
+  height: 2%;
+  width: 17%;
+  top: 957px;
+  right: 0;
+  bottom: 0;
+  left: 49.7%;
+  border-radius: var(--br-mini);
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  border-radius: 10px;
+  outline: none;
+}
+.cart11:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #e2cffb,
+    #e0e8fa,
+    #92ffed,
+    #a2b2ff,
+    #8c9fff,
+    #9e44ff,
+    #e4b4ff,
+    #e2cffb
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.cart11:active {
+  color: #000;
+}
+
+.cart11:active:after {
+  background: transparent;
+}
+
+.cart11:hover:before {
+  opacity: 1;
+}
+
+.cart11:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
