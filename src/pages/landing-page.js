@@ -57,6 +57,7 @@ const Landing = () => {
 						</div>
 						<div className='col-md-5'>
 							<div className=' section-text py-sm-5'>
+								<p>hellllllllllo</p>
 								<p>
                                 With RentTech you can flexibly rent technology. It's that easy: Order, Enjoy, Send back. Get all the technology you love whenever you want. Discover RentTech
 								</p>
