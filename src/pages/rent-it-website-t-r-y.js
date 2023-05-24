@@ -292,34 +292,59 @@ const RentItWebsiteTRY = () => {
           </div>
         </button>
       </button>
+
       <div className={styles.laptopsGroups}>
         {laptops.map((product) => {
           return (
             <Card
-              key={product.id}
+            key={product.id}
+            style={{
+              width: "14rem",
+              height: "350px",
+              
+              left: "-88px",
+              // boxShadow: "2px 2px 4px 3px grey",
+              marginRight: "30px",
+
+              borderRadius: "var(--br-6xl)",
+            }}
+            className="card"
+          >
+            <Card.Img
+              className="test"
               style={{
-                width: "14rem",
-                height: "291px",
-                // boxShadow: "2px 2px 4px 3px grey",
-                marginRight: "30px",
-                borderRadius: "var(--br-6xl)",
+                // width: "25%",
+                height: "50%",
               }}
-              className="card"
-            >
-              <Card.Img variant="top" src={product.image} />
-              <Card.Body>
-                <Card.Title className="size-20 mt-3">
+              variant="top"
+              src={`http://localhost:3001/${product.image}`}
+            />
+            <Card.Body>
+              <div style={{ height: "110px" }}>
+                <Card.Title
+                  className="size-20 mt-3"
+                  style={{
+                    fontSize: "20px",
+                    fontWeight: "bolder",
+                    marginBottom: "20px",
+                  }}
+                >
                   {product.title}
                 </Card.Title>
-                <Card.Text>{product.description}</Card.Text>
-                <div>{product.price}</div>
-                {/* <div>{product.price}</div> */}
+                {/* <Card.Text style={{ height: "60px" }}>{product.description}</Card.Text> */}
+                <div>
+                  {`${product.price} L.E`}
+                  <span style={{ color: "red" }}> /Month</span>
+                </div>
+               
+              </div>
+              
                 <Button variant="primary">ADD TO CART</Button>
               </Card.Body>
             </Card>
           );
         })}
-        
+
         <div>
           <button
             style={{ marginLeft: "40px" }}
@@ -353,7 +378,7 @@ const RentItWebsiteTRY = () => {
               }}
               className="card"
             >
-              <Card.Img variant="top" src={product.image} />
+              <Card.Img variant="top" src={`http://localhost:3001/${product.image}`} />
               <Card.Body>
                 <Card.Title className="size-20 mt-3">
                   {product.title}
@@ -410,7 +435,7 @@ const RentItWebsiteTRY = () => {
               }}
               className="card"
             >
-              <Card.Img variant="top" src={product.image} />
+              <Card.Img variant="top" src={`http://localhost:3001/${product.image}`} />
               <Card.Body>
                 <Card.Title className="size-20 mt-3">
                   {product.title}
@@ -807,7 +832,7 @@ const RentItWebsiteTRY = () => {
               }}
               className="card"
             >
-              <Card.Img variant="top" src={product.image} />
+              <Card.Img variant="top" src={`http://localhost:3001/${product.image}`} />
               <Card.Body>
                 <Card.Title className="size-20 mt-3">
                   {product.title}
@@ -838,7 +863,7 @@ const RentItWebsiteTRY = () => {
               }}
               className="card"
             >
-              <Card.Img variant="top" src={product.image} />
+              <Card.Img variant="top" src={`http://localhost:3001/${product.image}`} />
               <Card.Body>
                 <Card.Title className="size-20 mt-3">
                   {product.title}
@@ -998,7 +1023,7 @@ const RentItWebsiteTRY = () => {
           <img className={styles.vectorIcon20} alt="" src="/vector11.svg" />
         </button>
       </div>
-    </div>
+    </div >
   );
 };
 

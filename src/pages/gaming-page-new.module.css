@@ -763,11 +763,17 @@
   color: var(--neutral-10);
   font-family: var(--s-regular);
 }
+
 .card {
   width: 18rem;
   height: 100px;
   flex-direction: row;
 }
+
+.dropdown-toggle .btn .btn-primary {
+  background-color: white !important;
+}
+
 .laptopsGroups {
   display: flex;
   position: absolute;
@@ -777,5 +783,24 @@
   right: 12.29%;
   bottom: 77.74%;
   left: 29.36%;
+  flex-wrap: wrap;
   color: black;
+}
+
+.filter {
+  height: 67.05%;
+  width: 13.54%;
+  top: 23.21%;
+  right: 72.08%;
+  bottom: 9.74%;
+  left: 5.38%;
+  border-radius: var(--br-mini);
+  border: 1px solid var(--color-gray-700);
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: var(--padding-3xs);
+  justify-content: center;
+  gap: 23px;
+  font-size: var(--font-size-smi);
+  color: var(--color-gray-100);
 }

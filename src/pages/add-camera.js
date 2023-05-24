@@ -10,7 +10,7 @@ const AddProduct = () => {
   const [price, setPrice] = useState("");
   const [phone, setPhone] = useState("");
   const [categoryId, setCategoryId] = useState("645b7e0ca18c9aa53907147e");
-  const [images, setImages] = useState("");
+  const [image, setImage] = useState("");
   const [brandId, setBrandId] = useState("");
   const [error, setError] = useState("");
 
@@ -24,7 +24,9 @@ const AddProduct = () => {
     formData.append("price", price);
     formData.append("phone", phone);
     formData.append("brandId", brandId);
-    formData.append("images", images);
+    formData.append("image", image[0]);
+
+    console.log(formData.get("image"));
 
     // Retrieve token from local storage
     const token = localStorage.getItem("token");
@@ -35,25 +37,20 @@ const AddProduct = () => {
       alert("You have to login first");
       window.location.replace("http://localhost:3000/log-in-page");
     } else {
-      axios
-        .post("http://localhost:3001/product/add", {
-          title,
-          description,
-          price,
-          phone,
-          categoryId,
-          brandId,
-          images,
+      await axios
+        .post("http://localhost:3001/product/add", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
         })
         .then((response) => {
           const { message, result } = response.data;
           if (message == "Created") {
-            alert("Added successfully!");
+            confirm("Added successfully!");
             console.log(message);
             window.location.replace("http://localhost:3000/camera-page");
           } else {
             console.log(message);
-            alert("Invalid email or password");
           }
         })
         .catch((error) => {
@@ -86,7 +83,7 @@ const AddProduct = () => {
     setBrandId(e.target.value);
   };
   const onImagesChange = (e) => {
-    setImages(e.target.value);
+    setImage(e.target.files); // set images state to the selected file(s)
   };
 
   const onSignUpButtonClick = useCallback(() => {
@@ -265,15 +262,14 @@ const AddProduct = () => {
           ADD PHOTOS
         </label>
         <input
-          multiple
           className={styles.frameInSignPageChild}
-          id="images"
+          id="image"
           type="file"
-          name="images"
-          required
-          accept="images/*"
-          value={images}
+          name="image"
+          accept="image/*"
           onChange={onImagesChange}
+          onSubmit={handleSubmit}
+          encType="multipart/form-data" // modify enctype to allow file uploads
         />
         <button className={styles.creataccount} type="submit">
           CONFIRM ADDING PRODUCT

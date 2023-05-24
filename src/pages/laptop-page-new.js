@@ -1,9 +1,9 @@
-
 import { FormControlLabel, Checkbox } from "@mui/material";
 import { useCallback, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
+import Dropdown from "react-bootstrap/Dropdown";
 import {
   Slider as ChakraSlider,
   SliderTrack as ChakraSliderTrack,
@@ -17,7 +17,7 @@ const LaptopPageNew = () => {
   const navigate = useNavigate();
 
   const onLogoClick = useCallback(() => {
-    navigate("/");
+    navigate("/rent-it-website-t-r-y");
   }, [navigate]);
 
   const onLogInButtonClick = useCallback(() => {
@@ -61,7 +61,6 @@ const LaptopPageNew = () => {
   }, [navigate]);
 
   const [laptops, setLaptops] = useState([]);
- 
 
   useEffect(() => {
     getLaptopsFromApi();
@@ -128,36 +127,68 @@ const LaptopPageNew = () => {
         </div>
       </div>
 
-      
-
       <div className={styles.laptopsGroups}>
         {laptops.map((product) => {
           return (
             <Card
               key={product.id}
               style={{
-                width: "14rem",
-                height: "291px",
+                width: "300px",
+                height: "450px",
+                marginBottom: "30px",
+                left: "-88px",
                 // boxShadow: "2px 2px 4px 3px grey",
                 marginRight: "30px",
+
                 borderRadius: "var(--br-6xl)",
               }}
               className="card"
             >
-              <Card.Img variant="top" src={product.images} />
+              <Card.Img
+                className="test"
+                style={{
+                  // width: "25%",
+                  height: "50%",
+                }}
+                variant="top"
+                src={`http://localhost:3001/${product.image}`}
+              />
               <Card.Body>
-                <Card.Title className="size-20 mt-3">
-                  {product.title}
-                </Card.Title>
-                <Card.Text>{product.description}</Card.Text>
-                <div>{product.price}</div>
-                {/* <div>{product.price}</div> */}
-                <Button variant="primary">ADD TO CART</Button>
+                <div style={{ height: "110px" }}>
+                  <Card.Title
+                    className="size-20 mt-3"
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bolder",
+                      marginBottom: "20px",
+                    }}
+                  >
+                    {product.title}
+                  </Card.Title>
+                  {/* <Card.Text style={{ height: "60px" }}>{product.description}</Card.Text> */}
+                  <div>
+                    {`${product.price} L.E`}
+                    <span style={{ color: "red" }}> /Month</span>
+                  </div>
+                  {/* <div>{product.price}</div> */}
+                </div>
+                <div style={{display:"flex", justifyContent:"space-between"}}>
+                  <Button variant="primary">ADD TO CART</Button>
+
+                  <Dropdown>
+                    <Dropdown.Toggle id="dropdown"></Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                      <Dropdown.Item href="#/action-1">EDIT</Dropdown.Item>
+                      <Dropdown.Item href="#/action-2"> DELETE </Dropdown.Item>
+                   </Dropdown.Menu>
+                  </Dropdown>
+                </div>
               </Card.Body>
             </Card>
           );
         })}
-     </div>
+      </div>
 
       <div className={styles.laptopPageNewChild} />
       <button className={styles.loadMoreButton}>
@@ -169,18 +200,16 @@ const LaptopPageNew = () => {
         <div className={styles.laptops1}>Laptops</div>
         <div className={styles.laptopsTypes}>
           <div className={styles.olitems}>
-            <div className={styles.hp}>HP</div>
-            <div className={styles.lenovo}>Lenovo</div>
-            <div className={styles.asus}>Asus</div>
-            <div className={styles.dell}>Dell</div>
-            <div className={styles.iLife}>I-life</div>
-            <div className={styles.apple}>Apple</div>
-            <div className={styles.acer}>Acer</div>
-            <div className={styles.cherry}>Cherry</div>
-            <div className={styles.msi}>MSI</div>
-            <div className={styles.huawei}>Huawei</div>
-            <div className={styles.infinix}>Infinix</div>
-            <div className={styles.itel}>Itel</div>
+            <div className={styles.hp}>Acer</div>
+            <div className={styles.lenovo}>Apple</div>
+            <div className={styles.asus}>Dell</div>
+            <div className={styles.dell}>HP</div>
+            <div className={styles.iLife}>Huawei</div>
+            <div className={styles.apple}>Infinix</div>
+            <div className={styles.acer}>Lenovo</div>
+            <div className={styles.cherry}>MSI</div>
+            <div className={styles.msi}>Samsung</div>
+            <div className={styles.huawei}>Sony</div>
             <div className={styles.checkboxdefaultCheckboxOnlParent}>
               <FormControlLabel
                 className={styles.checkboxdefaultCheckboxOnl}
@@ -232,87 +261,11 @@ const LaptopPageNew = () => {
                 label=""
                 control={<Checkbox color="primary" size="medium" />}
               />
-              <FormControlLabel
-                className={styles.checkboxdefaultCheckboxOnl10}
-                label=""
-                control={<Checkbox color="primary" size="medium" />}
-              />
-              <FormControlLabel
-                className={styles.checkboxdefaultCheckboxOnl11}
-                label=""
-                control={<Checkbox color="primary" size="medium" />}
-              />
             </div>
           </div>
         </div>
-        <button className={styles.brandType}>
-          <div className={styles.brand}>Brand</div>
-          <img className={styles.pseudoIcon} alt="" src="/pseudo.svg" />
-        </button>
-        <div className={styles.colorType}>
-          <button className={styles.colorrr}>
-            <div className={styles.color}>Color</div>
-            <img className={styles.pseudoIcon1} alt="" src="/pseudo1.svg" />
-          </button>
-          <button className={styles.colors}>
-            <div className={styles.divswatchAttributeOptions}>
-              <div className={styles.divswatchOption} />
-              <button className={styles.divswatchOption1} />
-              <button className={styles.divswatchOption2} />
-              <button className={styles.divswatchOption3} />
-              <button className={styles.divswatchOption4} />
-            </div>
-          </button>
-        </div>
-        <div className={styles.priceType}>
-          <button className={styles.price}>
-            <div className={styles.price1}>Price</div>
-            <img className={styles.pseudoIcon1} alt="" src="/pseudo1.svg" />
-          </button>
-          <div className={styles.slider}>
-            <div className={styles.priceSlide}>
-              <div className={styles.egp749900Egp6999900}>
-                EGP7,499.00 - EGP69,999.00
-              </div>
-            </div>
-            <ChakraSlider
-              className={styles.sliderdefault}
-              width="172px"
-              defaultValue={25}
-              colorScheme="teal"
-            >
-              <ChakraSliderTrack>
-                <ChakraSliderFilledTrack />
-              </ChakraSliderTrack>
-              <ChakraSliderThumb />
-            </ChakraSlider>
-          </div>
-        </div>
-        <button className={styles.ssd}>
-          <div className={styles.ssd1}>ssd</div>
-          <img className={styles.pseudoIcon} alt="" src="/pseudo.svg" />
-        </button>
-        <button className={styles.ssd}>
-          <div className={styles.laptopCategory1}>Laptop Category</div>
-          <img className={styles.pseudoIcon} alt="" src="/pseudo.svg" />
-        </button>
-        <button className={styles.ssd}>
-          <div className={styles.graphicsCard}>Graphics Card</div>
-          <img className={styles.pseudoIcon} alt="" src="/pseudo.svg" />
-        </button>
-        <button className={styles.ssd}>
-          <div className={styles.displaySize}>Processor</div>
-          <img className={styles.pseudoIcon} alt="" src="/pseudo.svg" />
-        </button>
-        <button className={styles.ssd}>
-          <div className={styles.displaySize}>Display Size</div>
-          <img className={styles.pseudoIcon} alt="" src="/pseudo.svg" />
-        </button>
-        <button className={styles.ssd}>
-          <div className={styles.ram1}>RAM</div>
-          <img className={styles.pseudoIcon} alt="" src="/pseudo.svg" />
-        </button>
       </div>
+
       <div className={styles.navigationBar}>
         <button className={styles.laptopTextUp} onClick={onLAPTOPTEXTUPClick}>
           <div className={styles.laptops}>LAPTOPS</div>
