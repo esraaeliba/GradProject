@@ -1,6 +1,10 @@
-import { useCallback } from "react";
+
 import { useNavigate } from "react-router-dom";
 import styles from "./camera-page-new.module.css";
+import { useCallback, useEffect } from "react";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import { useState } from "react";
 const CameraPageNew = () => {
   const navigate = useNavigate();
 
@@ -43,6 +47,24 @@ const CameraPageNew = () => {
   const onPROJECTTEXTUPClick = useCallback(() => {
     navigate("/projector-page");
   }, [navigate]);
+
+ 
+  const [cameras, setCameras] = useState([]);
+
+
+
+  useEffect(() => {
+    getCamerasFromApi();
+  }, []);
+  
+  const getCamerasFromApi = () => {
+    fetch("http://localhost:3001/product/cameras")
+      .then((res) => res.json())
+      .then((json) => {
+        setCameras(json.products);
+      });
+  };
+  
 
   return (
     <div className={styles.cameraPageNew}>
@@ -108,360 +130,37 @@ const CameraPageNew = () => {
           <div className={styles.loadMore}>LOAD MORE</div>
         </button>
       </button>
-      <div className={styles.cameraGp}>
-        <div className={styles.cameraReview}>
-          <img
-            className={styles.cameraImageIcon}
-            alt=""
-            src="/camera-image@2x.png"
-          />
-          <div className={styles.nikonD5600SingleLensContainer}>
-            <p className={styles.singleLensReflexDigital}>NIKON D5600</p>
-            <p className={styles.singleLensReflexDigital}>
-              Single-lens reflex digital camera
-            </p>
-            <p className={styles.singleLensReflexDigital}>
-              Image sensor type CMOS
-            </p>
-            <p className={styles.singleLensReflexDigital}>Lens mount</p>
-            <p className={styles.singleLensReflexDigital}>
-              Nikon F mount with AF contacts
-            </p>
-          </div>
-          <div className={styles.lineInCameraFrame} />
-          <b className={styles.egpday}>300 EGP/DAY</b>
+      
+      <div className={styles.laptopsGroups}>
+        {cameras.map((product) => {
+          return (
+            <Card
+              key={product.id}
+              style={{
+                width: "14rem",
+                height: "291px",
+                // boxShadow: "2px 2px 4px 3px grey",
+                marginRight: "30px",
+                borderRadius: "var(--br-6xl)",
+              }}
+              className="card"
+            >
+              <Card.Img variant="top" src={product.images} />
+              <Card.Body>
+                <Card.Title className="size-20 mt-3">
+                  {product.title}
+                </Card.Title>
+                <Card.Text>{product.description}</Card.Text>
+                <div>{product.price}</div>
+                {/* <div>{product.price}</div> */}
+                <Button variant="primary">ADD TO CART</Button>
+              </Card.Body>
+            </Card>
+          );
+        })}
         </div>
-        <div className={styles.cameraReview1}>
-          <img
-            className={styles.cameraImageIcon}
-            alt=""
-            src="/camera-image@2x.png"
-          />
-          <div className={styles.nikonD5600SingleLensContainer}>
-            <p className={styles.singleLensReflexDigital}>NIKON D5600</p>
-            <p className={styles.singleLensReflexDigital}>
-              Single-lens reflex digital camera
-            </p>
-            <p className={styles.singleLensReflexDigital}>
-              Image sensor type CMOS
-            </p>
-            <p className={styles.singleLensReflexDigital}>Lens mount</p>
-            <p className={styles.singleLensReflexDigital}>
-              Nikon F mount with AF contacts
-            </p>
-          </div>
-          <div className={styles.lineInCameraFrame} />
-          <b className={styles.egpday}>300 EGP/DAY</b>
-        </div>
-        <div className={styles.cameraReview2}>
-          <img
-            className={styles.cameraImageIcon}
-            alt=""
-            src="/camera-image@2x.png"
-          />
-          <div className={styles.nikonD5600SingleLensContainer}>
-            <p className={styles.singleLensReflexDigital}>NIKON D5600</p>
-            <p className={styles.singleLensReflexDigital}>
-              Single-lens reflex digital camera
-            </p>
-            <p className={styles.singleLensReflexDigital}>
-              Image sensor type CMOS
-            </p>
-            <p className={styles.singleLensReflexDigital}>Lens mount</p>
-            <p className={styles.singleLensReflexDigital}>
-              Nikon F mount with AF contacts
-            </p>
-          </div>
-          <div className={styles.lineInCameraFrame} />
-          <b className={styles.egpday}>300 EGP/DAY</b>
-        </div>
-        <div className={styles.cameraReview3}>
-          <img
-            className={styles.cameraImageIcon}
-            alt=""
-            src="/camera-image@2x.png"
-          />
-          <div className={styles.nikonD5600SingleLensContainer}>
-            <p className={styles.singleLensReflexDigital}>NIKON D5600</p>
-            <p className={styles.singleLensReflexDigital}>
-              Single-lens reflex digital camera
-            </p>
-            <p className={styles.singleLensReflexDigital}>
-              Image sensor type CMOS
-            </p>
-            <p className={styles.singleLensReflexDigital}>Lens mount</p>
-            <p className={styles.singleLensReflexDigital}>
-              Nikon F mount with AF contacts
-            </p>
-          </div>
-          <div className={styles.lineInCameraFrame} />
-          <b className={styles.egpday}>300 EGP/DAY</b>
-        </div>
-        <div className={styles.cameraReview4}>
-          <img
-            className={styles.cameraImageIcon}
-            alt=""
-            src="/camera-image@2x.png"
-          />
-          <div className={styles.nikonD5600SingleLensContainer}>
-            <p className={styles.singleLensReflexDigital}>NIKON D5600</p>
-            <p className={styles.singleLensReflexDigital}>
-              Single-lens reflex digital camera
-            </p>
-            <p className={styles.singleLensReflexDigital}>
-              Image sensor type CMOS
-            </p>
-            <p className={styles.singleLensReflexDigital}>Lens mount</p>
-            <p className={styles.singleLensReflexDigital}>
-              Nikon F mount with AF contacts
-            </p>
-          </div>
-          <div className={styles.lineInCameraFrame} />
-          <b className={styles.egpday}>300 EGP/DAY</b>
-        </div>
-        <div className={styles.cameraReview5}>
-          <img
-            className={styles.cameraImageIcon}
-            alt=""
-            src="/camera-image@2x.png"
-          />
-          <div className={styles.nikonD5600SingleLensContainer}>
-            <p className={styles.singleLensReflexDigital}>NIKON D5600</p>
-            <p className={styles.singleLensReflexDigital}>
-              Single-lens reflex digital camera
-            </p>
-            <p className={styles.singleLensReflexDigital}>
-              Image sensor type CMOS
-            </p>
-            <p className={styles.singleLensReflexDigital}>Lens mount</p>
-            <p className={styles.singleLensReflexDigital}>
-              Nikon F mount with AF contacts
-            </p>
-          </div>
-          <div className={styles.lineInCameraFrame} />
-          <b className={styles.egpday}>300 EGP/DAY</b>
-        </div>
-        <div className={styles.cameraReview6}>
-          <img
-            className={styles.cameraImageIcon}
-            alt=""
-            src="/camera-image@2x.png"
-          />
-          <div className={styles.nikonD5600SingleLensContainer}>
-            <p className={styles.singleLensReflexDigital}>NIKON D5600</p>
-            <p className={styles.singleLensReflexDigital}>
-              Single-lens reflex digital camera
-            </p>
-            <p className={styles.singleLensReflexDigital}>
-              Image sensor type CMOS
-            </p>
-            <p className={styles.singleLensReflexDigital}>Lens mount</p>
-            <p className={styles.singleLensReflexDigital}>
-              Nikon F mount with AF contacts
-            </p>
-          </div>
-          <div className={styles.lineInCameraFrame} />
-          <b className={styles.egpday}>300 EGP/DAY</b>
-        </div>
-        <div className={styles.cameraReview7}>
-          <img
-            className={styles.cameraImageIcon}
-            alt=""
-            src="/camera-image@2x.png"
-          />
-          <div className={styles.nikonD5600SingleLensContainer}>
-            <p className={styles.singleLensReflexDigital}>NIKON D5600</p>
-            <p className={styles.singleLensReflexDigital}>
-              Single-lens reflex digital camera
-            </p>
-            <p className={styles.singleLensReflexDigital}>
-              Image sensor type CMOS
-            </p>
-            <p className={styles.singleLensReflexDigital}>Lens mount</p>
-            <p className={styles.singleLensReflexDigital}>
-              Nikon F mount with AF contacts
-            </p>
-          </div>
-          <div className={styles.lineInCameraFrame} />
-          <b className={styles.egpday}>300 EGP/DAY</b>
-        </div>
-        <div className={styles.cameraReview8}>
-          <img
-            className={styles.cameraImageIcon}
-            alt=""
-            src="/camera-image@2x.png"
-          />
-          <div className={styles.nikonD5600SingleLensContainer}>
-            <p className={styles.singleLensReflexDigital}>NIKON D5600</p>
-            <p className={styles.singleLensReflexDigital}>
-              Single-lens reflex digital camera
-            </p>
-            <p className={styles.singleLensReflexDigital}>
-              Image sensor type CMOS
-            </p>
-            <p className={styles.singleLensReflexDigital}>Lens mount</p>
-            <p className={styles.singleLensReflexDigital}>
-              Nikon F mount with AF contacts
-            </p>
-          </div>
-          <div className={styles.lineInCameraFrame} />
-          <b className={styles.egpday}>300 EGP/DAY</b>
-        </div>
-        <div className={styles.cameraReview9}>
-          <img
-            className={styles.cameraImageIcon}
-            alt=""
-            src="/camera-image@2x.png"
-          />
-          <div className={styles.nikonD5600SingleLensContainer}>
-            <p className={styles.singleLensReflexDigital}>NIKON D5600</p>
-            <p className={styles.singleLensReflexDigital}>
-              Single-lens reflex digital camera
-            </p>
-            <p className={styles.singleLensReflexDigital}>
-              Image sensor type CMOS
-            </p>
-            <p className={styles.singleLensReflexDigital}>Lens mount</p>
-            <p className={styles.singleLensReflexDigital}>
-              Nikon F mount with AF contacts
-            </p>
-          </div>
-          <div className={styles.lineInCameraFrame} />
-          <b className={styles.egpday}>300 EGP/DAY</b>
-        </div>
-        <div className={styles.cameraReview10}>
-          <img
-            className={styles.cameraImageIcon}
-            alt=""
-            src="/camera-image@2x.png"
-          />
-          <div className={styles.nikonD5600SingleLensContainer}>
-            <p className={styles.singleLensReflexDigital}>NIKON D5600</p>
-            <p className={styles.singleLensReflexDigital}>
-              Single-lens reflex digital camera
-            </p>
-            <p className={styles.singleLensReflexDigital}>
-              Image sensor type CMOS
-            </p>
-            <p className={styles.singleLensReflexDigital}>Lens mount</p>
-            <p className={styles.singleLensReflexDigital}>
-              Nikon F mount with AF contacts
-            </p>
-          </div>
-          <div className={styles.lineInCameraFrame} />
-          <b className={styles.egpday}>300 EGP/DAY</b>
-        </div>
-        <div className={styles.cameraReview11}>
-          <img
-            className={styles.cameraImageIcon}
-            alt=""
-            src="/camera-image@2x.png"
-          />
-          <div className={styles.nikonD5600SingleLensContainer}>
-            <p className={styles.singleLensReflexDigital}>NIKON D5600</p>
-            <p className={styles.singleLensReflexDigital}>
-              Single-lens reflex digital camera
-            </p>
-            <p className={styles.singleLensReflexDigital}>
-              Image sensor type CMOS
-            </p>
-            <p className={styles.singleLensReflexDigital}>Lens mount</p>
-            <p className={styles.singleLensReflexDigital}>
-              Nikon F mount with AF contacts
-            </p>
-          </div>
-          <div className={styles.lineInCameraFrame} />
-          <b className={styles.egpday}>300 EGP/DAY</b>
-        </div>
-        <div className={styles.cameraReview12}>
-          <img
-            className={styles.cameraImageIcon}
-            alt=""
-            src="/camera-image@2x.png"
-          />
-          <div className={styles.nikonD5600SingleLensContainer}>
-            <p className={styles.singleLensReflexDigital}>NIKON D5600</p>
-            <p className={styles.singleLensReflexDigital}>
-              Single-lens reflex digital camera
-            </p>
-            <p className={styles.singleLensReflexDigital}>
-              Image sensor type CMOS
-            </p>
-            <p className={styles.singleLensReflexDigital}>Lens mount</p>
-            <p className={styles.singleLensReflexDigital}>
-              Nikon F mount with AF contacts
-            </p>
-          </div>
-          <div className={styles.lineInCameraFrame} />
-          <b className={styles.egpday}>300 EGP/DAY</b>
-        </div>
-        <div className={styles.cameraReview13}>
-          <img
-            className={styles.cameraImageIcon}
-            alt=""
-            src="/camera-image@2x.png"
-          />
-          <div className={styles.nikonD5600SingleLensContainer}>
-            <p className={styles.singleLensReflexDigital}>NIKON D5600</p>
-            <p className={styles.singleLensReflexDigital}>
-              Single-lens reflex digital camera
-            </p>
-            <p className={styles.singleLensReflexDigital}>
-              Image sensor type CMOS
-            </p>
-            <p className={styles.singleLensReflexDigital}>Lens mount</p>
-            <p className={styles.singleLensReflexDigital}>
-              Nikon F mount with AF contacts
-            </p>
-          </div>
-          <div className={styles.lineInCameraFrame} />
-          <b className={styles.egpday}>300 EGP/DAY</b>
-        </div>
-        <div className={styles.cameraReview14}>
-          <img
-            className={styles.cameraImageIcon}
-            alt=""
-            src="/camera-image@2x.png"
-          />
-          <div className={styles.nikonD5600SingleLensContainer}>
-            <p className={styles.singleLensReflexDigital}>NIKON D5600</p>
-            <p className={styles.singleLensReflexDigital}>
-              Single-lens reflex digital camera
-            </p>
-            <p className={styles.singleLensReflexDigital}>
-              Image sensor type CMOS
-            </p>
-            <p className={styles.singleLensReflexDigital}>Lens mount</p>
-            <p className={styles.singleLensReflexDigital}>
-              Nikon F mount with AF contacts
-            </p>
-          </div>
-          <div className={styles.lineInCameraFrame} />
-          <b className={styles.egpday}>300 EGP/DAY</b>
-        </div>
-        <div className={styles.cameraReview15}>
-          <img
-            className={styles.cameraImageIcon}
-            alt=""
-            src="/camera-image@2x.png"
-          />
-          <div className={styles.nikonD5600SingleLensContainer}>
-            <p className={styles.singleLensReflexDigital}>NIKON D5600</p>
-            <p className={styles.singleLensReflexDigital}>
-              Single-lens reflex digital camera
-            </p>
-            <p className={styles.singleLensReflexDigital}>
-              Image sensor type CMOS
-            </p>
-            <p className={styles.singleLensReflexDigital}>Lens mount</p>
-            <p className={styles.singleLensReflexDigital}>
-              Nikon F mount with AF contacts
-            </p>
-          </div>
-          <div className={styles.lineInCameraFrame} />
-          <b className={styles.egpday}>300 EGP/DAY</b>
-        </div>
-      </div>
+
+
       <div className={styles.navigationBar}>
         <button className={styles.laptopTextUp} onClick={onLAPTOPTEXTUPClick}>
           <div className={styles.cameras}>LAPTOPS</div>

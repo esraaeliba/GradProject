@@ -1,4 +1,7 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./sound-page-new.module.css";
 const SoundPageNew = () => {
@@ -43,6 +46,20 @@ const SoundPageNew = () => {
   const onPROJECTTEXTUPClick = useCallback(() => {
     navigate("/projector-page");
   }, [navigate]);
+
+  const [soundSystems, setSoundSystems] = useState([]);
+
+  useEffect(() => {
+    geSoundSysytemsFromApi();
+  }, []);
+
+  const geSoundSysytemsFromApi = () => {
+    fetch("http://localhost:3001/product/sound")
+      .then((res) => res.json())
+      .then((json) => {
+        setSoundSystems(json.products);
+      });
+  };
 
   return (
     <div className={styles.soundPageNew}>
@@ -104,264 +121,35 @@ const SoundPageNew = () => {
           <div className={styles.loadMore}>LOAD MORE</div>
         </button>
       </button>
-      <div className={styles.soundGp}>
-        <div className={styles.speakerReview}>
-          <img
-            className={styles.speakerImageIcon}
-            alt=""
-            src="/speaker-image@2x.png"
-          />
-          <div className={styles.mediaTechSubwooferContainer}>
-            <p className={styles.mediaTech}>{`Media Tech `}</p>
-            <p className={styles.mediaTech}>Subwoofer MT737</p>
-            <p className={styles.mediaTech}>Type: Wireless</p>
-            <p className={styles.mediaTech}>Connectivity: Bluetooth</p>
-            <p className={styles.mediaTech}>Color: Gray</p>
-          </div>
-          <div className={styles.lineInSpeakerFrame} />
-          <b className={styles.egpweek}>300 EGP/WEEK</b>
+      <div className={styles.laptopsGroups}>
+        {soundSystems.map((product) => {
+          return (
+            <Card
+              key={product.id}
+              style={{
+                width: "14rem",
+                height: "291px",
+                // boxShadow: "2px 2px 4px 3px grey",
+                marginRight: "30px",
+                borderRadius: "var(--br-6xl)",
+              }}
+              className="card"
+            >
+              <Card.Img variant="top" src={product.images} />
+              <Card.Body>
+                <Card.Title className="size-20 mt-3">
+                  {product.title}
+                </Card.Title>
+                <Card.Text>{product.description}</Card.Text>
+                <div>{product.price}</div>
+                {/* <div>{product.price}</div> */}
+                <Button variant="primary">ADD TO CART</Button>
+              </Card.Body>
+            </Card>
+          );
+        })}
         </div>
-        <div className={styles.speakerReview1}>
-          <img
-            className={styles.speakerImageIcon}
-            alt=""
-            src="/speaker-image@2x.png"
-          />
-          <div className={styles.mediaTechSubwooferContainer}>
-            <p className={styles.mediaTech}>{`Media Tech `}</p>
-            <p className={styles.mediaTech}>Subwoofer MT737</p>
-            <p className={styles.mediaTech}>Type: Wireless</p>
-            <p className={styles.mediaTech}>Connectivity: Bluetooth</p>
-            <p className={styles.mediaTech}>Color: Gray</p>
-          </div>
-          <div className={styles.lineInSpeakerFrame} />
-          <b className={styles.egpweek}>300 EGP/WEEK</b>
-        </div>
-        <div className={styles.speakerReview2}>
-          <img
-            className={styles.speakerImageIcon}
-            alt=""
-            src="/speaker-image@2x.png"
-          />
-          <div className={styles.mediaTechSubwooferContainer}>
-            <p className={styles.mediaTech}>{`Media Tech `}</p>
-            <p className={styles.mediaTech}>Subwoofer MT737</p>
-            <p className={styles.mediaTech}>Type: Wireless</p>
-            <p className={styles.mediaTech}>Connectivity: Bluetooth</p>
-            <p className={styles.mediaTech}>Color: Gray</p>
-          </div>
-          <div className={styles.lineInSpeakerFrame} />
-          <b className={styles.egpweek}>300 EGP/WEEK</b>
-        </div>
-        <div className={styles.speakerReview3}>
-          <img
-            className={styles.speakerImageIcon}
-            alt=""
-            src="/speaker-image@2x.png"
-          />
-          <div className={styles.mediaTechSubwooferContainer}>
-            <p className={styles.mediaTech}>{`Media Tech `}</p>
-            <p className={styles.mediaTech}>Subwoofer MT737</p>
-            <p className={styles.mediaTech}>Type: Wireless</p>
-            <p className={styles.mediaTech}>Connectivity: Bluetooth</p>
-            <p className={styles.mediaTech}>Color: Gray</p>
-          </div>
-          <div className={styles.lineInSpeakerFrame} />
-          <b className={styles.egpweek}>300 EGP/WEEK</b>
-        </div>
-        <div className={styles.speakerReview4}>
-          <img
-            className={styles.speakerImageIcon}
-            alt=""
-            src="/speaker-image@2x.png"
-          />
-          <div className={styles.mediaTechSubwooferContainer}>
-            <p className={styles.mediaTech}>{`Media Tech `}</p>
-            <p className={styles.mediaTech}>Subwoofer MT737</p>
-            <p className={styles.mediaTech}>Type: Wireless</p>
-            <p className={styles.mediaTech}>Connectivity: Bluetooth</p>
-            <p className={styles.mediaTech}>Color: Gray</p>
-          </div>
-          <div className={styles.lineInSpeakerFrame} />
-          <b className={styles.egpweek}>300 EGP/WEEK</b>
-        </div>
-        <div className={styles.speakerReview5}>
-          <img
-            className={styles.speakerImageIcon}
-            alt=""
-            src="/speaker-image@2x.png"
-          />
-          <div className={styles.mediaTechSubwooferContainer}>
-            <p className={styles.mediaTech}>{`Media Tech `}</p>
-            <p className={styles.mediaTech}>Subwoofer MT737</p>
-            <p className={styles.mediaTech}>Type: Wireless</p>
-            <p className={styles.mediaTech}>Connectivity: Bluetooth</p>
-            <p className={styles.mediaTech}>Color: Gray</p>
-          </div>
-          <div className={styles.lineInSpeakerFrame} />
-          <b className={styles.egpweek}>300 EGP/WEEK</b>
-        </div>
-        <div className={styles.speakerReview6}>
-          <img
-            className={styles.speakerImageIcon}
-            alt=""
-            src="/speaker-image@2x.png"
-          />
-          <div className={styles.mediaTechSubwooferContainer}>
-            <p className={styles.mediaTech}>{`Media Tech `}</p>
-            <p className={styles.mediaTech}>Subwoofer MT737</p>
-            <p className={styles.mediaTech}>Type: Wireless</p>
-            <p className={styles.mediaTech}>Connectivity: Bluetooth</p>
-            <p className={styles.mediaTech}>Color: Gray</p>
-          </div>
-          <div className={styles.lineInSpeakerFrame} />
-          <b className={styles.egpweek}>300 EGP/WEEK</b>
-        </div>
-        <div className={styles.speakerReview7}>
-          <img
-            className={styles.speakerImageIcon}
-            alt=""
-            src="/speaker-image@2x.png"
-          />
-          <div className={styles.mediaTechSubwooferContainer}>
-            <p className={styles.mediaTech}>{`Media Tech `}</p>
-            <p className={styles.mediaTech}>Subwoofer MT737</p>
-            <p className={styles.mediaTech}>Type: Wireless</p>
-            <p className={styles.mediaTech}>Connectivity: Bluetooth</p>
-            <p className={styles.mediaTech}>Color: Gray</p>
-          </div>
-          <div className={styles.lineInSpeakerFrame} />
-          <b className={styles.egpweek}>300 EGP/WEEK</b>
-        </div>
-        <div className={styles.speakerReview8}>
-          <img
-            className={styles.speakerImageIcon}
-            alt=""
-            src="/speaker-image@2x.png"
-          />
-          <div className={styles.mediaTechSubwooferContainer}>
-            <p className={styles.mediaTech}>{`Media Tech `}</p>
-            <p className={styles.mediaTech}>Subwoofer MT737</p>
-            <p className={styles.mediaTech}>Type: Wireless</p>
-            <p className={styles.mediaTech}>Connectivity: Bluetooth</p>
-            <p className={styles.mediaTech}>Color: Gray</p>
-          </div>
-          <div className={styles.lineInSpeakerFrame} />
-          <b className={styles.egpweek}>300 EGP/WEEK</b>
-        </div>
-        <div className={styles.speakerReview9}>
-          <img
-            className={styles.speakerImageIcon}
-            alt=""
-            src="/speaker-image@2x.png"
-          />
-          <div className={styles.mediaTechSubwooferContainer}>
-            <p className={styles.mediaTech}>{`Media Tech `}</p>
-            <p className={styles.mediaTech}>Subwoofer MT737</p>
-            <p className={styles.mediaTech}>Type: Wireless</p>
-            <p className={styles.mediaTech}>Connectivity: Bluetooth</p>
-            <p className={styles.mediaTech}>Color: Gray</p>
-          </div>
-          <div className={styles.lineInSpeakerFrame} />
-          <b className={styles.egpweek}>300 EGP/WEEK</b>
-        </div>
-        <div className={styles.speakerReview10}>
-          <img
-            className={styles.speakerImageIcon}
-            alt=""
-            src="/speaker-image@2x.png"
-          />
-          <div className={styles.mediaTechSubwooferContainer}>
-            <p className={styles.mediaTech}>{`Media Tech `}</p>
-            <p className={styles.mediaTech}>Subwoofer MT737</p>
-            <p className={styles.mediaTech}>Type: Wireless</p>
-            <p className={styles.mediaTech}>Connectivity: Bluetooth</p>
-            <p className={styles.mediaTech}>Color: Gray</p>
-          </div>
-          <div className={styles.lineInSpeakerFrame} />
-          <b className={styles.egpweek}>300 EGP/WEEK</b>
-        </div>
-        <div className={styles.speakerReview11}>
-          <img
-            className={styles.speakerImageIcon}
-            alt=""
-            src="/speaker-image@2x.png"
-          />
-          <div className={styles.mediaTechSubwooferContainer}>
-            <p className={styles.mediaTech}>{`Media Tech `}</p>
-            <p className={styles.mediaTech}>Subwoofer MT737</p>
-            <p className={styles.mediaTech}>Type: Wireless</p>
-            <p className={styles.mediaTech}>Connectivity: Bluetooth</p>
-            <p className={styles.mediaTech}>Color: Gray</p>
-          </div>
-          <div className={styles.lineInSpeakerFrame} />
-          <b className={styles.egpweek}>300 EGP/WEEK</b>
-        </div>
-        <div className={styles.speakerReview12}>
-          <img
-            className={styles.speakerImageIcon}
-            alt=""
-            src="/speaker-image@2x.png"
-          />
-          <div className={styles.mediaTechSubwooferContainer}>
-            <p className={styles.mediaTech}>{`Media Tech `}</p>
-            <p className={styles.mediaTech}>Subwoofer MT737</p>
-            <p className={styles.mediaTech}>Type: Wireless</p>
-            <p className={styles.mediaTech}>Connectivity: Bluetooth</p>
-            <p className={styles.mediaTech}>Color: Gray</p>
-          </div>
-          <div className={styles.lineInSpeakerFrame} />
-          <b className={styles.egpweek}>300 EGP/WEEK</b>
-        </div>
-        <div className={styles.speakerReview13}>
-          <img
-            className={styles.speakerImageIcon}
-            alt=""
-            src="/speaker-image@2x.png"
-          />
-          <div className={styles.mediaTechSubwooferContainer}>
-            <p className={styles.mediaTech}>{`Media Tech `}</p>
-            <p className={styles.mediaTech}>Subwoofer MT737</p>
-            <p className={styles.mediaTech}>Type: Wireless</p>
-            <p className={styles.mediaTech}>Connectivity: Bluetooth</p>
-            <p className={styles.mediaTech}>Color: Gray</p>
-          </div>
-          <div className={styles.lineInSpeakerFrame} />
-          <b className={styles.egpweek}>300 EGP/WEEK</b>
-        </div>
-        <div className={styles.speakerReview14}>
-          <img
-            className={styles.speakerImageIcon}
-            alt=""
-            src="/speaker-image@2x.png"
-          />
-          <div className={styles.mediaTechSubwooferContainer}>
-            <p className={styles.mediaTech}>{`Media Tech `}</p>
-            <p className={styles.mediaTech}>Subwoofer MT737</p>
-            <p className={styles.mediaTech}>Type: Wireless</p>
-            <p className={styles.mediaTech}>Connectivity: Bluetooth</p>
-            <p className={styles.mediaTech}>Color: Gray</p>
-          </div>
-          <div className={styles.lineInSpeakerFrame} />
-          <b className={styles.egpweek}>300 EGP/WEEK</b>
-        </div>
-        <div className={styles.speakerReview15}>
-          <img
-            className={styles.speakerImageIcon}
-            alt=""
-            src="/speaker-image@2x.png"
-          />
-          <div className={styles.mediaTechSubwooferContainer}>
-            <p className={styles.mediaTech}>{`Media Tech `}</p>
-            <p className={styles.mediaTech}>Subwoofer MT737</p>
-            <p className={styles.mediaTech}>Type: Wireless</p>
-            <p className={styles.mediaTech}>Connectivity: Bluetooth</p>
-            <p className={styles.mediaTech}>Color: Gray</p>
-          </div>
-          <div className={styles.lineInSpeakerFrame} />
-          <b className={styles.egpweek}>300 EGP/WEEK</b>
-        </div>
-      </div>
+
       <div className={styles.filter} />
       <div className={styles.navigationBar}>
         <button className={styles.laptopTextUp} onClick={onLAPTOPTEXTUPClick}>

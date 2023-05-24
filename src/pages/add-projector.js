@@ -14,6 +14,9 @@ const AddProduct = () => {
   const [brandId, setBrandId] = useState("");
   const [error, setError] = useState("");
 
+
+  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 

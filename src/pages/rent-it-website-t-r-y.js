@@ -1,4 +1,4 @@
-import { useCallback, useEffect} from "react";
+import { useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./rent-it-website-t-r-y.module.css";
 import { useState } from "react";
@@ -16,10 +16,8 @@ const RentItWebsiteTRY = () => {
   // Retrieve token from local storage
   const token = localStorage.getItem("token");
 
-
-
   const onLogoClick = useCallback(() => {
-    navigate("/");
+    navigate("/rent-it-website-t-r-y");
   }, [navigate]);
   const onFeedFormSubmit = async (e) => {
     e.preventDefault();
@@ -35,7 +33,7 @@ const RentItWebsiteTRY = () => {
         .then((response) => {
           const { message } = response.data;
           if (message == "Created") {
-            alert("Sent successfully");
+            confirm("Sent successfully");
           } else {
             console.log(message);
           }
@@ -246,29 +244,6 @@ const RentItWebsiteTRY = () => {
         </div>
       </div>
 
-      {/*<div>
-      {products.map(product => (
-        <Card className={classes.root} key={product.id}>
-          <CardMedia
-            className={classes.media}
-            image={product.image}
-            title={product.name}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              {product.name}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {product.description}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              Price: {product.price}
-            </Typography>
-          </CardContent>
-        </Card>
-      ))}
-    </div>*/}
-
       <button className={styles.logo} onClick={onLogoClick} />
       <div className={styles.upGp}>
         <div className={styles.blackUp}>
@@ -289,6 +264,11 @@ const RentItWebsiteTRY = () => {
           </div>
         </div>
       </div>
+      <button className={styles.load} onClick={onLaoptopButtonClick}>LOAD MORE</button>
+      <button className={styles.load1} onClick={onCameraButtonClick}>LOAD MORE</button>
+      <button className={styles.load2} onClick={onGAMINGTEXTUPClick}>LOAD MORE</button>
+      <button className={styles.load3} onClick={onSOUNDTEXTUPClick}>LOAD MORE</button>
+      <button className={styles.load4} onClick={onProjectorButtonClick}>LOAD MORE</button>
 
       <div className={styles.searchBar}>
         <div className={styles.bar}>
@@ -339,6 +319,7 @@ const RentItWebsiteTRY = () => {
             </Card>
           );
         })}
+        
         <div>
           <button
             style={{ marginLeft: "40px" }}
@@ -353,7 +334,7 @@ const RentItWebsiteTRY = () => {
               alt=""
               src="/line-in-lap-top-frame.svg"
             />
-            <b className={styles.addNewProduct}>ADD NEW </b>
+            <b className={styles.addNewProduct}>ADD NEW LAPTOPS</b>
           </button>
         </div>
       </div>
@@ -403,9 +384,6 @@ const RentItWebsiteTRY = () => {
         </button>
       </div>
 
-
-
-
       {/* gaming consolllle */}
       <div className={styles.psGroup}>
         <button className={styles.addProduct} onClick={onAddProduct2Click}>
@@ -446,8 +424,6 @@ const RentItWebsiteTRY = () => {
           );
         })}
       </div>
-
-
 
       <button className={styles.loginButtton} onClick={onLoginButttonClick}>
         <button className={styles.loginButton} onClick={onLOGINBUTTONClick}>
@@ -846,12 +822,10 @@ const RentItWebsiteTRY = () => {
         })}
       </div>
 
-
       {/* projectors */}
 
       <div className={styles.projectorGp}>
-
-      {projector.map((product) => {
+        {projector.map((product) => {
           return (
             <Card
               key={product.id}
@@ -872,7 +846,7 @@ const RentItWebsiteTRY = () => {
                 <Card.Text>{product.description}</Card.Text>e
                 <div>{product.price}</div>
                 {/* <div>{product.price}</div> */}
-               {/* <a><i class="fa-solid fa-heart fa-2xl" style="color: #ff0000;"></i></a>  */}
+                {/* <a><i class="fa-solid fa-heart fa-2xl" style="color: #ff0000;"></i></a>  */}
                 <Button variant="primary">ADD TO CART</Button>
               </Card.Body>
             </Card>

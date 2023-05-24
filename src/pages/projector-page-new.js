@@ -1,4 +1,7 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./projector-page-new.module.css";
 const ProjectorPageNew = () => {
@@ -43,6 +46,20 @@ const ProjectorPageNew = () => {
   const onPROJECTTEXTUPClick = useCallback(() => {
     navigate("/projector-page");
   }, [navigate]);
+
+  const [projector, setProjector] = useState([]);
+
+  useEffect(() => {
+    getsetProjector();
+  }, []);
+  
+  const getsetProjector = () => {
+    fetch("http://localhost:3001/product/projectors")
+      .then((res) => res.json())
+      .then((json) => {
+        setProjector(json.products);
+      });
+  };
 
   return (
     <div className={styles.projectorPageNew}>
@@ -105,280 +122,36 @@ const ProjectorPageNew = () => {
           <div className={styles.loadMore}>LOAD MORE</div>
         </button>
       </button>
-      <div className={styles.projectorGp}>
-        <div className={styles.projectorReview}>
-          <img
-            className={styles.projectorImage}
-            alt=""
-            src="/projector-image@2x.png"
-          />
-          <div className={styles.viewSonic3000Container}>
-            <p className={styles.ledProjector}>View Sonic 3,000 ANSI</p>
-            <p className={styles.ledProjector}>LED Projector</p>
-            <p className={styles.ledProjector}>Native Resolution:</p>
-            <p className={styles.ledProjector}>WXGA (1280x800)</p>
-            <p className={styles.ledProjector}>Lens: F=2.56-2.68,</p>
-            <p className={styles.ledProjector}>f=22-24.1mm</p>
-          </div>
-          <div className={styles.lineInProjectFrame} />
-          <b className={styles.egpweek}>600 EGP/WEEK</b>
+      <div className={styles.laptopsGroups}>
+        {projector.map((product) => {
+          return (
+            <Card
+              key={product.id}
+              style={{
+                width: "14rem",
+                height: "291px",
+                // boxShadow: "2px 2px 4px 3px grey",
+                marginRight: "30px",
+                borderRadius: "var(--br-6xl)",
+              }}
+              className="card"
+            >
+              <Card.Img variant="top" src={product.images} />
+              <Card.Body>
+                <Card.Title className="size-20 mt-3">
+                  {product.title}
+                </Card.Title>
+                <Card.Text>{product.description}</Card.Text>
+                <div>{product.price}</div>
+                {/* <div>{product.price}</div> */}
+                <Button variant="primary">ADD TO CART</Button>
+              </Card.Body>
+            </Card>
+          );
+        })}
         </div>
-        <div className={styles.projectorReview1}>
-          <img
-            className={styles.projectorImage}
-            alt=""
-            src="/projector-image@2x.png"
-          />
-          <div className={styles.viewSonic3000Container}>
-            <p className={styles.ledProjector}>View Sonic 3,000 ANSI</p>
-            <p className={styles.ledProjector}>LED Projector</p>
-            <p className={styles.ledProjector}>Native Resolution:</p>
-            <p className={styles.ledProjector}>WXGA (1280x800)</p>
-            <p className={styles.ledProjector}>Lens: F=2.56-2.68,</p>
-            <p className={styles.ledProjector}>f=22-24.1mm</p>
-          </div>
-          <div className={styles.lineInProjectFrame} />
-          <b className={styles.egpweek}>600 EGP/WEEK</b>
-        </div>
-        <div className={styles.projectorReview2}>
-          <img
-            className={styles.projectorImage}
-            alt=""
-            src="/projector-image@2x.png"
-          />
-          <div className={styles.viewSonic3000Container}>
-            <p className={styles.ledProjector}>View Sonic 3,000 ANSI</p>
-            <p className={styles.ledProjector}>LED Projector</p>
-            <p className={styles.ledProjector}>Native Resolution:</p>
-            <p className={styles.ledProjector}>WXGA (1280x800)</p>
-            <p className={styles.ledProjector}>Lens: F=2.56-2.68,</p>
-            <p className={styles.ledProjector}>f=22-24.1mm</p>
-          </div>
-          <div className={styles.lineInProjectFrame} />
-          <b className={styles.egpweek}>600 EGP/WEEK</b>
-        </div>
-        <div className={styles.projectorReview3}>
-          <img
-            className={styles.projectorImage}
-            alt=""
-            src="/projector-image@2x.png"
-          />
-          <div className={styles.viewSonic3000Container}>
-            <p className={styles.ledProjector}>View Sonic 3,000 ANSI</p>
-            <p className={styles.ledProjector}>LED Projector</p>
-            <p className={styles.ledProjector}>Native Resolution:</p>
-            <p className={styles.ledProjector}>WXGA (1280x800)</p>
-            <p className={styles.ledProjector}>Lens: F=2.56-2.68,</p>
-            <p className={styles.ledProjector}>f=22-24.1mm</p>
-          </div>
-          <div className={styles.lineInProjectFrame} />
-          <b className={styles.egpweek}>600 EGP/WEEK</b>
-        </div>
-        <div className={styles.projectorReview4}>
-          <img
-            className={styles.projectorImage}
-            alt=""
-            src="/projector-image@2x.png"
-          />
-          <div className={styles.viewSonic3000Container}>
-            <p className={styles.ledProjector}>View Sonic 3,000 ANSI</p>
-            <p className={styles.ledProjector}>LED Projector</p>
-            <p className={styles.ledProjector}>Native Resolution:</p>
-            <p className={styles.ledProjector}>WXGA (1280x800)</p>
-            <p className={styles.ledProjector}>Lens: F=2.56-2.68,</p>
-            <p className={styles.ledProjector}>f=22-24.1mm</p>
-          </div>
-          <div className={styles.lineInProjectFrame} />
-          <b className={styles.egpweek}>600 EGP/WEEK</b>
-        </div>
-        <div className={styles.projectorReview5}>
-          <img
-            className={styles.projectorImage}
-            alt=""
-            src="/projector-image@2x.png"
-          />
-          <div className={styles.viewSonic3000Container}>
-            <p className={styles.ledProjector}>View Sonic 3,000 ANSI</p>
-            <p className={styles.ledProjector}>LED Projector</p>
-            <p className={styles.ledProjector}>Native Resolution:</p>
-            <p className={styles.ledProjector}>WXGA (1280x800)</p>
-            <p className={styles.ledProjector}>Lens: F=2.56-2.68,</p>
-            <p className={styles.ledProjector}>f=22-24.1mm</p>
-          </div>
-          <div className={styles.lineInProjectFrame} />
-          <b className={styles.egpweek}>600 EGP/WEEK</b>
-        </div>
-        <div className={styles.projectorReview6}>
-          <img
-            className={styles.projectorImage}
-            alt=""
-            src="/projector-image@2x.png"
-          />
-          <div className={styles.viewSonic3000Container}>
-            <p className={styles.ledProjector}>View Sonic 3,000 ANSI</p>
-            <p className={styles.ledProjector}>LED Projector</p>
-            <p className={styles.ledProjector}>Native Resolution:</p>
-            <p className={styles.ledProjector}>WXGA (1280x800)</p>
-            <p className={styles.ledProjector}>Lens: F=2.56-2.68,</p>
-            <p className={styles.ledProjector}>f=22-24.1mm</p>
-          </div>
-          <div className={styles.lineInProjectFrame} />
-          <b className={styles.egpweek}>600 EGP/WEEK</b>
-        </div>
-        <div className={styles.projectorReview7}>
-          <img
-            className={styles.projectorImage}
-            alt=""
-            src="/projector-image@2x.png"
-          />
-          <div className={styles.viewSonic3000Container}>
-            <p className={styles.ledProjector}>View Sonic 3,000 ANSI</p>
-            <p className={styles.ledProjector}>LED Projector</p>
-            <p className={styles.ledProjector}>Native Resolution:</p>
-            <p className={styles.ledProjector}>WXGA (1280x800)</p>
-            <p className={styles.ledProjector}>Lens: F=2.56-2.68,</p>
-            <p className={styles.ledProjector}>f=22-24.1mm</p>
-          </div>
-          <div className={styles.lineInProjectFrame} />
-          <b className={styles.egpweek}>600 EGP/WEEK</b>
-        </div>
-        <div className={styles.projectorReview8}>
-          <img
-            className={styles.projectorImage}
-            alt=""
-            src="/projector-image@2x.png"
-          />
-          <div className={styles.viewSonic3000Container}>
-            <p className={styles.ledProjector}>View Sonic 3,000 ANSI</p>
-            <p className={styles.ledProjector}>LED Projector</p>
-            <p className={styles.ledProjector}>Native Resolution:</p>
-            <p className={styles.ledProjector}>WXGA (1280x800)</p>
-            <p className={styles.ledProjector}>Lens: F=2.56-2.68,</p>
-            <p className={styles.ledProjector}>f=22-24.1mm</p>
-          </div>
-          <div className={styles.lineInProjectFrame} />
-          <b className={styles.egpweek}>600 EGP/WEEK</b>
-        </div>
-        <div className={styles.projectorReview9}>
-          <img
-            className={styles.projectorImage}
-            alt=""
-            src="/projector-image@2x.png"
-          />
-          <div className={styles.viewSonic3000Container}>
-            <p className={styles.ledProjector}>View Sonic 3,000 ANSI</p>
-            <p className={styles.ledProjector}>LED Projector</p>
-            <p className={styles.ledProjector}>Native Resolution:</p>
-            <p className={styles.ledProjector}>WXGA (1280x800)</p>
-            <p className={styles.ledProjector}>Lens: F=2.56-2.68,</p>
-            <p className={styles.ledProjector}>f=22-24.1mm</p>
-          </div>
-          <div className={styles.lineInProjectFrame} />
-          <b className={styles.egpweek}>600 EGP/WEEK</b>
-        </div>
-        <div className={styles.projectorReview10}>
-          <img
-            className={styles.projectorImage}
-            alt=""
-            src="/projector-image@2x.png"
-          />
-          <div className={styles.viewSonic3000Container}>
-            <p className={styles.ledProjector}>View Sonic 3,000 ANSI</p>
-            <p className={styles.ledProjector}>LED Projector</p>
-            <p className={styles.ledProjector}>Native Resolution:</p>
-            <p className={styles.ledProjector}>WXGA (1280x800)</p>
-            <p className={styles.ledProjector}>Lens: F=2.56-2.68,</p>
-            <p className={styles.ledProjector}>f=22-24.1mm</p>
-          </div>
-          <div className={styles.lineInProjectFrame} />
-          <b className={styles.egpweek}>600 EGP/WEEK</b>
-        </div>
-        <div className={styles.projectorReview11}>
-          <img
-            className={styles.projectorImage}
-            alt=""
-            src="/projector-image@2x.png"
-          />
-          <div className={styles.viewSonic3000Container}>
-            <p className={styles.ledProjector}>View Sonic 3,000 ANSI</p>
-            <p className={styles.ledProjector}>LED Projector</p>
-            <p className={styles.ledProjector}>Native Resolution:</p>
-            <p className={styles.ledProjector}>WXGA (1280x800)</p>
-            <p className={styles.ledProjector}>Lens: F=2.56-2.68,</p>
-            <p className={styles.ledProjector}>f=22-24.1mm</p>
-          </div>
-          <div className={styles.lineInProjectFrame} />
-          <b className={styles.egpweek}>600 EGP/WEEK</b>
-        </div>
-        <div className={styles.projectorReview12}>
-          <img
-            className={styles.projectorImage}
-            alt=""
-            src="/projector-image@2x.png"
-          />
-          <div className={styles.viewSonic3000Container}>
-            <p className={styles.ledProjector}>View Sonic 3,000 ANSI</p>
-            <p className={styles.ledProjector}>LED Projector</p>
-            <p className={styles.ledProjector}>Native Resolution:</p>
-            <p className={styles.ledProjector}>WXGA (1280x800)</p>
-            <p className={styles.ledProjector}>Lens: F=2.56-2.68,</p>
-            <p className={styles.ledProjector}>f=22-24.1mm</p>
-          </div>
-          <div className={styles.lineInProjectFrame} />
-          <b className={styles.egpweek}>600 EGP/WEEK</b>
-        </div>
-        <div className={styles.projectorReview13}>
-          <img
-            className={styles.projectorImage}
-            alt=""
-            src="/projector-image@2x.png"
-          />
-          <div className={styles.viewSonic3000Container}>
-            <p className={styles.ledProjector}>View Sonic 3,000 ANSI</p>
-            <p className={styles.ledProjector}>LED Projector</p>
-            <p className={styles.ledProjector}>Native Resolution:</p>
-            <p className={styles.ledProjector}>WXGA (1280x800)</p>
-            <p className={styles.ledProjector}>Lens: F=2.56-2.68,</p>
-            <p className={styles.ledProjector}>f=22-24.1mm</p>
-          </div>
-          <div className={styles.lineInProjectFrame} />
-          <b className={styles.egpweek}>600 EGP/WEEK</b>
-        </div>
-        <div className={styles.projectorReview14}>
-          <img
-            className={styles.projectorImage}
-            alt=""
-            src="/projector-image@2x.png"
-          />
-          <div className={styles.viewSonic3000Container}>
-            <p className={styles.ledProjector}>View Sonic 3,000 ANSI</p>
-            <p className={styles.ledProjector}>LED Projector</p>
-            <p className={styles.ledProjector}>Native Resolution:</p>
-            <p className={styles.ledProjector}>WXGA (1280x800)</p>
-            <p className={styles.ledProjector}>Lens: F=2.56-2.68,</p>
-            <p className={styles.ledProjector}>f=22-24.1mm</p>
-          </div>
-          <div className={styles.lineInProjectFrame} />
-          <b className={styles.egpweek}>600 EGP/WEEK</b>
-        </div>
-        <div className={styles.projectorReview15}>
-          <img
-            className={styles.projectorImage}
-            alt=""
-            src="/projector-image@2x.png"
-          />
-          <div className={styles.viewSonic3000Container}>
-            <p className={styles.ledProjector}>View Sonic 3,000 ANSI</p>
-            <p className={styles.ledProjector}>LED Projector</p>
-            <p className={styles.ledProjector}>Native Resolution:</p>
-            <p className={styles.ledProjector}>WXGA (1280x800)</p>
-            <p className={styles.ledProjector}>Lens: F=2.56-2.68,</p>
-            <p className={styles.ledProjector}>f=22-24.1mm</p>
-          </div>
-          <div className={styles.lineInProjectFrame} />
-          <b className={styles.egpweek}>600 EGP/WEEK</b>
-        </div>
-      </div>
+
+
       <div className={styles.filter} />
       <div className={styles.navigationBar}>
         <button className={styles.laptopTextUp} onClick={onLAPTOPTEXTUPClick}>

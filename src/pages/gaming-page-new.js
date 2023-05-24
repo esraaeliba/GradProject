@@ -1,4 +1,7 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./gaming-page-new.module.css";
 const GamingPageNew = () => {
@@ -43,6 +46,24 @@ const GamingPageNew = () => {
   const onPROJECTTEXTUPClick = useCallback(() => {
     navigate("/projector-page");
   }, [navigate]);
+
+  const [gamingConsoles, setGamingConsoles] = useState([]);
+
+
+  useEffect(() => {
+    
+    getGamingConsoles();
+    
+  }, []);
+  
+  const getGamingConsoles = () => {
+    fetch("http://localhost:3001/product/consoles")
+      .then((res) => res.json())
+      .then((json) => {
+        setGamingConsoles(json.products);
+      });
+  };
+ 
 
   return (
     <div className={styles.gamingPageNew}>
@@ -105,168 +126,35 @@ const GamingPageNew = () => {
           <div className={styles.loadMore}>LOAD MORE</div>
         </button>
       </button>
-      <div className={styles.psGp}>
-        <div className={styles.ps4Review}>
-          <img className={styles.ps4ImageIcon} alt="" src="/ps4-image@2x.png" />
-          <div className={styles.playstation41tbContainer}>
-            <p className={styles.playstation41tb}>PLAYSTATION 4 1TB</p>
-            <p className={styles.playstation41tb}>{`one dualshock 4 `}</p>
-            <p className={styles.playstation41tb}>wireless controller</p>
-          </div>
-          <div className={styles.lineInPsframe} />
-          <b className={styles.egpday}>500 EGP/DAY</b>
+      
+      <div className={styles.laptopsGroups}>
+        {gamingConsoles.map((product) => {
+          return (
+            <Card
+              key={product.id}
+              style={{
+                width: "14rem",
+                height: "291px",
+                // boxShadow: "2px 2px 4px 3px grey",
+                marginRight: "30px",
+                borderRadius: "var(--br-6xl)",
+              }}
+              className="card"
+            >
+              <Card.Img variant="top" src={product.images} />
+              <Card.Body>
+                <Card.Title className="size-20 mt-3">
+                  {product.title}
+                </Card.Title>
+                <Card.Text>{product.description}</Card.Text>
+                <div>{product.price}</div>
+                {/* <div>{product.price}</div> */}
+                <Button variant="primary">ADD TO CART</Button>
+              </Card.Body>
+            </Card>
+          );
+        })}
         </div>
-        <div className={styles.ps4Review1}>
-          <img className={styles.ps4ImageIcon} alt="" src="/ps4-image@2x.png" />
-          <div className={styles.playstation41tbContainer}>
-            <p className={styles.playstation41tb}>PLAYSTATION 4 1TB</p>
-            <p className={styles.playstation41tb}>{`one dualshock 4 `}</p>
-            <p className={styles.playstation41tb}>wireless controller</p>
-          </div>
-          <div className={styles.lineInPsframe} />
-          <b className={styles.egpday}>500 EGP/DAY</b>
-        </div>
-        <div className={styles.ps4Review2}>
-          <img className={styles.ps4ImageIcon} alt="" src="/ps4-image@2x.png" />
-          <div className={styles.playstation41tbContainer}>
-            <p className={styles.playstation41tb}>PLAYSTATION 4 1TB</p>
-            <p className={styles.playstation41tb}>{`one dualshock 4 `}</p>
-            <p className={styles.playstation41tb}>wireless controller</p>
-          </div>
-          <div className={styles.lineInPsframe} />
-          <b className={styles.egpday}>500 EGP/DAY</b>
-        </div>
-        <div className={styles.ps4Review3}>
-          <img className={styles.ps4ImageIcon} alt="" src="/ps4-image@2x.png" />
-          <div className={styles.playstation41tbContainer}>
-            <p className={styles.playstation41tb}>PLAYSTATION 4 1TB</p>
-            <p className={styles.playstation41tb}>{`one dualshock 4 `}</p>
-            <p className={styles.playstation41tb}>wireless controller</p>
-          </div>
-          <div className={styles.lineInPsframe} />
-          <b className={styles.egpday}>500 EGP/DAY</b>
-        </div>
-        <div className={styles.ps4Review4}>
-          <img className={styles.ps4ImageIcon} alt="" src="/ps4-image@2x.png" />
-          <div className={styles.playstation41tbContainer}>
-            <p className={styles.playstation41tb}>PLAYSTATION 4 1TB</p>
-            <p className={styles.playstation41tb}>{`one dualshock 4 `}</p>
-            <p className={styles.playstation41tb}>wireless controller</p>
-          </div>
-          <div className={styles.lineInPsframe} />
-          <b className={styles.egpday}>500 EGP/DAY</b>
-        </div>
-        <div className={styles.ps4Review5}>
-          <img className={styles.ps4ImageIcon} alt="" src="/ps4-image@2x.png" />
-          <div className={styles.playstation41tbContainer}>
-            <p className={styles.playstation41tb}>PLAYSTATION 4 1TB</p>
-            <p className={styles.playstation41tb}>{`one dualshock 4 `}</p>
-            <p className={styles.playstation41tb}>wireless controller</p>
-          </div>
-          <div className={styles.lineInPsframe} />
-          <b className={styles.egpday}>500 EGP/DAY</b>
-        </div>
-        <div className={styles.ps4Review6}>
-          <img className={styles.ps4ImageIcon} alt="" src="/ps4-image@2x.png" />
-          <div className={styles.playstation41tbContainer}>
-            <p className={styles.playstation41tb}>PLAYSTATION 4 1TB</p>
-            <p className={styles.playstation41tb}>{`one dualshock 4 `}</p>
-            <p className={styles.playstation41tb}>wireless controller</p>
-          </div>
-          <div className={styles.lineInPsframe} />
-          <b className={styles.egpday}>500 EGP/DAY</b>
-        </div>
-        <div className={styles.ps4Review7}>
-          <img className={styles.ps4ImageIcon} alt="" src="/ps4-image@2x.png" />
-          <div className={styles.playstation41tbContainer}>
-            <p className={styles.playstation41tb}>PLAYSTATION 4 1TB</p>
-            <p className={styles.playstation41tb}>{`one dualshock 4 `}</p>
-            <p className={styles.playstation41tb}>wireless controller</p>
-          </div>
-          <div className={styles.lineInPsframe} />
-          <b className={styles.egpday}>500 EGP/DAY</b>
-        </div>
-        <div className={styles.ps4Review8}>
-          <img className={styles.ps4ImageIcon} alt="" src="/ps4-image@2x.png" />
-          <div className={styles.playstation41tbContainer}>
-            <p className={styles.playstation41tb}>PLAYSTATION 4 1TB</p>
-            <p className={styles.playstation41tb}>{`one dualshock 4 `}</p>
-            <p className={styles.playstation41tb}>wireless controller</p>
-          </div>
-          <div className={styles.lineInPsframe} />
-          <b className={styles.egpday}>500 EGP/DAY</b>
-        </div>
-        <div className={styles.ps4Review9}>
-          <img className={styles.ps4ImageIcon} alt="" src="/ps4-image@2x.png" />
-          <div className={styles.playstation41tbContainer}>
-            <p className={styles.playstation41tb}>PLAYSTATION 4 1TB</p>
-            <p className={styles.playstation41tb}>{`one dualshock 4 `}</p>
-            <p className={styles.playstation41tb}>wireless controller</p>
-          </div>
-          <div className={styles.lineInPsframe} />
-          <b className={styles.egpday}>500 EGP/DAY</b>
-        </div>
-        <div className={styles.ps4Review10}>
-          <img className={styles.ps4ImageIcon} alt="" src="/ps4-image@2x.png" />
-          <div className={styles.playstation41tbContainer}>
-            <p className={styles.playstation41tb}>PLAYSTATION 4 1TB</p>
-            <p className={styles.playstation41tb}>{`one dualshock 4 `}</p>
-            <p className={styles.playstation41tb}>wireless controller</p>
-          </div>
-          <div className={styles.lineInPsframe} />
-          <b className={styles.egpday}>500 EGP/DAY</b>
-        </div>
-        <div className={styles.ps4Review11}>
-          <img className={styles.ps4ImageIcon} alt="" src="/ps4-image@2x.png" />
-          <div className={styles.playstation41tbContainer}>
-            <p className={styles.playstation41tb}>PLAYSTATION 4 1TB</p>
-            <p className={styles.playstation41tb}>{`one dualshock 4 `}</p>
-            <p className={styles.playstation41tb}>wireless controller</p>
-          </div>
-          <div className={styles.lineInPsframe} />
-          <b className={styles.egpday}>500 EGP/DAY</b>
-        </div>
-        <div className={styles.ps4Review12}>
-          <img className={styles.ps4ImageIcon} alt="" src="/ps4-image@2x.png" />
-          <div className={styles.playstation41tbContainer}>
-            <p className={styles.playstation41tb}>PLAYSTATION 4 1TB</p>
-            <p className={styles.playstation41tb}>{`one dualshock 4 `}</p>
-            <p className={styles.playstation41tb}>wireless controller</p>
-          </div>
-          <div className={styles.lineInPsframe} />
-          <b className={styles.egpday}>500 EGP/DAY</b>
-        </div>
-        <div className={styles.ps4Review13}>
-          <img className={styles.ps4ImageIcon} alt="" src="/ps4-image@2x.png" />
-          <div className={styles.playstation41tbContainer}>
-            <p className={styles.playstation41tb}>PLAYSTATION 4 1TB</p>
-            <p className={styles.playstation41tb}>{`one dualshock 4 `}</p>
-            <p className={styles.playstation41tb}>wireless controller</p>
-          </div>
-          <div className={styles.lineInPsframe} />
-          <b className={styles.egpday}>500 EGP/DAY</b>
-        </div>
-        <div className={styles.ps4Review14}>
-          <img className={styles.ps4ImageIcon} alt="" src="/ps4-image@2x.png" />
-          <div className={styles.playstation41tbContainer}>
-            <p className={styles.playstation41tb}>PLAYSTATION 4 1TB</p>
-            <p className={styles.playstation41tb}>{`one dualshock 4 `}</p>
-            <p className={styles.playstation41tb}>wireless controller</p>
-          </div>
-          <div className={styles.lineInPsframe} />
-          <b className={styles.egpday}>500 EGP/DAY</b>
-        </div>
-        <div className={styles.ps4Review15}>
-          <img className={styles.ps4ImageIcon} alt="" src="/ps4-image@2x.png" />
-          <div className={styles.playstation41tbContainer}>
-            <p className={styles.playstation41tb}>PLAYSTATION 4 1TB</p>
-            <p className={styles.playstation41tb}>{`one dualshock 4 `}</p>
-            <p className={styles.playstation41tb}>wireless controller</p>
-          </div>
-          <div className={styles.lineInPsframe} />
-          <b className={styles.egpday}>500 EGP/DAY</b>
-        </div>
-      </div>
       <div className={styles.filter1} />
       <div className={styles.navigationBar}>
         <button className={styles.laptopTextUp} onClick={onLAPTOPTEXTUPClick}>

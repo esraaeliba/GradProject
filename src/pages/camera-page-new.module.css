@@ -755,3 +755,19 @@
   color: var(--neutral-10);
   font-family: var(--s-regular);
 }
+.card {
+  width: 18rem;
+  height: 100px;
+  flex-direction: row;
+}
+.laptopsGroups {
+  display: flex;
+  position: absolute;
+  height: 4.83%;
+  width: 75.35%;
+  top: 23.43%;
+  right: 12.29%;
+  bottom: 77.74%;
+  left: 29.36%;
+  color: black;
+}

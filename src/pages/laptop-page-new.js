@@ -1,5 +1,9 @@
-import { useCallback } from "react";
+
 import { FormControlLabel, Checkbox } from "@mui/material";
+import { useCallback, useEffect } from "react";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import { useState } from "react";
 import {
   Slider as ChakraSlider,
   SliderTrack as ChakraSliderTrack,
@@ -56,6 +60,19 @@ const LaptopPageNew = () => {
     navigate("/projector-page");
   }, [navigate]);
 
+  const [laptops, setLaptops] = useState([]);
+ 
+
+  useEffect(() => {
+    getLaptopsFromApi();
+  }, []);
+  const getLaptopsFromApi = () => {
+    fetch("http://localhost:3001/product/laptops")
+      .then((res) => res.json())
+      .then((json) => {
+        setLaptops(json.products);
+      });
+  };
   return (
     <div className={styles.laptopPageNew}>
       <div className={styles.vectorWrapper}>
@@ -110,309 +127,38 @@ const LaptopPageNew = () => {
           <img className={styles.vectorIcon4} alt="" src="/vector20.svg" />
         </div>
       </div>
-      <div className={styles.laptopsReview}>
-        <div className={styles.laptopReviewParent}>
-          <div className={styles.laptopReview}>
-            <img
-              className={styles.lapTopImage}
-              alt=""
-              src="/lap-top-image@2x.png"
-            />
-            <div className={styles.hpVictus16E0000neContainer}>
-              <p
-                className={styles.hpVictus16E0000ne}
-              >{`HP Victus 16-e0000ne `}</p>
-              <p className={styles.hpVictus16E0000ne}>{`AMD Ryzen 7-5800H `}</p>
-              <p className={styles.hpVictus16E0000ne}>{`16GB - 1TB SSD `}</p>
-              <p className={styles.hpVictus16E0000ne}>
-                NVIDIA GeForce RTX 3050
-              </p>
-              <p className={styles.hpVictus16E0000ne}> 4GB- 16"FHD - Win10</p>
-            </div>
-            <div className={styles.lineInLapTopFrame} />
-            <b className={styles.egpmonth}>1000 EGP/MONTH</b>
-          </div>
-          <div className={styles.laptopReview1}>
-            <img
-              className={styles.lapTopImage}
-              alt=""
-              src="/lap-top-image@2x.png"
-            />
-            <div className={styles.hpVictus16E0000neContainer}>
-              <p
-                className={styles.hpVictus16E0000ne}
-              >{`HP Victus 16-e0000ne `}</p>
-              <p className={styles.hpVictus16E0000ne}>{`AMD Ryzen 7-5800H `}</p>
-              <p className={styles.hpVictus16E0000ne}>{`16GB - 1TB SSD `}</p>
-              <p className={styles.hpVictus16E0000ne}>
-                NVIDIA GeForce RTX 3050
-              </p>
-              <p className={styles.hpVictus16E0000ne}> 4GB- 16"FHD - Win10</p>
-            </div>
-            <div className={styles.lineInLapTopFrame} />
-            <b className={styles.egpmonth}>1000 EGP/MONTH</b>
-          </div>
-          <div className={styles.laptopReview2}>
-            <img
-              className={styles.lapTopImage}
-              alt=""
-              src="/lap-top-image@2x.png"
-            />
-            <div className={styles.hpVictus16E0000neContainer}>
-              <p
-                className={styles.hpVictus16E0000ne}
-              >{`HP Victus 16-e0000ne `}</p>
-              <p className={styles.hpVictus16E0000ne}>{`AMD Ryzen 7-5800H `}</p>
-              <p className={styles.hpVictus16E0000ne}>{`16GB - 1TB SSD `}</p>
-              <p className={styles.hpVictus16E0000ne}>
-                NVIDIA GeForce RTX 3050
-              </p>
-              <p className={styles.hpVictus16E0000ne}> 4GB- 16"FHD - Win10</p>
-            </div>
-            <div className={styles.lineInLapTopFrame} />
-            <b className={styles.egpmonth}>1000 EGP/MONTH</b>
-          </div>
-          <button
-            className={styles.laptopReview3}
-            onClick={onLAPTOPREVIEWClick}
-          >
-            <img
-              className={styles.lapTopImage}
-              alt=""
-              src="/lap-top-image@2x.png"
-            />
-            <div className={styles.hpVictus16E0000neContainer3}>
-              <p
-                className={styles.hpVictus16E0000ne}
-              >{`HP Victus 16-e0000ne `}</p>
-              <p className={styles.hpVictus16E0000ne}>{`AMD Ryzen 7-5800H `}</p>
-              <p className={styles.hpVictus16E0000ne}>{`16GB - 1TB SSD `}</p>
-              <p className={styles.hpVictus16E0000ne}>
-                NVIDIA GeForce RTX 3050
-              </p>
-              <p className={styles.hpVictus16E0000ne}> 4GB- 16"FHD - Win10</p>
-            </div>
-            <div className={styles.lineInLapTopFrame} />
-            <b className={styles.egpmonth3}>1000 EGP/MONTH</b>
-          </button>
-        </div>
-        <div className={styles.laptopReview4}>
-          <img
-            className={styles.lapTopImage}
-            alt=""
-            src="/lap-top-image@2x.png"
-          />
-          <div className={styles.hpVictus16E0000neContainer}>
-            <p
-              className={styles.hpVictus16E0000ne}
-            >{`HP Victus 16-e0000ne `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`AMD Ryzen 7-5800H `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`16GB - 1TB SSD `}</p>
-            <p className={styles.hpVictus16E0000ne}>NVIDIA GeForce RTX 3050</p>
-            <p className={styles.hpVictus16E0000ne}> 4GB- 16"FHD - Win10</p>
-          </div>
-          <div className={styles.lineInLapTopFrame} />
-          <b className={styles.egpmonth}>1000 EGP/MONTH</b>
-        </div>
-        <div className={styles.laptopReview5}>
-          <img
-            className={styles.lapTopImage}
-            alt=""
-            src="/lap-top-image@2x.png"
-          />
-          <div className={styles.hpVictus16E0000neContainer}>
-            <p
-              className={styles.hpVictus16E0000ne}
-            >{`HP Victus 16-e0000ne `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`AMD Ryzen 7-5800H `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`16GB - 1TB SSD `}</p>
-            <p className={styles.hpVictus16E0000ne}>NVIDIA GeForce RTX 3050</p>
-            <p className={styles.hpVictus16E0000ne}> 4GB- 16"FHD - Win10</p>
-          </div>
-          <div className={styles.lineInLapTopFrame} />
-          <b className={styles.egpmonth}>1000 EGP/MONTH</b>
-        </div>
-        <div className={styles.laptopReview6}>
-          <img
-            className={styles.lapTopImage}
-            alt=""
-            src="/lap-top-image@2x.png"
-          />
-          <div className={styles.hpVictus16E0000neContainer}>
-            <p
-              className={styles.hpVictus16E0000ne}
-            >{`HP Victus 16-e0000ne `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`AMD Ryzen 7-5800H `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`16GB - 1TB SSD `}</p>
-            <p className={styles.hpVictus16E0000ne}>NVIDIA GeForce RTX 3050</p>
-            <p className={styles.hpVictus16E0000ne}> 4GB- 16"FHD - Win10</p>
-          </div>
-          <div className={styles.lineInLapTopFrame} />
-          <b className={styles.egpmonth}>1000 EGP/MONTH</b>
-        </div>
-        <div className={styles.laptopReview7}>
-          <img
-            className={styles.lapTopImage}
-            alt=""
-            src="/lap-top-image@2x.png"
-          />
-          <div className={styles.hpVictus16E0000neContainer}>
-            <p
-              className={styles.hpVictus16E0000ne}
-            >{`HP Victus 16-e0000ne `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`AMD Ryzen 7-5800H `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`16GB - 1TB SSD `}</p>
-            <p className={styles.hpVictus16E0000ne}>NVIDIA GeForce RTX 3050</p>
-            <p className={styles.hpVictus16E0000ne}> 4GB- 16"FHD - Win10</p>
-          </div>
-          <div className={styles.lineInLapTopFrame} />
-          <b className={styles.egpmonth}>1000 EGP/MONTH</b>
-        </div>
-        <div className={styles.laptopReview8}>
-          <img
-            className={styles.lapTopImage}
-            alt=""
-            src="/lap-top-image@2x.png"
-          />
-          <div className={styles.hpVictus16E0000neContainer}>
-            <p
-              className={styles.hpVictus16E0000ne}
-            >{`HP Victus 16-e0000ne `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`AMD Ryzen 7-5800H `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`16GB - 1TB SSD `}</p>
-            <p className={styles.hpVictus16E0000ne}>NVIDIA GeForce RTX 3050</p>
-            <p className={styles.hpVictus16E0000ne}> 4GB- 16"FHD - Win10</p>
-          </div>
-          <div className={styles.lineInLapTopFrame} />
-          <b className={styles.egpmonth}>1000 EGP/MONTH</b>
-        </div>
-        <div className={styles.laptopReview9}>
-          <img
-            className={styles.lapTopImage}
-            alt=""
-            src="/lap-top-image@2x.png"
-          />
-          <div className={styles.hpVictus16E0000neContainer}>
-            <p
-              className={styles.hpVictus16E0000ne}
-            >{`HP Victus 16-e0000ne `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`AMD Ryzen 7-5800H `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`16GB - 1TB SSD `}</p>
-            <p className={styles.hpVictus16E0000ne}>NVIDIA GeForce RTX 3050</p>
-            <p className={styles.hpVictus16E0000ne}> 4GB- 16"FHD - Win10</p>
-          </div>
-          <div className={styles.lineInLapTopFrame} />
-          <b className={styles.egpmonth}>1000 EGP/MONTH</b>
-        </div>
-        <div className={styles.laptopReview10}>
-          <img
-            className={styles.lapTopImage}
-            alt=""
-            src="/lap-top-image@2x.png"
-          />
-          <div className={styles.hpVictus16E0000neContainer}>
-            <p
-              className={styles.hpVictus16E0000ne}
-            >{`HP Victus 16-e0000ne `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`AMD Ryzen 7-5800H `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`16GB - 1TB SSD `}</p>
-            <p className={styles.hpVictus16E0000ne}>NVIDIA GeForce RTX 3050</p>
-            <p className={styles.hpVictus16E0000ne}> 4GB- 16"FHD - Win10</p>
-          </div>
-          <div className={styles.lineInLapTopFrame} />
-          <b className={styles.egpmonth}>1000 EGP/MONTH</b>
-        </div>
-        <div className={styles.laptopReview11}>
-          <img
-            className={styles.lapTopImage}
-            alt=""
-            src="/lap-top-image@2x.png"
-          />
-          <div className={styles.hpVictus16E0000neContainer}>
-            <p
-              className={styles.hpVictus16E0000ne}
-            >{`HP Victus 16-e0000ne `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`AMD Ryzen 7-5800H `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`16GB - 1TB SSD `}</p>
-            <p className={styles.hpVictus16E0000ne}>NVIDIA GeForce RTX 3050</p>
-            <p className={styles.hpVictus16E0000ne}> 4GB- 16"FHD - Win10</p>
-          </div>
-          <div className={styles.lineInLapTopFrame} />
-          <b className={styles.egpmonth}>1000 EGP/MONTH</b>
-        </div>
-        <div className={styles.laptopReview12}>
-          <img
-            className={styles.lapTopImage}
-            alt=""
-            src="/lap-top-image@2x.png"
-          />
-          <div className={styles.hpVictus16E0000neContainer}>
-            <p
-              className={styles.hpVictus16E0000ne}
-            >{`HP Victus 16-e0000ne `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`AMD Ryzen 7-5800H `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`16GB - 1TB SSD `}</p>
-            <p className={styles.hpVictus16E0000ne}>NVIDIA GeForce RTX 3050</p>
-            <p className={styles.hpVictus16E0000ne}> 4GB- 16"FHD - Win10</p>
-          </div>
-          <div className={styles.lineInLapTopFrame} />
-          <b className={styles.egpmonth}>1000 EGP/MONTH</b>
-        </div>
-        <div className={styles.laptopReview13}>
-          <img
-            className={styles.lapTopImage}
-            alt=""
-            src="/lap-top-image@2x.png"
-          />
-          <div className={styles.hpVictus16E0000neContainer}>
-            <p
-              className={styles.hpVictus16E0000ne}
-            >{`HP Victus 16-e0000ne `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`AMD Ryzen 7-5800H `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`16GB - 1TB SSD `}</p>
-            <p className={styles.hpVictus16E0000ne}>NVIDIA GeForce RTX 3050</p>
-            <p className={styles.hpVictus16E0000ne}> 4GB- 16"FHD - Win10</p>
-          </div>
-          <div className={styles.lineInLapTopFrame} />
-          <b className={styles.egpmonth}>1000 EGP/MONTH</b>
-        </div>
-        <div className={styles.laptopReview14}>
-          <img
-            className={styles.lapTopImage}
-            alt=""
-            src="/lap-top-image@2x.png"
-          />
-          <div className={styles.hpVictus16E0000neContainer}>
-            <p
-              className={styles.hpVictus16E0000ne}
-            >{`HP Victus 16-e0000ne `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`AMD Ryzen 7-5800H `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`16GB - 1TB SSD `}</p>
-            <p className={styles.hpVictus16E0000ne}>NVIDIA GeForce RTX 3050</p>
-            <p className={styles.hpVictus16E0000ne}> 4GB- 16"FHD - Win10</p>
-          </div>
-          <div className={styles.lineInLapTopFrame} />
-          <b className={styles.egpmonth}>1000 EGP/MONTH</b>
-        </div>
-        <div className={styles.laptopReview15}>
-          <img
-            className={styles.lapTopImage}
-            alt=""
-            src="/lap-top-image@2x.png"
-          />
-          <div className={styles.hpVictus16E0000neContainer}>
-            <p
-              className={styles.hpVictus16E0000ne}
-            >{`HP Victus 16-e0000ne `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`AMD Ryzen 7-5800H `}</p>
-            <p className={styles.hpVictus16E0000ne}>{`16GB - 1TB SSD `}</p>
-            <p className={styles.hpVictus16E0000ne}>NVIDIA GeForce RTX 3050</p>
-            <p className={styles.hpVictus16E0000ne}> 4GB- 16"FHD - Win10</p>
-          </div>
-          <div className={styles.lineInLapTopFrame} />
-          <b className={styles.egpmonth}>1000 EGP/MONTH</b>
-        </div>
-      </div>
+
+      
+
+      <div className={styles.laptopsGroups}>
+        {laptops.map((product) => {
+          return (
+            <Card
+              key={product.id}
+              style={{
+                width: "14rem",
+                height: "291px",
+                // boxShadow: "2px 2px 4px 3px grey",
+                marginRight: "30px",
+                borderRadius: "var(--br-6xl)",
+              }}
+              className="card"
+            >
+              <Card.Img variant="top" src={product.images} />
+              <Card.Body>
+                <Card.Title className="size-20 mt-3">
+                  {product.title}
+                </Card.Title>
+                <Card.Text>{product.description}</Card.Text>
+                <div>{product.price}</div>
+                {/* <div>{product.price}</div> */}
+                <Button variant="primary">ADD TO CART</Button>
+              </Card.Body>
+            </Card>
+          );
+        })}
+     </div>
+
       <div className={styles.laptopPageNewChild} />
       <button className={styles.loadMoreButton}>
         <button className={styles.loadMoreWrapper}>

@@ -86,7 +86,7 @@ const ForgetPassword = () => {
           title="Enter your email address"
         />
         <button className={styles.logInButton} type="submit">
-          SEARCH
+          RESET
         </button>
       </form>
 
