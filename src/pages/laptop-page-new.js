@@ -137,6 +137,7 @@ const LaptopPageNew = () => {
                 height: "450px",
                 marginBottom: "30px",
                 left: "-88px",
+                backgroundColor:"transparent",
                 // boxShadow: "2px 2px 4px 3px grey",
                 marginRight: "30px",
 
@@ -188,14 +189,27 @@ const LaptopPageNew = () => {
             </Card>
           );
         })}
-      </div>
 
+
+      </div>
+    <div className="pagi" style={{marginTop: "1728px"}}> 
+    <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+      
+      </div>  
       <div className={styles.laptopPageNewChild} />
-      <button className={styles.loadMoreButton}>
-        <button className={styles.loadMoreWrapper}>
-          <div className={styles.loadMore}>LOAD MORE</div>
-        </button>
-      </button>
+      
       <div className={styles.filter}>
         <div className={styles.laptops1}>Laptops</div>
         <div className={styles.laptopsTypes}>

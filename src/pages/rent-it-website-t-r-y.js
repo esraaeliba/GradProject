@@ -219,6 +219,10 @@ const RentItWebsiteTRY = () => {
   };
 
   return (
+
+    
+
+    
     <div className={styles.rentItWebsiteTry}>
       <div className={styles.v}>
         <div className={styles.vectorWrapper}>
@@ -264,11 +268,13 @@ const RentItWebsiteTRY = () => {
           </div>
         </div>
       </div>
-      <button className={styles.load} onClick={onLaoptopButtonClick}>LOAD MORE</button>
+
+     {/* <div> class <FontAwesomeIcon icon="fa-light fa-forward" fade size="2xl" /> </div>  */}
+      {/* <button className={styles.load} onClick={onLaoptopButtonClick}>LOAD MORE</button>
       <button className={styles.load1} onClick={onCameraButtonClick}>LOAD MORE</button>
       <button className={styles.load2} onClick={onGAMINGTEXTUPClick}>LOAD MORE</button>
       <button className={styles.load3} onClick={onSOUNDTEXTUPClick}>LOAD MORE</button>
-      <button className={styles.load4} onClick={onProjectorButtonClick}>LOAD MORE</button>
+      <button className={styles.load4} onClick={onProjectorButtonClick}>LOAD MORE</button> */}
 
       <div className={styles.searchBar}>
         <div className={styles.bar}>
@@ -285,13 +291,43 @@ const RentItWebsiteTRY = () => {
           </div>
         </button>
       </button>
-      <button className={styles.cameraButton} onClick={onCameraButtonClick}>
+      <button className={styles.cameraButton }  onClick={onCameraButtonClick}>
         <button className={styles.laptopButton} onClick={onCAMERASBUTTONClick}>
           <div className={styles.laptopsWrapper}>
             <div className={styles.laptops}>CAMERAS</div>
           </div>
         </button>
       </button>
+
+
+      {/* <div class="row">
+
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="2000">
+            <img src="th.jpg" class="d-block w-100" alt="..."/>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="images/banner2.jpg" class="d-block w-100" alt="..."/>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="images/banner3.jpg" class="d-block w-100" alt="..."/>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+</div> */}
+
 
       <div className={styles.laptopsGroups}>
         {laptops.map((product) => {
@@ -300,10 +336,10 @@ const RentItWebsiteTRY = () => {
             key={product.id}
             style={{
               width: "14rem",
-              height: "350px",
+              height: "400px",
               
-              left: "-88px",
-              // boxShadow: "2px 2px 4px 3px grey",
+              // left: "-88px",
+              boxShadow: "2px 2px 14px 1px rgb(51, 97, 203)",
               marginRight: "30px",
 
               borderRadius: "var(--br-6xl)",
@@ -315,12 +351,14 @@ const RentItWebsiteTRY = () => {
               style={{
                 // width: "25%",
                 height: "50%",
+                borderTopLeftRadius: "50px",
+                borderTopRightRadius: "50px",
               }}
               variant="top"
               src={`http://localhost:3001/${product.image}`}
             />
             <Card.Body>
-              <div style={{ height: "110px" }}>
+              <div style={{ height: "95px" }}>
                 <Card.Title
                   className="size-20 mt-3"
                   style={{
@@ -332,7 +370,7 @@ const RentItWebsiteTRY = () => {
                   {product.title}
                 </Card.Title>
                 {/* <Card.Text style={{ height: "60px" }}>{product.description}</Card.Text> */}
-                <div>
+                <div style={{fontSize: "15px"}}>
                   {`${product.price} L.E`}
                   <span style={{ color: "red" }}> /Month</span>
                 </div>
@@ -366,83 +404,143 @@ const RentItWebsiteTRY = () => {
 
       <div className={styles.cameraGroup}>
         {cameras.map((product) => {
-          return (
+           return (
             <Card
-              key={product.id}
+            key={product.id}
+            style={{
+              width: "14rem",
+              height: "400px",
+              
+              // left: "-88px",
+              boxShadow: "2px 2px 14px 1px rgb(51, 97, 203)",
+              marginRight: "30px",
+
+              borderRadius: "var(--br-6xl)",
+            }}
+            className="card"
+          >
+            <Card.Img
+              className="test"
               style={{
-                width: "14rem",
-                height: "291px",
-                // boxShadow: "2px 2px 4px 3px grey",
-                marginRight: "30px",
-                borderRadius: "var(--br-6xl)",
+                // width: "25%",
+                height: "50%",
+                borderTopLeftRadius: "50px",
+                borderTopRightRadius: "50px",
               }}
-              className="card"
-            >
-              <Card.Img variant="top" src={`http://localhost:3001/${product.image}`} />
-              <Card.Body>
-                <Card.Title className="size-20 mt-3">
+              variant="top"
+              src={`http://localhost:3001/${product.image}`}
+            />
+            <Card.Body>
+              <div style={{ height: "95px" }}>
+                <Card.Title
+                  className="size-20 mt-3"
+                  style={{
+                    fontSize: "20px",
+                    fontWeight: "bolder",
+                    marginBottom: "20px",
+                  }}
+                >
                   {product.title}
                 </Card.Title>
-                <Card.Text>{product.description}</Card.Text>
-                <div>{product.price}</div>
-                {/* <div>{product.price}</div> */}
+                {/* <Card.Text style={{ height: "60px" }}>{product.description}</Card.Text> */}
+                <div style={{fontSize: "15px"}}>
+                  {`${product.price} L.E`}
+                  <span style={{ color: "red" }}> /Month</span>
+                </div>
+               
+              </div>
+              
                 <Button variant="primary">ADD TO CART</Button>
               </Card.Body>
             </Card>
           );
         })}
 
-        <button
-          style={{ marginLeft: "40px" }}
-          className={styles.addProduct}
-          onClick={onAddProduct1Click}
-        >
-          <div className={styles.iconPlus}>
-            <img className={styles.vectorIcon8} alt="" src="/vector8.svg" />
-          </div>
-          <img
-            className={styles.lineInLapTopFrame1}
-            alt=""
-            src="/line-in-lap-top-frame.svg"
-          />
-          <b className={styles.addNewProduct}>ADD NEW CAMERA</b>
-        </button>
+<div>
+          <button
+            style={{ marginLeft: "40px" }}
+            className={styles.addProduct}
+            onClick={onAddProduct1Click}
+          >
+            <div className={styles.iconPlus}>
+              <img className={styles.vectorIcon8} alt="" src="/vector8.svg" />
+            </div>
+            <img
+              className={styles.lineInLapTopFrame1}
+              alt=""
+              src="/line-in-lap-top-frame.svg"
+            />
+            <b className={styles.addNewProduct}>ADD NEW CAMERAS</b>
+          </button>
+        </div>
       </div>
 
       {/* gaming consolllle */}
       <div className={styles.psGroup}>
-        <button className={styles.addProduct} onClick={onAddProduct2Click}>
-          <div className={styles.iconPlus}>
-            <img className={styles.vectorIcon8} alt="" src="/vector8.svg" />
-          </div>
-          <img
-            className={styles.lineInLapTopFrame1}
-            alt=""
-            src="/line-in-lap-top-frame.svg"
-          />
-          <b className={styles.addNewProduct}>ADD NEW CONSOLE</b>
-        </button>
+      <div>
+          <button
+            style={{ marginLeft: "40px" }}
+            className={styles.addProduct}
+            onClick={onAddProduct2Click}
+          >
+            <div className={styles.iconPlus}>
+              <img className={styles.vectorIcon8} alt="" src="/vector8.svg" />
+            </div>
+            <img
+              className={styles.lineInLapTopFrame1}
+              alt=""
+              src="/line-in-lap-top-frame.svg"
+            />
+            <b className={styles.addNewProduct}>ADD NEW GAMING-CONSOLES</b>
+          </button>
+        </div>
         {gamingConsoles.map((product) => {
-          return (
+           return (
             <Card
-              key={product.id}
+            key={product.id}
+            style={{
+              width: "14rem",
+              height: "400px",
+              
+              // left: "-88px",
+              boxShadow: "2px 2px 14px 1px rgb(51, 97, 203)",
+              marginRight: "30px",
+
+              borderRadius: "var(--br-6xl)",
+            }}
+            className="card"
+          >
+            <Card.Img
+              className="test"
               style={{
-                width: "14rem",
-                height: "291px",
-                // boxShadow: "2px 2px 4px 3px grey",
-                marginRight: "30px",
-                borderRadius: "var(--br-6xl)",
+                // width: "25%",
+                height: "50%",
+                borderTopLeftRadius: "50px",
+                borderTopRightRadius: "50px",
               }}
-              className="card"
-            >
-              <Card.Img variant="top" src={`http://localhost:3001/${product.image}`} />
-              <Card.Body>
-                <Card.Title className="size-20 mt-3">
+              variant="top"
+              src={`http://localhost:3001/${product.image}`}
+            />
+            <Card.Body>
+              <div style={{ height: "95px" }}>
+                <Card.Title
+                  className="size-20 mt-3"
+                  style={{
+                    fontSize: "20px",
+                    fontWeight: "bolder",
+                    marginBottom: "20px",
+                  }}
+                >
                   {product.title}
                 </Card.Title>
-                <Card.Text>{product.description}</Card.Text>
-                <div>{product.price}</div>
-                {/* <div>{product.price}</div> */}
+                {/* <Card.Text style={{ height: "60px" }}>{product.description}</Card.Text> */}
+                <div style={{fontSize: "15px"}}>
+                  {`${product.price} L.E`}
+                  <span style={{ color: "red" }}> /Month</span>
+                </div>
+               
+              </div>
+              
                 <Button variant="primary">ADD TO CART</Button>
               </Card.Body>
             </Card>
@@ -808,38 +906,70 @@ const RentItWebsiteTRY = () => {
 
       {/* sound system */}
       <div className={styles.soundGp}>
-        <button className={styles.addProduct3} onClick={onAddProduct3Click}>
-          <div className={styles.iconPlus}>
-            <img className={styles.vectorIcon8} alt="" src="/vector8.svg" />
-          </div>
-          <img
-            className={styles.lineInLapTopFrame1}
-            alt=""
-            src="/line-in-lap-top-frame.svg"
-          />
-          <b className={styles.addNewProduct}>ADD NEW SOUND SYSTEM</b>
-        </button>
+      <div>
+          <button
+            style={{ marginLeft: "40px" }}
+            className={styles.addProduct}
+            onClick={onAddProduct3Click}
+          >
+            <div className={styles.iconPlus}>
+              <img className={styles.vectorIcon8} alt="" src="/vector8.svg" />
+            </div>
+            <img
+              className={styles.lineInLapTopFrame1}
+              alt=""
+              src="/line-in-lap-top-frame.svg"
+            />
+            <b className={styles.addNewProduct}>ADD NEW SOUND-SYSTEMS</b>
+          </button>
+        </div>
         {soundSystems.map((product) => {
-          return (
+           return (
             <Card
-              key={product.id}
+            key={product.id}
+            style={{
+              width: "14rem",
+              height: "400px",
+              
+              // left: "-88px",
+              boxShadow: "2px 2px 14px 1px rgb(51, 97, 203)",
+              marginRight: "30px",
+
+              borderRadius: "var(--br-6xl)",
+            }}
+            className="card"
+          >
+            <Card.Img
+              className="test"
               style={{
-                width: "14rem",
-                height: "291px",
-                // boxShadow: "2px 2px 4px 3px grey",
-                marginRight: "30px",
-                borderRadius: "var(--br-6xl)",
+                // width: "25%",
+                height: "50%",
+                borderTopLeftRadius: "50px",
+                borderTopRightRadius: "50px",
               }}
-              className="card"
-            >
-              <Card.Img variant="top" src={`http://localhost:3001/${product.image}`} />
-              <Card.Body>
-                <Card.Title className="size-20 mt-3">
+              variant="top"
+              src={`http://localhost:3001/${product.image}`}
+            />
+            <Card.Body>
+              <div style={{ height: "95px" }}>
+                <Card.Title
+                  className="size-20 mt-3"
+                  style={{
+                    fontSize: "20px",
+                    fontWeight: "bolder",
+                    marginBottom: "20px",
+                  }}
+                >
                   {product.title}
                 </Card.Title>
-                <Card.Text>{product.description}</Card.Text>
-                <div>{product.price}</div>
-                {/* <div>{product.price}</div> */}
+                {/* <Card.Text style={{ height: "60px" }}>{product.description}</Card.Text> */}
+                <div style={{fontSize: "15px"}}>
+                  {`${product.price} L.E`}
+                  <span style={{ color: "red" }}> /Month</span>
+                </div>
+               
+              </div>
+              
                 <Button variant="primary">ADD TO CART</Button>
               </Card.Body>
             </Card>
@@ -851,44 +981,75 @@ const RentItWebsiteTRY = () => {
 
       <div className={styles.projectorGp}>
         {projector.map((product) => {
-          return (
+           return (
             <Card
-              key={product.id}
+            key={product.id}
+            style={{
+              width: "14rem",
+              height: "400px",
+              
+              // left: "-88px",
+              boxShadow: "2px 2px 14px 1px rgb(51, 97, 203)",
+              marginRight: "30px",
+
+              borderRadius: "var(--br-6xl)",
+            }}
+            className="card"
+          >
+            <Card.Img
+              className="test"
               style={{
-                width: "14rem",
-                height: "291px",
-                // boxShadow: "2px 2px 4px 3px grey",
-                marginRight: "30px",
-                borderRadius: "var(--br-6xl)",
+                // width: "25%",
+                height: "50%",
+                borderTopLeftRadius: "50px",
+                borderTopRightRadius: "50px",
               }}
-              className="card"
-            >
-              <Card.Img variant="top" src={`http://localhost:3001/${product.image}`} />
-              <Card.Body>
-                <Card.Title className="size-20 mt-3">
+              variant="top"
+              src={`http://localhost:3001/${product.image}`}
+            />
+            <Card.Body>
+              <div style={{ height: "95px" }}>
+                <Card.Title
+                  className="size-20 mt-3"
+                  style={{
+                    fontSize: "20px",
+                    fontWeight: "bolder",
+                    marginBottom: "20px",
+                  }}
+                >
                   {product.title}
                 </Card.Title>
-                <Card.Text>{product.description}</Card.Text>e
-                <div>{product.price}</div>
-                {/* <div>{product.price}</div> */}
-                {/* <a><i class="fa-solid fa-heart fa-2xl" style="color: #ff0000;"></i></a>  */}
+                {/* <Card.Text style={{ height: "60px" }}>{product.description}</Card.Text> */}
+                <div style={{fontSize: "15px"}}>
+                  {`${product.price} L.E`}
+                  <span style={{ color: "red" }}> /Month</span>
+                </div>
+               
+              </div>
+              
                 <Button variant="primary">ADD TO CART</Button>
               </Card.Body>
             </Card>
           );
         })}
 
-        <button className={styles.addProduct} onClick={onAddProduct4Click}>
-          <div className={styles.iconPlus}>
-            <img className={styles.vectorIcon8} alt="" src="/vector8.svg" />
-          </div>
-          <img
-            className={styles.lineInLapTopFrame1}
-            alt=""
-            src="/line-in-lap-top-frame.svg"
-          />
-          <b className={styles.addNewProduct}>ADD NEW PROJECTOR</b>
-        </button>
+<div>
+          <button
+            style={{ marginLeft: "40px" }}
+            className={styles.addProduct}
+            onClick={onAddProduct4Click}
+          >
+            <div className={styles.iconPlus}>
+              <img className={styles.vectorIcon8} alt="" src="/vector8.svg" />
+            </div>
+            <img
+              className={styles.lineInLapTopFrame1}
+              alt=""
+              src="/line-in-lap-top-frame.svg"
+            />
+            <b className={styles.addNewProduct}>ADD NEW PROJECTORS</b>
+          </button>
+        </div>
       </div>
       <div className={styles.aboutUs}>
         <div className={styles.contactSections}>

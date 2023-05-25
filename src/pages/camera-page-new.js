@@ -1,5 +1,6 @@
 import { FormControlLabel, Checkbox } from "@mui/material";
 import { useCallback, useEffect } from "react";
+import axios from "axios";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
@@ -61,10 +62,52 @@ const LaptopPageNew = () => {
   }, [navigate]);
 
   const [cameras, setCameras] = useState([]);
-
+  // const [isLoading, setIsLoading] = useState(false);
+  const token = localStorage.getItem("token");
+  // axios.defaults.headers.common["authorization"] = Bearer__${token};
+  const addToCart = async (product) => {
+    // setIsLoading(true);
+    try {
+      const response = await fetch("http://localhost:3001/cart/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "authorization":` Bearer__${token}`
+        },
+        body: JSON.stringify({
+          id: product.id,
+          products: product.products,
+        }),
+      });
+      if (!response.ok) {
+        throw new Error("Something went wrong");
+      }
+      // setIsLoading(false);
+      // navigate1("/laptop-product");
+    } catch (error) {
+      // setIsLoading(false);
+      console.log(error);
+    }
+  };
   useEffect(() => {
     getCamerasFromApi();
-  }, []);
+  }, []); 
+
+const deleteCamera = (product) => {
+  axios.delete(``)
+            .then(function(response) {
+                // handle success
+                console.log(response);
+            })
+            .catch(function(error) {
+                // handle error
+                console.log(error);
+            });
+
+          }
+
+
+
   const getCamerasFromApi = () => {
     fetch("http://localhost:3001/product/cameras")
       .then((res) => res.json())
@@ -172,16 +215,23 @@ const LaptopPageNew = () => {
                   </div>
                   {/* <div>{product.price}</div> */}
                 </div>
-                <div style={{display:"flex", justifyContent:"space-between"}}>
-                  <Button variant="primary">ADD TO CART</Button>
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <Button
+                    variant="primary"
+                    onClick={(product) => addToCart(product)}
+                  >
+                    ADD TO CART
+                  </Button>
 
                   <Dropdown>
                     <Dropdown.Toggle id="dropdown"></Dropdown.Toggle>
 
                     <Dropdown.Menu>
                       <Dropdown.Item href="#/action-1">EDIT</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2"> DELETE </Dropdown.Item>
-                   </Dropdown.Menu>
+                      <Dropdown.Item  onClick={deleteCamera} href="/camera-page"> DELETE </Dropdown.Item>
+                    </Dropdown.Menu>
                   </Dropdown>
                 </div>
               </Card.Body>
@@ -190,12 +240,40 @@ const LaptopPageNew = () => {
         })}
       </div>
 
+      <div className="pagi" style={{ marginTop: "1728px" }}>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabIndex="-1">
+                Previous
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">
+                1
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">
+                2
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">
+                3
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">
+                Next
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
       <div className={styles.laptopPageNewChild} />
-      <button className={styles.loadMoreButton}>
-        <button className={styles.loadMoreWrapper}>
-          <div className={styles.loadMore}>LOAD MORE</div>
-        </button>
-      </button>
+
       <div className={styles.filter}>
         <div className={styles.laptops1}>Laptops</div>
         <div className={styles.laptopsTypes}>
