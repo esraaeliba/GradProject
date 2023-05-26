@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';233
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import {
   CssBaseline,
   ThemeProvider,
@@ -15,6 +16,7 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import createCache from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
 import "./global.css";
+
 
 const muiTheme = createTheme();
 const chakraTheme = extendTheme({

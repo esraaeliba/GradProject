@@ -72,7 +72,7 @@ const LaptopPageNew = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "authorization":` Bearer__${token}`
+          "authorization": ` Bearer__${token}`
         },
         body: JSON.stringify({
           id: product.id,
@@ -91,25 +91,25 @@ const LaptopPageNew = () => {
   };
   useEffect(() => {
     getCamerasFromApi();
-  }, []); 
+  }, []);
 
-const deleteCamera = (product) => {
-  axios.delete(``)
-            .then(function(response) {
-                // handle success
-                console.log(response);
-            })
-            .catch(function(error) {
-                // handle error
-                console.log(error);
-            });
+  const deleteCamera = (product) => {
+    axios.delete(``)
+      .then(function (response) {
+        // handle success
+        console.log(response);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
 
-          }
+  }
 
 
 
   const getCamerasFromApi = () => {
-    fetch("http://localhost:3001/product/cameras")
+    fetch("http://localhost:3001/product/cameras6")
       .then((res) => res.json())
       .then((json) => {
         setCameras(json.products);
@@ -230,7 +230,7 @@ const deleteCamera = (product) => {
 
                     <Dropdown.Menu>
                       <Dropdown.Item href="#/action-1">EDIT</Dropdown.Item>
-                      <Dropdown.Item  onClick={deleteCamera} href="/camera-page"> DELETE </Dropdown.Item>
+                      <Dropdown.Item onClick={deleteCamera} href="/camera-page"> DELETE </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>
@@ -254,7 +254,7 @@ const deleteCamera = (product) => {
               </a>
             </li>
             <li class="page-item">
-              <a class="page-link" href="#">
+              <a class="page-link" href="camera22-page">
                 2
               </a>
             </li>
@@ -264,7 +264,7 @@ const deleteCamera = (product) => {
               </a>
             </li>
             <li class="page-item">
-              <a class="page-link" href="#">
+              <a class="page-link" href="camera22-page">
                 Next
               </a>
             </li>

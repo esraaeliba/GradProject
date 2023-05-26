@@ -65,8 +65,9 @@ const LaptopPageNew = () => {
   useEffect(() => {
     getLaptopsFromApi();
   }, []);
+
   const getLaptopsFromApi = () => {
-    fetch("http://localhost:3001/product/laptops")
+    fetch("http://localhost:3001/product/laptops6")
       .then((res) => res.json())
       .then((json) => {
         setLaptops(json.products);
@@ -137,7 +138,7 @@ const LaptopPageNew = () => {
                 height: "450px",
                 marginBottom: "30px",
                 left: "-88px",
-                backgroundColor:"transparent",
+                backgroundColor: "transparent",
                 // boxShadow: "2px 2px 4px 3px grey",
                 marginRight: "30px",
 
@@ -173,7 +174,7 @@ const LaptopPageNew = () => {
                   </div>
                   {/* <div>{product.price}</div> */}
                 </div>
-                <div style={{display:"flex", justifyContent:"space-between"}}>
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
                   <Button variant="primary">ADD TO CART</Button>
 
                   <Dropdown>
@@ -182,7 +183,7 @@ const LaptopPageNew = () => {
                     <Dropdown.Menu>
                       <Dropdown.Item href="#/action-1">EDIT</Dropdown.Item>
                       <Dropdown.Item href="#/action-2"> DELETE </Dropdown.Item>
-                   </Dropdown.Menu>
+                    </Dropdown.Menu>
                   </Dropdown>
                 </div>
               </Card.Body>
@@ -192,24 +193,24 @@ const LaptopPageNew = () => {
 
 
       </div>
-    <div className="pagi" style={{marginTop: "1728px"}}> 
-    <nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Next</a>
-    </li>
-  </ul>
-</nav>
-      
-      </div>  
+      <div className="pagi" style={{ marginTop: "1728px" }}>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="/laptop22-page">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="/laptop22-page">Next</a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
       <div className={styles.laptopPageNewChild} />
-      
+
       <div className={styles.filter}>
         <div className={styles.laptops1}>Laptops</div>
         <div className={styles.laptopsTypes}>

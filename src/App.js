@@ -23,6 +23,11 @@ import ChangePassword from "./pages/change-password";
 import { useEffect } from "react";
 import ForgetPassword from "./pages/forget-password";
 import Landing from "./pages/landing-page";
+import Laptop22PageNew from "./pages/laptop22-page";
+import Camera22PageNew from "./pages/camera22-page";
+import Gaming22PageNew from "./pages/gaming22-page";
+import Sound22PageNew from "./pages/sound22-page";
+import Projector22PageNew from "./pages/projector22-page";
 
 function App() {
   const action = useNavigationType();
@@ -104,6 +109,26 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/laptop22-page":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/camera22-page":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/gaming22-page":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/sound22-page":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/projector22-page":
+        title = "";
+        metaDescription = "";
+        break;
     }
 
     if (title) {
@@ -123,7 +148,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Landing />} />
-      <Route path="/rent-it-website-t-r-y" element={<RentItWebsiteTRY/>} />
+      <Route path="/rent-it-website-t-r-y" element={<RentItWebsiteTRY />} />
       <Route path="/add-laptop" element={<AddLaptop />} />
       <Route path="/add-camera" element={<AddCamera />} />
       <Route path="/add-gaming-console" element={<AddGamingConsole />} />
@@ -139,6 +164,11 @@ function App() {
       <Route path="/projector-page" element={<ProjectorPageNew />} />
       <Route path="/forget-Password" element={<ForgetPassword />} />
       <Route path="/change-Password" element={<ChangePassword />} />
+      <Route path="/laptop22-page" element={<Laptop22PageNew />} />
+      <Route path="/camera22-page" element={<Camera22PageNew />} />
+      <Route path="/gaming22-page" element={<Gaming22PageNew />} />
+      <Route path="/sound22-page" element={<Sound22PageNew />} />
+      <Route path="/projector22-page" element={<Projector22PageNew />} />
     </Routes>
   );
 }

@@ -5,7 +5,8 @@ import { useState } from "react";
 import axios from "axios";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import {faCircleChevronRight} from '@fortawesome/free-solid-svg-icons'
 
 const RentItWebsiteTRY = () => {
   const navigate = useNavigate();
@@ -21,6 +22,8 @@ const RentItWebsiteTRY = () => {
   }, [navigate]);
   const onFeedFormSubmit = async (e) => {
     e.preventDefault();
+    setName('');
+    setDescription('');
 
     // Set token in the request headers
     axios.defaults.headers.common["authorization"] = `Bearer__${token}`;
@@ -217,12 +220,14 @@ const RentItWebsiteTRY = () => {
         setProjector(json.products);
       });
   };
+  const handleClick = () => {
+    window.open("https://www.instagram.com/rent.tech_/#", "_blank");
+  };
+  const handleClick1 = () => {
+    window.open("https://www.facebook.com/Rent.Tech.Project/", "_blank");
+  };
 
   return (
-
-    
-
-    
     <div className={styles.rentItWebsiteTry}>
       <div className={styles.v}>
         <div className={styles.vectorWrapper}>
@@ -269,12 +274,49 @@ const RentItWebsiteTRY = () => {
         </div>
       </div>
 
-     {/* <div> class <FontAwesomeIcon icon="fa-light fa-forward" fade size="2xl" /> </div>  */}
-      {/* <button className={styles.load} onClick={onLaoptopButtonClick}>LOAD MORE</button>
-      <button className={styles.load1} onClick={onCameraButtonClick}>LOAD MORE</button>
-      <button className={styles.load2} onClick={onGAMINGTEXTUPClick}>LOAD MORE</button>
-      <button className={styles.load3} onClick={onSOUNDTEXTUPClick}>LOAD MORE</button>
-      <button className={styles.load4} onClick={onProjectorButtonClick}>LOAD MORE</button> */}
+   
+    
+    
+
+      {/* <div>
+      <nav style={{height: "116px", background: "#00000052"}} class="navbar navbar-expand-lg navbar-light ">
+      <a style={{fontSize: "37px", marginLeft: "26px"}} class="navbar-brand" href="#">RentTech</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+      <a style={{fontSize: "17px", marginLeft: "45px", color:"black"}}class="nav-link" href="#">Home  <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+      <a style={{fontSize: "17px", marginLeft: "1px", color:"black"}} class="nav-link" href="#">Account</a>
+      </li>
+      <li class="nav-item dropdown">
+      <a style={{fontSize: "17px", marginLeft: "1px", color:"black"}} class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Laptops</a>
+          <a class="dropdown-item" href="#">Cameras</a>
+          <a class="dropdown-item" href="#">Gaming consoles</a>
+          <a class="dropdown-item" href="#">Sound Systems</a>
+          <a class="dropdown-item" href="#">Projectors</a>
+        </div>
+      </li>
+     
+    </ul>
+    <form  class="form-inline my-2 my-lg-0" style={{display:"flex",marginLeft: "722px"}} >
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+     
+    </form>
+  </div>
+</nav>
+      </div> */}
+
+
 
       <div className={styles.searchBar}>
         <div className={styles.bar}>
@@ -291,92 +333,65 @@ const RentItWebsiteTRY = () => {
           </div>
         </button>
       </button>
-      <button className={styles.cameraButton }  onClick={onCameraButtonClick}>
-        <button className={styles.laptopButton} onClick={onCAMERASBUTTONClick}>
+      <button className={styles.cameraButton} onClick={onCameraButtonClick}>
+        <button className={styles.laptopButton1} onClick={onCAMERASBUTTONClick}>
           <div className={styles.laptopsWrapper}>
             <div className={styles.laptops}>CAMERAS</div>
           </div>
         </button>
       </button>
 
-
-      {/* <div class="row">
-
-<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="2000">
-            <img src="th.jpg" class="d-block w-100" alt="..."/>
-        </div>
-        <div class="carousel-item" data-bs-interval="2000">
-            <img src="images/banner2.jpg" class="d-block w-100" alt="..."/>
-        </div>
-        <div class="carousel-item" data-bs-interval="2000">
-            <img src="images/banner3.jpg" class="d-block w-100" alt="..."/>
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
-
-</div> */}
-
+     
 
       <div className={styles.laptopsGroups}>
         {laptops.map((product) => {
           return (
             <Card
-            key={product.id}
-            style={{
-              width: "14rem",
-              height: "400px",
-              
-              // left: "-88px",
-              boxShadow: "2px 2px 14px 1px rgb(51, 97, 203)",
-              marginRight: "30px",
-
-              borderRadius: "var(--br-6xl)",
-            }}
-            className="card"
-          >
-            <Card.Img
-              className="test"
+              key={product.id}
               style={{
-                // width: "25%",
-                height: "50%",
-                borderTopLeftRadius: "50px",
-                borderTopRightRadius: "50px",
+                width: "13rem",
+                height: "325px",
+                top: "-20px",
+                backgroundColor: "transparent",
+
+                // left: "-88px",
+                boxShadow: "2px 2px 14px 1px rgb(51, 97, 203)",
+                marginRight: "30px",
+
+                borderRadius: "var(--br-6xl)",
               }}
-              variant="top"
-              src={`http://localhost:3001/${product.image}`}
-            />
-            <Card.Body>
-              <div style={{ height: "95px" }}>
-                <Card.Title
-                  className="size-20 mt-3"
-                  style={{
-                    fontSize: "20px",
-                    fontWeight: "bolder",
-                    marginBottom: "20px",
-                  }}
-                >
-                  {product.title}
-                </Card.Title>
-                {/* <Card.Text style={{ height: "60px" }}>{product.description}</Card.Text> */}
-                <div style={{fontSize: "15px"}}>
-                  {`${product.price} L.E`}
-                  <span style={{ color: "red" }}> /Month</span>
+              className="card"
+            >
+              <Card.Img
+                className="test"
+                style={{
+                  // width: "25%",
+                  height: "50%",
+                  borderTopLeftRadius: "24px",
+                  borderTopRightRadius: "24px",
+                }}
+                variant="top"
+                src={`http://localhost:3001/${product.image}`}
+              />
+              <Card.Body>
+                <div style={{ height: "75px" }}>
+                  <Card.Title
+                    className="size-20 mt-3"
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bolder",
+                      marginBottom: "20px",
+                    }}
+                  >
+                    {product.title}
+                  </Card.Title>
+                  {/* <Card.Text style={{ height: "60px" }}>{product.description}</Card.Text> */}
+                  <div style={{ fontSize: "15px" }}>
+                    {`${product.price} L.E`}
+                    <span style={{ color: "red" }}> /Month</span>
+                  </div>
                 </div>
-               
-              </div>
-              
+
                 <Button variant="primary">ADD TO CART</Button>
               </Card.Body>
             </Card>
@@ -385,7 +400,7 @@ const RentItWebsiteTRY = () => {
 
         <div>
           <button
-            style={{ marginLeft: "40px" }}
+            style={{ marginLeft: "40px", top: "-20px", height: "345px" }}
             className={styles.addProduct}
             onClick={onAddProductClick}
           >
@@ -400,65 +415,70 @@ const RentItWebsiteTRY = () => {
             <b className={styles.addNewProduct}>ADD NEW LAPTOPS</b>
           </button>
         </div>
+
+        <a href="/laptop-page" className={styles.seeMore}>
+          See More
+        </a>
       </div>
 
       <div className={styles.cameraGroup}>
         {cameras.map((product) => {
-           return (
+          return (
             <Card
-            key={product.id}
-            style={{
-              width: "14rem",
-              height: "400px",
-              
-              // left: "-88px",
-              boxShadow: "2px 2px 14px 1px rgb(51, 97, 203)",
-              marginRight: "30px",
-
-              borderRadius: "var(--br-6xl)",
-            }}
-            className="card"
-          >
-            <Card.Img
-              className="test"
+              key={product.id}
               style={{
-                // width: "25%",
-                height: "50%",
-                borderTopLeftRadius: "50px",
-                borderTopRightRadius: "50px",
+                backgroundColor: "transparent",
+                width: "13rem",
+                height: "325px",
+                top: "-90px",
+
+                // left: "-88px",
+                boxShadow: "2px 2px 14px 1px rgb(51, 97, 203)",
+                marginRight: "30px",
+
+                borderRadius: "var(--br-6xl)",
               }}
-              variant="top"
-              src={`http://localhost:3001/${product.image}`}
-            />
-            <Card.Body>
-              <div style={{ height: "95px" }}>
-                <Card.Title
-                  className="size-20 mt-3"
-                  style={{
-                    fontSize: "20px",
-                    fontWeight: "bolder",
-                    marginBottom: "20px",
-                  }}
-                >
-                  {product.title}
-                </Card.Title>
-                {/* <Card.Text style={{ height: "60px" }}>{product.description}</Card.Text> */}
-                <div style={{fontSize: "15px"}}>
-                  {`${product.price} L.E`}
-                  <span style={{ color: "red" }}> /Month</span>
+              className="card"
+            >
+              <Card.Img
+                className="test"
+                style={{
+                  // width: "25%",
+                  height: "50%",
+                  borderTopLeftRadius: "24px",
+                  borderTopRightRadius: "24px",
+                }}
+                variant="top"
+                src={`http://localhost:3001/${product.image}`}
+              />
+              <Card.Body>
+                <div style={{ height: "75px" }}>
+                  <Card.Title
+                    className="size-20 mt-3"
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bolder",
+                      marginBottom: "20px",
+                    }}
+                  >
+                    {product.title}
+                  </Card.Title>
+                  {/* <Card.Text style={{ height: "60px" }}>{product.description}</Card.Text> */}
+                  <div style={{ fontSize: "15px" }}>
+                    {`${product.price} L.E`}
+                    <span style={{ color: "red" }}> /Month</span>
+                  </div>
                 </div>
-               
-              </div>
-              
+
                 <Button variant="primary">ADD TO CART</Button>
               </Card.Body>
             </Card>
           );
         })}
 
-<div>
+        <div>
           <button
-            style={{ marginLeft: "40px" }}
+            style={{ marginLeft: "40px", height: "345px", top: "-90px" }}
             className={styles.addProduct}
             onClick={onAddProduct1Click}
           >
@@ -473,13 +493,70 @@ const RentItWebsiteTRY = () => {
             <b className={styles.addNewProduct}>ADD NEW CAMERAS</b>
           </button>
         </div>
+
+        <a href="/camera-page" className={styles.seeMore} style={{ top: "80px" }}>
+          See More
+        </a>
       </div>
 
       {/* gaming consolllle */}
       <div className={styles.psGroup}>
-      <div>
+        {gamingConsoles.map((product) => {
+          return (
+            <Card
+              key={product.id}
+              style={{
+                width: "13rem",
+                height: "325px",
+                top: "30px",
+                backgroundColor: "transparent",
+
+                // left: "-88px",
+                boxShadow: "2px 2px 14px 1px rgb(51, 97, 203)",
+                marginRight: "30px",
+
+                borderRadius: "var(--br-6xl)",
+              }}
+              className="card"
+            >
+              <Card.Img
+                className="test"
+                style={{
+                  // width: "25%",
+                  height: "50%",
+                  borderTopLeftRadius: "24px",
+                  borderTopRightRadius: "24px",
+                }}
+                variant="top"
+                src={`http://localhost:3001/${product.image}`}
+              />
+              <Card.Body>
+                <div style={{ height: "75px" }}>
+                  <Card.Title
+                    className="size-20 mt-3"
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bolder",
+                      marginBottom: "20px",
+                    }}
+                  >
+                    {product.title}
+                  </Card.Title>
+                  {/* <Card.Text style={{ height: "60px" }}>{product.description}</Card.Text> */}
+                  <div style={{ fontSize: "15px" }}>
+                    {`${product.price} L.E`}
+                    <span style={{ color: "red" }}> /Month</span>
+                  </div>
+                </div>
+
+                <Button variant="primary">ADD TO CART</Button>
+              </Card.Body>
+            </Card>
+          );
+        })}
+        <div>
           <button
-            style={{ marginLeft: "40px" }}
+            style={{ marginLeft: "40px", top: "30px", height: "345px" }}
             className={styles.addProduct}
             onClick={onAddProduct2Click}
           >
@@ -491,61 +568,18 @@ const RentItWebsiteTRY = () => {
               alt=""
               src="/line-in-lap-top-frame.svg"
             />
-            <b className={styles.addNewProduct}>ADD NEW GAMING-CONSOLES</b>
+            <b className={styles.addNewProduct} style={{ fontSize: "12px" }}>
+              ADD NEW GAMING-CONSOLES
+            </b>
           </button>
         </div>
-        {gamingConsoles.map((product) => {
-           return (
-            <Card
-            key={product.id}
-            style={{
-              width: "14rem",
-              height: "400px",
-              
-              // left: "-88px",
-              boxShadow: "2px 2px 14px 1px rgb(51, 97, 203)",
-              marginRight: "30px",
-
-              borderRadius: "var(--br-6xl)",
-            }}
-            className="card"
-          >
-            <Card.Img
-              className="test"
-              style={{
-                // width: "25%",
-                height: "50%",
-                borderTopLeftRadius: "50px",
-                borderTopRightRadius: "50px",
-              }}
-              variant="top"
-              src={`http://localhost:3001/${product.image}`}
-            />
-            <Card.Body>
-              <div style={{ height: "95px" }}>
-                <Card.Title
-                  className="size-20 mt-3"
-                  style={{
-                    fontSize: "20px",
-                    fontWeight: "bolder",
-                    marginBottom: "20px",
-                  }}
-                >
-                  {product.title}
-                </Card.Title>
-                {/* <Card.Text style={{ height: "60px" }}>{product.description}</Card.Text> */}
-                <div style={{fontSize: "15px"}}>
-                  {`${product.price} L.E`}
-                  <span style={{ color: "red" }}> /Month</span>
-                </div>
-               
-              </div>
-              
-                <Button variant="primary">ADD TO CART</Button>
-              </Card.Body>
-            </Card>
-          );
-        })}
+        <a
+          href="/gaming-page-new"
+          className={styles.seeMore}
+          style={{ top: "225px", right: "0px" }}
+        >
+          See More
+        </a>
       </div>
 
       <button className={styles.loginButtton} onClick={onLoginButttonClick}>
@@ -563,39 +597,89 @@ const RentItWebsiteTRY = () => {
           <div className={styles.rectangleWrapper}>
             <img
               className={styles.rectangleIcon}
+              style={{ borderRadius: "50%" }}
               alt=""
               src="/rectangle@2x.png"
             />
           </div>
-          <div className={styles.yesYouCanContainer}>
-            <p className={styles.yesYouCan}>YES, YOU CAN RENT ALL YOU NEED</p>
+          <div
+            className={styles.yesYouCanContainer}
+            style={{ textAlign: "left" }}
+          >
+            <p className={styles.yesYouCan} style={{ marginBottom: "20px" }}>
+              YES, YOU CAN RENT ALL YOU NEED
+            </p>
             <p
               className={styles.hpVictus16E0000ne}
+              style={{ color: "white" }}
             >{`JUST WITH FEW STEPS GET THE `}</p>
-            <p className={styles.hpVictus16E0000ne}>
+            <p className={styles.hpVictus16E0000ne} style={{ color: "white" }}>
               TECH YOU WANT IN YOUR HANDS
             </p>
-            <p className={styles.hpVictus16E0000ne}>{`RIGHT NOW `}</p>
+            <p
+              className={styles.hpVictus16E0000ne}
+              style={{ color: "white" }}
+            >{`RIGHT NOW `}</p>
           </div>
-          <button className={styles.exloreNowButton}>
-            <div className={styles.exploreNow}>{`EXPLORE NOW `}</div>
+          <button
+            className={styles.exloreNowButton}
+            style={{
+              backgroundColor: "black",
+              position: "relative",
+              top: "165px",
+              right: "513px",
+            }}
+          >
+            <div
+              className={styles.exploreNow}
+              style={{ color: "white" }}
+            >{`EXPLORE NOW `}</div>
           </button>
         </div>
       </div>
       <div className={styles.paymentMethods}>
         <div className={styles.paymentFrame}>
-          <button className={styles.paymentButton}>
-            <div className={styles.paymentMethods1}>PAYMENT METHODS</div>
+          <button
+            className={styles.paymentButton}
+            style={{
+              backgroundColor: "black",
+              position: "relative",
+              top: "150px",
+              left: "234px",
+                width: "225px",
+                color:"white"
+            }}
+          >
+            <div
+              className={styles.paymentMethods1}
+              style={{
+                color: "white",
+              }}
+            >
+              PAYMENT METHODS
+            </div>
           </button>
-          <div className={styles.yesYouCanContainer}>
-            <p className={styles.yesYouCan}>{`YOU CAN ALSO PAY `}</p>
-            <p className={styles.yesYouCan}>WITH MANY WAYS</p>
-            <p className={styles.hpVictus16E0000ne}>VODAFONE CASH</p>
-            <p className={styles.hpVictus16E0000ne}>CASH ON ARRIVAL</p>
-            <p className={styles.hpVictus16E0000ne}>CREDIT CARD</p>
+          <div
+            className={styles.yesYouCanContainer}
+            style={{ textAlign: "left" }}
+          >
+            <p
+              className={styles.yesYouCan}
+              style={{ marginBottom: "20px" }}
+            >{`YOU CAN ALSO PAY WITH MANY WAYS `}</p>
+            <p className={styles.hpVictus16E0000ne} style={{ color: "white" }}>
+              VODAFONE CASH
+            </p>
+            <p className={styles.hpVictus16E0000ne} style={{ color: "white" }}>
+              CASH ON ARRIVAL
+            </p>
+            <p className={styles.hpVictus16E0000ne} style={{ color: "white" }}>
+              CREDIT CARD
+            </p>
           </div>
           <div className={styles.rectangleContainer}>
             <img
+            style={{borderRadius: "50%", width:"300px", height:"300px",top:"44px",left:"102px"}}
               className={styles.rectangleIcon1}
               alt=""
               src="/rectangle1@2x.png"
@@ -906,9 +990,9 @@ const RentItWebsiteTRY = () => {
 
       {/* sound system */}
       <div className={styles.soundGp}>
-      <div>
+        <div>
           <button
-            style={{ marginLeft: "40px" }}
+            style={{ marginLeft: "40px", height: "345px", top: "10px" }}
             className={styles.addProduct}
             onClick={onAddProduct3Click}
           >
@@ -924,118 +1008,125 @@ const RentItWebsiteTRY = () => {
           </button>
         </div>
         {soundSystems.map((product) => {
-           return (
+          return (
             <Card
-            key={product.id}
-            style={{
-              width: "14rem",
-              height: "400px",
-              
-              // left: "-88px",
-              boxShadow: "2px 2px 14px 1px rgb(51, 97, 203)",
-              marginRight: "30px",
-
-              borderRadius: "var(--br-6xl)",
-            }}
-            className="card"
-          >
-            <Card.Img
-              className="test"
+              key={product.id}
               style={{
-                // width: "25%",
-                height: "50%",
-                borderTopLeftRadius: "50px",
-                borderTopRightRadius: "50px",
+                width: "13rem",
+                height: "325px",
+                top: "10px",
+                backgroundColor: "transparent",
+                // left: "-88px",
+                boxShadow: "2px 2px 14px 1px rgb(51, 97, 203)",
+                marginRight: "30px",
+
+                borderRadius: "var(--br-6xl)",
               }}
-              variant="top"
-              src={`http://localhost:3001/${product.image}`}
-            />
-            <Card.Body>
-              <div style={{ height: "95px" }}>
-                <Card.Title
-                  className="size-20 mt-3"
-                  style={{
-                    fontSize: "20px",
-                    fontWeight: "bolder",
-                    marginBottom: "20px",
-                  }}
-                >
-                  {product.title}
-                </Card.Title>
-                {/* <Card.Text style={{ height: "60px" }}>{product.description}</Card.Text> */}
-                <div style={{fontSize: "15px"}}>
-                  {`${product.price} L.E`}
-                  <span style={{ color: "red" }}> /Month</span>
+              className="card"
+            >
+              <Card.Img
+                className="test"
+                style={{
+                  // width: "25%",
+                  height: "50%",
+                  borderTopLeftRadius: "24px",
+                  borderTopRightRadius: "24px",
+                }}
+                variant="top"
+                src={`http://localhost:3001/${product.image}`}
+              />
+              <Card.Body>
+                <div style={{ height: "75px" }}>
+                  <Card.Title
+                    className="size-20 mt-3"
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bolder",
+                      marginBottom: "20px",
+                    }}
+                  >
+                    {product.title}
+                  </Card.Title>
+                  {/* <Card.Text style={{ height: "60px" }}>{product.description}</Card.Text> */}
+                  <div style={{ fontSize: "15px" }}>
+                    {`${product.price} L.E`}
+                    <span style={{ color: "red" }}> /Month</span>
+                  </div>
                 </div>
-               
-              </div>
-              
+
                 <Button variant="primary">ADD TO CART</Button>
               </Card.Body>
             </Card>
           );
         })}
+        <a
+          href="/sound-page-new"
+          className={styles.seeMore}
+          style={{ top: "190px", right: "0px" }}
+        >
+          See More
+        </a>
       </div>
 
       {/* projectors */}
 
       <div className={styles.projectorGp}>
         {projector.map((product) => {
-           return (
+          return (
             <Card
-            key={product.id}
-            style={{
-              width: "14rem",
-              height: "400px",
-              
-              // left: "-88px",
-              boxShadow: "2px 2px 14px 1px rgb(51, 97, 203)",
-              marginRight: "30px",
-
-              borderRadius: "var(--br-6xl)",
-            }}
-            className="card"
-          >
-            <Card.Img
-              className="test"
+              key={product.id}
               style={{
-                // width: "25%",
-                height: "50%",
-                borderTopLeftRadius: "50px",
-                borderTopRightRadius: "50px",
+                width: "13rem",
+                height: "325px",
+                backgroundColor: "transparent",
+
+                // left: "-88px",
+                boxShadow: "2px 2px 14px 1px rgb(51, 97, 203)",
+                marginRight: "30px",
+
+                borderRadius: "var(--br-6xl)",
               }}
-              variant="top"
-              src={`http://localhost:3001/${product.image}`}
-            />
-            <Card.Body>
-              <div style={{ height: "95px" }}>
-                <Card.Title
-                  className="size-20 mt-3"
-                  style={{
-                    fontSize: "20px",
-                    fontWeight: "bolder",
-                    marginBottom: "20px",
-                  }}
-                >
-                  {product.title}
-                </Card.Title>
-                {/* <Card.Text style={{ height: "60px" }}>{product.description}</Card.Text> */}
-                <div style={{fontSize: "15px"}}>
-                  {`${product.price} L.E`}
-                  <span style={{ color: "red" }}> /Month</span>
+              className="card"
+            >
+              <Card.Img
+                className="test"
+                style={{
+                  // width: "25%",
+                  height: "50%",
+                  borderTopLeftRadius: "24px",
+                  borderTopRightRadius: "24px",
+                }}
+                variant="top"
+                src={`http://localhost:3001/${product.image}`}
+              />
+              <Card.Body>
+                <div style={{ height: "75px" }}>
+                  <Card.Title
+                    className="size-20 mt-3"
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bolder",
+                      marginBottom: "20px",
+                    }}
+                  >
+                    {product.title}
+                  </Card.Title>
+                  {/* <Card.Text style={{ height: "60px" }}>{product.description}</Card.Text> */}
+                  <div style={{ fontSize: "15px" }}>
+                    {`${product.price} L.E`}
+                    <span style={{ color: "red" }}> /Month</span>
+                  </div>
                 </div>
-               
-              </div>
-              
+
                 <Button variant="primary">ADD TO CART</Button>
               </Card.Body>
             </Card>
           );
         })}
 
-<div>
+        <div>
           <button
-            style={{ marginLeft: "40px" }}
+            style={{ marginLeft: "40px", height: "345px" }}
             className={styles.addProduct}
             onClick={onAddProduct4Click}
           >
@@ -1050,6 +1141,13 @@ const RentItWebsiteTRY = () => {
             <b className={styles.addNewProduct}>ADD NEW PROJECTORS</b>
           </button>
         </div>
+        <a
+          href="/projector-page"
+          className={styles.seeMore}
+          style={{ top: "190px", right: "0px" }}
+        >
+          See More
+        </a>
       </div>
       <div className={styles.aboutUs}>
         <div className={styles.contactSections}>
@@ -1184,7 +1282,19 @@ const RentItWebsiteTRY = () => {
           <img className={styles.vectorIcon20} alt="" src="/vector11.svg" />
         </button>
       </div>
-    </div >
+      <img
+        onClick={handleClick}
+        className={styles.insta}
+        alt=""
+        src="/insta.png"
+      />
+      <img
+        onClick={handleClick1}
+        className={styles.face}
+        alt=""
+        src="/face.png"
+      />
+    </div>
   );
 };
 
