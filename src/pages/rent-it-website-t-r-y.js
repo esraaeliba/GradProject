@@ -274,9 +274,9 @@ const RentItWebsiteTRY = () => {
         </div>
       </div>
 
-   
-    
-    
+
+
+
 
       {/* <div>
       <nav style={{height: "116px", background: "#00000052"}} class="navbar navbar-expand-lg navbar-light ">
@@ -341,7 +341,7 @@ const RentItWebsiteTRY = () => {
         </button>
       </button>
 
-     
+
 
       <div className={styles.laptopsGroups}>
         {laptops.map((product) => {
@@ -412,7 +412,7 @@ const RentItWebsiteTRY = () => {
               alt=""
               src="/line-in-lap-top-frame.svg"
             />
-            <b className={styles.addNewProduct}>ADD NEW LAPTOPS</b>
+            <b className={styles.addNewProduct}>ADD NEW LAPTOP</b>
           </button>
         </div>
 
@@ -490,7 +490,7 @@ const RentItWebsiteTRY = () => {
               alt=""
               src="/line-in-lap-top-frame.svg"
             />
-            <b className={styles.addNewProduct}>ADD NEW CAMERAS</b>
+            <b className={styles.addNewProduct}>ADD NEW CAMERA</b>
           </button>
         </div>
 
@@ -569,7 +569,7 @@ const RentItWebsiteTRY = () => {
               src="/line-in-lap-top-frame.svg"
             />
             <b className={styles.addNewProduct} style={{ fontSize: "12px" }}>
-              ADD NEW GAMING-CONSOLES
+              ADD NEW CONSOLE
             </b>
           </button>
         </div>
@@ -646,8 +646,8 @@ const RentItWebsiteTRY = () => {
               position: "relative",
               top: "150px",
               left: "234px",
-                width: "225px",
-                color:"white"
+              width: "225px",
+              color: "white"
             }}
           >
             <div
@@ -679,7 +679,7 @@ const RentItWebsiteTRY = () => {
           </div>
           <div className={styles.rectangleContainer}>
             <img
-            style={{borderRadius: "50%", width:"300px", height:"300px",top:"44px",left:"102px"}}
+              style={{ borderRadius: "50%", width: "300px", height: "300px", top: "44px", left: "102px" }}
               className={styles.rectangleIcon1}
               alt=""
               src="/rectangle1@2x.png"
@@ -1004,7 +1004,7 @@ const RentItWebsiteTRY = () => {
               alt=""
               src="/line-in-lap-top-frame.svg"
             />
-            <b className={styles.addNewProduct}>ADD NEW SOUND-SYSTEMS</b>
+            <b className={styles.addNewProduct}>ADD NEW SOUND-SYSTEM</b>
           </button>
         </div>
         {soundSystems.map((product) => {
@@ -1138,7 +1138,7 @@ const RentItWebsiteTRY = () => {
               alt=""
               src="/line-in-lap-top-frame.svg"
             />
-            <b className={styles.addNewProduct}>ADD NEW PROJECTORS</b>
+            <b className={styles.addNewProduct}>ADD NEW PROJECTOR</b>
           </button>
         </div>
         <a
@@ -1156,7 +1156,7 @@ const RentItWebsiteTRY = () => {
               <div className={styles.headingAndSubheading}>
                 <div className={styles.heading}>GET IN TOUCH</div>
                 <div className={styles.supportingText}>
-                  We’d love to hear from you. Please fill out this form.
+                  We’d love to hear a feedback from you. Please fill out this form.
                 </div>
               </div>
             </div>
@@ -1286,7 +1286,7 @@ const RentItWebsiteTRY = () => {
         onClick={handleClick}
         className={styles.insta}
         alt=""
-        src="/insta.png"
+        src="/insta.jpg"
       />
       <img
         onClick={handleClick1}

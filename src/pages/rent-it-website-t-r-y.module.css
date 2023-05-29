@@ -22,6 +22,7 @@
 }
 
 @keyframes jello-horizontal {
+
   0%,
   to {
     transform: scale3d(1, 1, 1);
@@ -49,6 +50,7 @@
 }
 
 @keyframes wobble-hor-bottom {
+
   0%,
   to {
     transform: translateX(0);
@@ -485,6 +487,7 @@
   animation: 1s ease 0s 1 normal none rotate-center;
   opacity: 1;
 }
+
 .laptopButton1 {
   cursor: pointer;
   border: 0;
@@ -1184,7 +1187,7 @@
   padding: 0;
   height: 1%;
   width: 12.5%;
-  top:49.31%;
+  top: 49.31%;
   right: 75.07%;
   bottom: 49.69%;
   left: 12.43%;
@@ -1685,6 +1688,7 @@
   bottom: 58.18%;
   left: 12.29%;
 }
+
 .soundsystemButton:hover {
   animation: 1s ease 0s 1 normal none rotate-center;
   opacity: 1;
@@ -1935,6 +1939,7 @@
   justify-content: center;
   padding: var(--padding-3xs);
 }
+
 .con1 {
   border: 0;
   position: absolute;
@@ -1954,10 +1959,12 @@
   align-items: center;
   justify-content: center;
 }
+
 .con1:hover {
   animation: 1s ease 0s infinite normal none scale-up;
   opacity: 1;
 }
+
 .insta {
   position: relative;
   width: 70px;
@@ -1968,6 +1975,7 @@
   left: 1365px;
   background-color: transparent;
 }
+
 .face {
   position: relative;
   width: 70px;
@@ -1978,20 +1986,22 @@
   left: 1365px;
   background-color: transparent;
 }
+
 .seeMore {
   height: 39px;
-    font-size: 14px;
-    background-color: black;
-    padding: 11px;
-    font-weight: bold;
-    border-radius: 39px;
-    position: relative;
-    top: 130px;
-    left: 325px;
-    cursor: pointer;
-    color: white;
-    text-decoration: none;
+  font-size: 14px;
+  background-color: black;
+  padding: 11px;
+  font-weight: bold;
+  border-radius: 39px;
+  position: relative;
+  top: 130px;
+  left: 325px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
 }
+
 .seeMore:hover {
   color: white;
 }
@@ -1999,18 +2009,19 @@
 
 .seeMore1 {
   height: 39px;
-    font-size: 14px;
-    background-color: black;
-    padding: 11px;
-    font-weight: bold;
-    border-radius: 39px;
-    position: relative;
-    top: 130px;
-    left: 325px;
-    cursor: pointer;
-    color: white;
-    text-decoration: none;
+  font-size: 14px;
+  background-color: black;
+  padding: 11px;
+  font-weight: bold;
+  border-radius: 39px;
+  position: relative;
+  top: 130px;
+  left: 325px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
 }
+
 .seeMore1:hover {
   color: white;
 }
@@ -2018,18 +2029,19 @@
 
 .seeMore2 {
   height: 39px;
-    font-size: 14px;
-    background-color: black;
-    padding: 11px;
-    font-weight: bold;
-    border-radius: 39px;
-    position: relative;
-    top: 130px;
-    left: 325px;
-    cursor: pointer;
-    color: white;
-    text-decoration: none;
+  font-size: 14px;
+  background-color: black;
+  padding: 11px;
+  font-weight: bold;
+  border-radius: 39px;
+  position: relative;
+  top: 130px;
+  left: 325px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
 }
+
 .seeMore2:hover {
   color: white;
 }
@@ -2037,36 +2049,38 @@
 
 .seeMore3 {
   height: 39px;
-    font-size: 14px;
-    background-color: black;
-    padding: 11px;
-    font-weight: bold;
-    border-radius: 39px;
-    position: relative;
-    top: 130px;
-    left: 325px;
-    cursor: pointer;
-    color: white;
-    text-decoration: none;
+  font-size: 14px;
+  background-color: black;
+  padding: 11px;
+  font-weight: bold;
+  border-radius: 39px;
+  position: relative;
+  top: 130px;
+  left: 325px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
 }
+
 .seeMore3:hover {
   color: white;
 }
 
 .seeMore4 {
   height: 39px;
-    font-size: 14px;
-    background-color: black;
-    padding: 11px;
-    font-weight: bold;
-    border-radius: 39px;
-    position: relative;
-    top: 130px;
-    left: 325px;
-    cursor: pointer;
-    color: white;
-    text-decoration: none;
+  font-size: 14px;
+  background-color: black;
+  padding: 11px;
+  font-weight: bold;
+  border-radius: 39px;
+  position: relative;
+  top: 130px;
+  left: 325px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
 }
+
 .seeMore4:hover {
   color: white;
 }

@@ -62,6 +62,7 @@ const LaptopPageNew = () => {
   }, [navigate]);
 
   const [cameras, setCameras] = useState([]);
+  // const [camerass, setCamerass] = useState([]);
   // const [isLoading, setIsLoading] = useState(false);
   const token = localStorage.getItem("token");
   // axios.defaults.headers.common["authorization"] = Bearer__${token};
@@ -89,25 +90,10 @@ const LaptopPageNew = () => {
       console.log(error);
     }
   };
+
   useEffect(() => {
     getCamerasFromApi();
-  }, []);
-
-  const deleteCamera = (product) => {
-    axios.delete(``)
-      .then(function (response) {
-        // handle success
-        console.log(response);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      });
-
-  }
-
-
-
+  }, [])
   const getCamerasFromApi = () => {
     fetch("http://localhost:3001/product/cameras6")
       .then((res) => res.json())
@@ -115,6 +101,72 @@ const LaptopPageNew = () => {
         setCameras(json.products);
       });
   };
+  const handleUpdateClick = async (productId) => {
+    const url = `http://localhost:3000/update?productId=${productId}`;
+    window.location.replace(url);
+  };
+
+  const handleDeleteClick = async (productId) => {
+    try {
+      fetch(`http://localhost:3001/product/delete/${productId}`, {
+        method: 'DELETE',
+        headers: {
+          "Content-Type": "application/json",
+          "authorization": `Bearer__${token}`
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // Handle the response from the backend
+          const { message } = data;
+          if (message == "deleted") {
+            window.location.replace("http://localhost:3000/camera-page");
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+  const signOut = () => {
+    // Remove the token from local storage
+    localStorage.removeItem('token');
+
+    // Redirect to the sign-in page or any other desired destination
+    window.location.replace("http://localhost:3000/log-in-page");
+  };
+
+  const handleCartClick = async (productId) => {
+    try {
+      const requestData = {
+        products: [{ productId, quantity: 1 }] // Set the quantity as needed
+      };
+
+      fetch('http://localhost:3001/cart/add', {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json",
+          "authorization": `Bearer__${token}`
+        },
+        body: JSON.stringify(requestData)
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          const { message } = data;
+          if (message === "Added" || message === "Updated") {
+            alert("Added to cart");
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
   return (
     <div className={styles.laptopPageNew}>
       <div className={styles.vectorWrapper}>
@@ -149,16 +201,21 @@ const LaptopPageNew = () => {
           </div>
         </div>
       </div>
-      <button className={styles.logInButton} onClick={onLogInButtonClick}>
-        <button className={styles.loginButton} onClick={onLOGINBUTTONClick}>
-          <div className={styles.login}>LOGIN</div>
+      {token ? null : (
+        <div>
+          <button className={styles.loginButtton} onClick={onLoginButttonClick}>
+            <div className={styles.login}>LOGIN</div>
+          </button>
+          <button className={styles.signUpButton} onClick={onSignUpButtonClick}>
+            <div className={styles.login}>SIGNUP</div>
+          </button>
+        </div>
+      )}
+      <div>
+        <button className={styles.signUpButton} onClick={signOut}>
+          <div className={styles.login}>Sign Out</div>
         </button>
-      </button>
-      <button className={styles.sinUpButton} onClick={onSinUpButtonClick}>
-        <button className={styles.signupButton} onClick={onSIGNUPBUTTONClick}>
-          <div className={styles.login}>SIGNUP</div>
-        </button>
-      </button>
+      </div>
       <button className={styles.homeToLaptopVector}>
         <img className={styles.vectorIcon2} alt="" src="/vector18.svg" />
         <img className={styles.vectorIcon3} alt="" src="/vector19.svg" />
@@ -218,19 +275,19 @@ const LaptopPageNew = () => {
                 <div
                   style={{ display: "flex", justifyContent: "space-between" }}
                 >
-                  <Button
-                    variant="primary"
-                    onClick={(product) => addToCart(product)}
-                  >
-                    ADD TO CART
-                  </Button>
+                  <Button onClick={() => handleCartClick(product._id)} variant="primary">ADD TO CART</Button>
+
 
                   <Dropdown>
                     <Dropdown.Toggle id="dropdown"></Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                      <Dropdown.Item href="#/action-1">EDIT</Dropdown.Item>
-                      <Dropdown.Item onClick={deleteCamera} href="/camera-page"> DELETE </Dropdown.Item>
+                      <Dropdown.Item onClick={() => handleUpdateClick(product._id)}>
+                        EDIT
+                      </Dropdown.Item>
+                      <Dropdown.Item onClick={() => handleDeleteClick(product._id)}>
+                        DELETE
+                      </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>

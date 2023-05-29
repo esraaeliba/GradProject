@@ -23,7 +23,7 @@ const ChangePassword = () => {
         const { message } = response.data;
         if (message == "Done") {
           alert("Changed successfully");
-          window.location.replace("http://localhost:3000/");
+          window.location.replace("http://localhost:3000/log-in-page");
         } else {
           console.log(message);
         }

@@ -1,4 +1,5 @@
 @keyframes jello-horizontal {
+
   0%,
   to {
     transform: scale3d(1, 1, 1);
@@ -107,6 +108,37 @@
   left: -0.69%;
 }
 
+.searchBar {
+  position: absolute;
+  height: 0.75%;
+  width: 38.19%;
+  top: 2.89%;
+  right: 30.9%;
+  bottom: 96.36%;
+  left: 30.9%;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-300);
+}
+
+.bar {
+  position: relative;
+  width: 550px;
+  height: 45px;
+}
+
+.barItem {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 9.82%;
+  right: 90.18%;
+  border-radius: var(--br-mini) 0 0 var(--br-mini);
+  background-color: var(--color-black);
+  mix-blend-mode: multiply;
+}
+
 .blackUpRec1 {
   align-self: stretch;
   position: relative;
@@ -193,7 +225,6 @@
   mix-blend-mode: multiply;
 }
 
-.search,
 .vectorIcon1 {
   position: absolute;
   top: 22.22%;
@@ -230,6 +261,46 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.search {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 10%;
+  width: 88%;
+  right: 0;
+  border-radius: var(--br-mini) 0.8;
+  background-color: var(--neutral-10);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  font-size: large;
+  color: black;
+  letter-spacing: normal;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-variant-position: normal;
+  text-align: justify;
+}
+
+.vectorIcon7 {
+  position: absolute;
+  top: 22.22%;
+  left: 14.73%;
+  cursor: pointer;
+}
+
+.vectorIcon7 {
+  height: 40%;
+  width: 3.27%;
+  top: 28.89%;
+  right: 93.45%;
+  bottom: 31.11%;
+  left: 3.27%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
 }
 
 .searchBar {
@@ -1503,6 +1574,7 @@
   flex-wrap: wrap;
   color: black;
 }
-.pagi{
+
+.pagi {
   margin-top: 1732px;
 }

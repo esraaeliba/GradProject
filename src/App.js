@@ -28,6 +28,9 @@ import Camera22PageNew from "./pages/camera22-page";
 import Gaming22PageNew from "./pages/gaming22-page";
 import Sound22PageNew from "./pages/sound22-page";
 import Projector22PageNew from "./pages/projector22-page";
+import Searched from "./pages/searched";
+import Update from "./pages/update-product";
+
 
 function App() {
   const action = useNavigationType();
@@ -129,6 +132,14 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/searched":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/update":
+        title = "";
+        metaDescription = "";
+        break;
     }
 
     if (title) {
@@ -169,6 +180,8 @@ function App() {
       <Route path="/gaming22-page" element={<Gaming22PageNew />} />
       <Route path="/sound22-page" element={<Sound22PageNew />} />
       <Route path="/projector22-page" element={<Projector22PageNew />} />
+      <Route path="/searched" element={<Searched />} />
+      <Route path="/update" element={<Update />} />
     </Routes>
   );
 }
